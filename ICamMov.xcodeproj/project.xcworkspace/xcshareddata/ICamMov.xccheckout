@@ -10,6 +10,8 @@
 	<string>ICamMov</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>337F5F1C90DAC5107F527CCB2221473F8C643D89</key>
+		<string>https://github.com/alex-chan/ICamMov.git</string>
 		<key>E53DC341597A84D09D2E267F2E59B9C41DB2C121</key>
 		<string>https://github.com/alex-chan/StillMovie.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>ICamMov.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E53DC341597A84D09D2E267F2E59B9C41DB2C121</key>
+		<key>337F5F1C90DAC5107F527CCB2221473F8C643D89</key>
 		<string>../..</string>
+		<key>E53DC341597A84D09D2E267F2E59B9C41DB2C121</key>
+		<string>../../../TryDemo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/alex-chan/StillMovie.git</string>
+	<string>https://github.com/alex-chan/ICamMov.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E53DC341597A84D09D2E267F2E59B9C41DB2C121</string>
+	<string>337F5F1C90DAC5107F527CCB2221473F8C643D89</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>337F5F1C90DAC5107F527CCB2221473F8C643D89</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ICamMov</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

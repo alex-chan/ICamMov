@@ -17,7 +17,7 @@ class ShareMovieViewController : UIViewController{
 //    var coverImage: UIImage?
     
     var shareSettings :Dictionary<String, Bool> = ["save": true, "weixin": true, "weibo": false]
-    
+    var progressView: UIProgressView?
     
     
     
@@ -72,7 +72,7 @@ class ShareMovieViewController : UIViewController{
         return acl
     }
     
-    typealias UploadFileResultBlock = AVFile->Void
+    typealias UploadFileResultBlock = (Bool!, NSError?, AVFile?)->Void
     
     func uploadCoverAndMovie(){
         
@@ -80,22 +80,62 @@ class ShareMovieViewController : UIViewController{
         
 //        self.sessionQueue = sessionQueue
         
-
+        var alert = UIAlertView(title: "上传中...", message: nil, delegate: nil, cancelButtonTitle:nil)
+        var progress = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)
         
+        
+        progress.frame = CGRectMake(0, 0, 200, 15)
+        progress.bounds = CGRectMake(0, 0, 200, 15)
+        progress.progress = 0.0;
+        progress.backgroundColor = UIColor.blackColor()
+        progress.userInteractionEnabled = false
+        progress.trackTintColor = UIColor.blueColor()
+        progress.progressTintColor = UIColor.redColor()
+        
+        alert.setValue(progress, forKey: "accessoryView")
+        
+//        alert.addSubview(progress)
+        
+        self.progressView = progress
+        alert.show()
         
         dispatch_async(sessionQueue, {
-            var coverFile = self.uploadCoverImage()
+            var error: NSError?
+            var coverFile = self.uploadCoverImage(&error)
+            
+            if error != nil{
+                dispatch_async(dispatch_get_main_queue(), {
+                    alert.dismissWithClickedButtonIndex(0, animated: true)
+                    var alert2 = UIAlertView(title: "上传错误", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "知道了")
+                    alert2.show()
+                })
+            }
+            
             self.uploadMovie({
                 
-                (videoFile: AVFile!) in
+                (succeed:Bool!, error:NSError?, videoFile: AVFile?) in
                 
-                var video = AVObject(className: "Video")
+                if succeed! {
+                    var video = AVObject(className: "Video")
+                    
+                    video["owner"] = AVUser.currentUser()
+                    video["videoFile"] = videoFile!
+                    video["coverImage"] = coverFile
+                    video.ACL = self.mineACL()
+                    video.save()
+                    dispatch_async(dispatch_get_main_queue(), {
+                        alert.dismissWithClickedButtonIndex(0, animated: true)
+                    })
+                }else{
+                    dispatch_async(dispatch_get_main_queue(), {
+                        alert.dismissWithClickedButtonIndex(0, animated: true)
+                        var alert2 = UIAlertView(title: "上传错误", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "知道了")
+                        alert2.show()
+                    })
+                    
+                }
                 
-                video["owner"] = AVUser.currentUser()
-                video["videoFile"] = videoFile
-                video["coverImage"] = coverFile
-                video.ACL = self.mineACL()
-                video.save()
+
                 
             })
             
@@ -107,14 +147,14 @@ class ShareMovieViewController : UIViewController{
         
     }
     
-    func uploadCoverImage() -> AVFile {
+    func uploadCoverImage(error: NSErrorPointer) -> AVFile {
         
         var image = coverImage.image
         var coverFile =  UIImagePNGRepresentation(image)
         
         var coverAVFile = AVFile.fileWithName("cover.png", data: coverFile) as AVFile
         coverAVFile.setOwnerId(AVUser.currentUser().objectId)
-        coverAVFile.save()
+        coverAVFile.save( error)
         
         return coverAVFile
         
@@ -130,7 +170,7 @@ class ShareMovieViewController : UIViewController{
     }
     
     
-    
+
     
     func uploadMovie(resultBlock: UploadFileResultBlock){
 
@@ -144,15 +184,28 @@ class ShareMovieViewController : UIViewController{
         videoFile.setOwnerId(AVUser.currentUser().objectId)
         
         
+        
         videoFile.saveInBackgroundWithBlock({
             (succeed: Bool!, error: NSError!) in
-            if succeed! {
-                resultBlock(videoFile)
-            }
+            
+            resultBlock(succeed, error, videoFile)
+            
         }, progressBlock: {
 //            (percentDone: Int32) in  // use this line when use Parse.com
             (percentDone: Int) in
             //
+            
+            dispatch_async(dispatch_get_main_queue(), {
+
+                
+//                self.progressView!.progress = Float(percentDone) / 100.0
+                
+                self.progressView!.setProgress(Float(percentDone) / 100.0, animated: true)
+                
+                println("proessView:\(self.progressView!.progress)" )
+                return
+            })
+            
             println(percentDone)
                 
         })
@@ -196,19 +249,30 @@ class ShareMovieViewController : UIViewController{
     
     @IBAction func share(sender: UIButton) {
         
-//        self.uploadMovie()
-        
         println(PFUser.currentUser())
-//        ShareSDK.hasAuthorizedWithType(ShareTypeSinaWeibo)
+
         if AVUser.currentUser() == nil {
             var loginView = self.storyboard!.instantiateViewControllerWithIdentifier("sid_vc_login") as LoginViewController
-            
-//            self.navigationController!.pushViewController(loginView, animated: true)
             
             self.presentViewController(loginView, animated: true, completion:nil)
             
         }else{
             println("current user exists")
+            
+            var atleastOneTrue = false
+            for val in self.shareSettings.values {
+                if val {
+                    atleastOneTrue = true
+                    break
+                }
+            }
+            if !atleastOneTrue {
+                var alertView = UIAlertView(title: "错误", message: "请至少选择一项保存或分享", delegate: nil, cancelButtonTitle: "知道了")
+                alertView.show()
+                
+                
+                return
+            }
             self.uploadCoverAndMovie()
         }
         
