@@ -20,3 +20,4 @@ alert.show()
 
 
 
+AVCloud.callFunction("getHost", withParameters: nil)

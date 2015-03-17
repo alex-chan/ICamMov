@@ -16,7 +16,10 @@ class ShareMovieViewController : UIViewController{
     var toShareMovieURL : NSURL?
 //    var coverImage: UIImage?
     
-    var shareSettings :Dictionary<String, Bool> = ["save": true, "weixin": true, "weibo": false]
+    var shareSettings :Dictionary<String, Bool> = ["save": true, "weixin_session": true, "weixin_timeline": false, "weibo": false]
+    
+    
+    
     var progressView: UIProgressView?
     
     
@@ -25,8 +28,10 @@ class ShareMovieViewController : UIViewController{
     @IBOutlet weak var saveMovieBtn: UIButton!
     @IBOutlet weak var shareWeixinBtn: UIButton!
     @IBOutlet weak var shareWeiboBtn: UIButton!
+    @IBOutlet weak var shareTimelineBtn: UIButton!
     
     
+    @IBOutlet weak var shareComment: BorderTextView!
     
 
     
@@ -70,6 +75,68 @@ class ShareMovieViewController : UIViewController{
         acl.setWriteAccess(true, forUser: AVUser.currentUser())
 
         return acl
+    }
+    
+    
+    func dispatchShare(shareUrl: String){
+        if self.shareSettings["save"]! {
+            
+        }
+        if self.shareSettings["weixin_session"]! {
+            self.shareInWeixin(ShareTypeWeixiSession, shareUrl: shareUrl)
+        }
+        if self.shareSettings["weixin_timeline"]! {
+            self.shareInWeixin(ShareTypeWeixiTimeline, shareUrl: shareUrl)
+        }
+        
+        
+    }
+    
+    func shareInWeixin(type: ShareType, shareUrl: String){
+        
+        
+        
+        println("shareULR:\(shareUrl)")
+        
+        var title = shareComment.text
+        var image = coverImage.image
+        var coverFile =  UIImagePNGRepresentation(image)
+        
+        var shareImage = ShareSDK.imageWithData(coverFile, fileName: "coverImage", mimeType: "image/png")
+        
+        var publishContent : ISSContent = ShareSDK.content("",
+            defaultContent:"默认分享内容，没内容时显示",
+            image:shareImage,
+            title:title,
+            url:shareUrl,
+            description:title,
+            mediaType:SSPublishContentMediaTypeVideo)
+        
+        
+        ShareSDK.clientShareContent(publishContent,
+            type: type,
+            authOptions: nil,
+            shareOptions: nil,
+            statusBarTips: true,
+            result: {
+                
+                (type:ShareType, state:SSResponseState , statusInfo:ISSPlatformShareInfo!, error:ICMErrorInfo!, end:Bool) in
+                
+                println(state.value)
+                
+                
+                switch state.value {
+                    case SSResponseStateSuccess.value:
+                        println("分享成功")
+                    case SSResponseStateFail.value:
+                        println(error.errorCode())
+                        println(error.errorDescription())
+                    default:
+                        println("other")
+                        
+                }
+                
+        })
     }
     
     typealias UploadFileResultBlock = (Bool!, NSError?, AVFile?)->Void
@@ -123,8 +190,23 @@ class ShareMovieViewController : UIViewController{
                     video["coverImage"] = coverFile
                     video.ACL = self.mineACL()
                     video.save()
+                    
+//                    var error: NSError?
+//                    var host = AVCloud.callFunction("hello", withParameters: nil, error: &error)
+//                    if let err = error{
+//                        println("error:\(err.localizedDescription)")
+//                    }
+//                    
+//                    println("host: \(host)")
+//                    
+//                    let url = "\(host)/videos/\(video.objectId)"
+                    
                     dispatch_async(dispatch_get_main_queue(), {
                         alert.dismissWithClickedButtonIndex(0, animated: true)
+                        
+                        var shareUrl = "\(Utils.getHost())/videos/\(video.objectId)"
+                        self.dispatchShare(shareUrl)
+                        
                     })
                 }else{
                     dispatch_async(dispatch_get_main_queue(), {
@@ -229,13 +311,17 @@ class ShareMovieViewController : UIViewController{
         
     }
     
-    @IBAction func shareWeixin(sender: UIButton) {
-        if self.shareSettings["weixin"]! {
+    @IBAction func shareWeixinSession(sender: UIButton) {
+        if self.shareSettings["weixin_session"]! {
             sender.setImage(UIImage(named: "WX_LOGO_GRAY"), forState: UIControlState.Normal)
         }else{
             sender.setImage(UIImage(named: "WX_LOGO"), forState: UIControlState.Normal)
+            if self.shareSettings["weixin_timeline"]! {
+                self.shareTimelineBtn.setImage(UIImage(named: "WX_TL_LOGO_GRAY"), forState: UIControlState.Normal)
+                self.shareSettings["weixin_timeline"] = false
+            }
         }
-        self.shareSettings["weixin"] = !self.shareSettings["weixin"]!
+        self.shareSettings["weixin_session"] = !self.shareSettings["weixin_session"]!
     }
     
     @IBAction func ShareWeibo(sender: UIButton) {
@@ -245,6 +331,22 @@ class ShareMovieViewController : UIViewController{
             sender.setImage(UIImage(named: "WB_LOGO"), forState: UIControlState.Normal)
         }
         self.shareSettings["weibo"] = !self.shareSettings["weibo"]!
+    }
+    
+
+    
+    @IBAction func shareTimeline(sender: UIButton) {
+
+        if self.shareSettings["weixin_timeline"]! {
+            sender.setImage(UIImage(named: "WX_TL_LOGO_GRAY"), forState: UIControlState.Normal)
+        }else{
+            sender.setImage(UIImage(named: "WX_TL_LOGO"), forState: UIControlState.Normal)
+            if self.shareSettings["weixin_session"]! {
+                self.shareWeixinBtn.setImage(UIImage(named: "WX_LOGO_GRAY"), forState: UIControlState.Normal)
+                self.shareSettings["weixin_session"] = false
+            }
+        }
+        self.shareSettings["weixin_timeline"] = !self.shareSettings["weixin_timeline"]!
     }
     
     @IBAction func share(sender: UIButton) {

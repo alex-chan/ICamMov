@@ -10,6 +10,33 @@ import Foundation
 
 class LoginViewController: UIViewController{
     
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
+    
+    
+    // MARK: actions
+    @IBAction func loginWithPhoneNum(sender: UIButton) {
+        if countElements(username.text) != 11 {
+            self.alertError("手机号必须为11位")
+            return
+        }
+        
+        
+        
+        AVUser.logInWithMobilePhoneNumberInBackground(username.text, password: password.text, block: {
+            (user:AVUser!, error: NSError!) in
+            if let err = error{
+                self.alertError(err.localizedDescription)
+            }else{
+                self.dismissSelf()
+            }
+            return
+        })
+    
+    }
+    
     @IBAction func sinaweibologin(sender: UIButton) {
         
 
@@ -106,7 +133,13 @@ class LoginViewController: UIViewController{
         })
     }
     
+    
     // MARK: custom functions
+    func alertError(errDes: String){
+        var alert = UIAlertView(title: "错误", message: errDes, delegate: nil, cancelButtonTitle: "知道了")
+        alert.show()
+    }
+    
     func dismissSelf(){
         if self.presentingViewController  != nil{
             self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)

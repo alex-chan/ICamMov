@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MG3-Yd-ttf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7zk-sH-Qf4">
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
@@ -135,30 +135,114 @@
                         <viewControllerLayoutGuide type="top" id="hWy-pK-hqL"/>
                         <viewControllerLayoutGuide type="bottom" id="zbE-Md-51f"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1bK-Fa-fdp">
+                    <view key="view" contentMode="scaleToFill" id="1bK-Fa-fdp" userLabel="Root">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tS-Ni-GUt">
-                                <rect key="frame" x="261" y="292" width="79" height="16"/>
-                                <state key="normal" backgroundImage="SinaWeiboLogin">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sinaweibologin:" destination="7zk-sH-Qf4" eventType="touchUpInside" id="ngz-if-gNS"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6P-9s-p5E" userLabel="Up">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="360"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BRAND" translatesAutoresizingMaskIntoConstraints="NO" id="TZ3-Lm-gk8" userLabel="logo">
+                                        <rect key="frame" x="210" y="47" width="180" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TZ3-Lm-gk8" secondAttribute="height" multiplier="3:1" id="ZGb-kg-rx3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFx-4C-RSf" userLabel="UserName">
+                                        <rect key="frame" x="20" y="151" width="560" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="IvC-JY-uZa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-H7-4t9" userLabel="PassWord">
+                                        <rect key="frame" x="20" y="217" width="560" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="jpX-nY-ioH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEJ-ld-P2E" userLabel="Login">
+                                        <rect key="frame" x="20" y="283" width="560" height="42"/>
+                                        <color key="backgroundColor" red="0.47322223264193131" green="0.61884932110316337" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                        <state key="normal" title="登录" image="PaperPlane">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithPhoneNum:" destination="7zk-sH-Qf4" eventType="touchUpInside" id="uni-Qw-hyn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.83921568627450982" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="DEJ-ld-P2E" secondAttribute="centerX" id="5jG-cR-UxE"/>
+                                    <constraint firstAttribute="centerX" secondItem="TZ3-Lm-gk8" secondAttribute="centerX" id="ElT-eN-sJm"/>
+                                    <constraint firstItem="BFx-4C-RSf" firstAttribute="leading" secondItem="d6P-9s-p5E" secondAttribute="leading" constant="20" id="Lsh-WB-xlG"/>
+                                    <constraint firstItem="BFx-4C-RSf" firstAttribute="top" secondItem="TZ3-Lm-gk8" secondAttribute="bottom" constant="44" id="QOE-ki-nNJ"/>
+                                    <constraint firstAttribute="centerX" secondItem="BFx-4C-RSf" secondAttribute="centerX" id="QnC-pB-UQJ"/>
+                                    <constraint firstItem="DEJ-ld-P2E" firstAttribute="leading" secondItem="d6P-9s-p5E" secondAttribute="leading" constant="20" id="TrB-DD-tMF"/>
+                                    <constraint firstItem="TZ3-Lm-gk8" firstAttribute="top" secondItem="d6P-9s-p5E" secondAttribute="top" constant="47" id="VZY-0t-84J"/>
+                                    <constraint firstAttribute="centerX" secondItem="wxn-H7-4t9" secondAttribute="centerX" id="ePx-k4-xaf"/>
+                                    <constraint firstItem="wxn-H7-4t9" firstAttribute="top" secondItem="TZ3-Lm-gk8" secondAttribute="bottom" constant="110" id="oBo-3E-tnV"/>
+                                    <constraint firstItem="DEJ-ld-P2E" firstAttribute="top" secondItem="wxn-H7-4t9" secondAttribute="bottom" constant="22" id="ziF-Wd-6TG"/>
+                                    <constraint firstItem="wxn-H7-4t9" firstAttribute="leading" secondItem="d6P-9s-p5E" secondAttribute="leading" constant="20" id="zv6-Y5-cPq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9h-xf-Kmn" userLabel="Bottom">
+                                <rect key="frame" x="0.0" y="360" width="600" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或者用第三方帐号登录:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGH-L7-Ab8" userLabel="OtherLoginLabel">
+                                        <rect key="frame" x="20" y="40" width="561" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQi-Ty-aSE" userLabel="WeiboLogin">
+                                        <rect key="frame" x="274" y="115" width="52" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bQi-Ty-aSE" secondAttribute="height" multiplier="1:1" id="sP6-NW-z2y"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                        <state key="normal" image="WB_LOGO">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sinaweibologin:" destination="7zk-sH-Qf4" eventType="touchUpInside" id="i0B-dI-KTq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IGH-L7-Ab8" firstAttribute="leading" secondItem="L9h-xf-Kmn" secondAttribute="leading" constant="20" id="79c-KM-mzO"/>
+                                    <constraint firstItem="IGH-L7-Ab8" firstAttribute="top" secondItem="L9h-xf-Kmn" secondAttribute="top" constant="40" id="ESF-72-RYn"/>
+                                    <constraint firstAttribute="centerX" secondItem="bQi-Ty-aSE" secondAttribute="centerX" id="Kas-wC-kjc"/>
+                                    <constraint firstItem="bQi-Ty-aSE" firstAttribute="top" secondItem="IGH-L7-Ab8" secondAttribute="bottom" constant="54" id="Kr8-6w-cFh"/>
+                                    <constraint firstAttribute="centerX" secondItem="IGH-L7-Ab8" secondAttribute="centerX" id="X6E-8S-l8t"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="6tS-Ni-GUt" secondAttribute="centerX" id="0KY-uh-v1Q"/>
-                            <constraint firstAttribute="centerY" secondItem="6tS-Ni-GUt" secondAttribute="centerY" id="9NH-tP-nXC"/>
+                            <constraint firstItem="d6P-9s-p5E" firstAttribute="top" secondItem="hWy-pK-hqL" secondAttribute="bottom" constant="-20" id="Baz-ti-i1M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d6P-9s-p5E" secondAttribute="trailing" constant="-16" id="Ip6-qu-aaH"/>
+                            <constraint firstItem="L9h-xf-Kmn" firstAttribute="leading" secondItem="1bK-Fa-fdp" secondAttribute="leadingMargin" constant="-16" id="S9z-26-PUI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L9h-xf-Kmn" secondAttribute="trailing" constant="-16" id="WVu-V0-fku"/>
+                            <constraint firstItem="d6P-9s-p5E" firstAttribute="bottom" secondItem="L9h-xf-Kmn" secondAttribute="top" id="gLX-kB-QGF"/>
+                            <constraint firstItem="d6P-9s-p5E" firstAttribute="leading" secondItem="1bK-Fa-fdp" secondAttribute="leadingMargin" constant="-16" id="oda-mz-zwV"/>
+                            <constraint firstItem="d6P-9s-p5E" firstAttribute="height" secondItem="L9h-xf-Kmn" secondAttribute="height" constant="120" id="spI-rh-Wfz"/>
+                            <constraint firstItem="zbE-Md-51f" firstAttribute="top" secondItem="L9h-xf-Kmn" secondAttribute="bottom" id="y5a-iM-dtb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="wxn-H7-4t9" id="FQe-y4-HUf"/>
+                        <outlet property="username" destination="BFx-4C-RSf" id="xFt-n1-XoO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG1-G5-ePS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="1417"/>
+            <point key="canvasLocation" x="-563" y="1187"/>
         </scene>
         <!--TakeMovie-->
         <scene sceneID="Omi-tU-fpJ">
@@ -467,7 +551,7 @@
                                 </attributedString>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -480,17 +564,17 @@
                                     <rect key="frame" x="7" y="219" width="400" height="40"/>
                                 </variation>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存与分享:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-yf-lud" userLabel="SaveShareLabel">
+                                <rect key="frame" x="36" y="314" width="75" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcx-Tx-AYC" userLabel="ShareView">
                                 <rect key="frame" x="36" y="339" width="528" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存与分享:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-yf-lud" userLabel="SaveShareLabel">
-                                        <rect key="frame" x="0.0" y="14" width="75" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-Gy-wno" userLabel="SaveBtn">
-                                        <rect key="frame" x="95" y="8" width="32" height="28"/>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9d-Gy-wno" userLabel="SaveBtn">
+                                        <rect key="frame" x="0.0" y="6" width="32" height="32"/>
                                         <state key="normal" image="Save">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -498,8 +582,26 @@
                                             <action selector="saveMovie:" destination="MG3-Yd-ttf" eventType="touchUpInside" id="QPu-pW-Yhr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-6Q-YWF" userLabel="ShareWBBtn">
-                                        <rect key="frame" x="199" y="6" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8II-Qe-fxM" userLabel="ShareWXBtn">
+                                        <rect key="frame" x="52" y="6" width="32" height="32"/>
+                                        <state key="normal" image="WX_LOGO">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareWeixinSession:" destination="MG3-Yd-ttf" eventType="touchUpInside" id="vUR-8T-j3T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-zB-ss2" userLabel="ShareWXTLBtn">
+                                        <rect key="frame" x="104" y="6" width="32" height="32"/>
+                                        <state key="normal" image="WX_TL_LOGO_GRAY">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareTimeline:" destination="MG3-Yd-ttf" eventType="touchUpInside" id="kQj-ew-UZk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-6Q-YWF" userLabel="ShareWBBtn">
+                                        <rect key="frame" x="156" y="6" width="32" height="32"/>
                                         <state key="normal" image="WB_LOGO_GRAY">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -507,32 +609,24 @@
                                             <action selector="ShareWeibo:" destination="MG3-Yd-ttf" eventType="touchUpInside" id="pip-Uw-koJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8II-Qe-fxM" userLabel="ShareWXBtn">
-                                        <rect key="frame" x="147" y="6" width="32" height="32"/>
-                                        <state key="normal" image="WX_LOGO">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="shareWeixin:" destination="MG3-Yd-ttf" eventType="touchUpInside" id="ZBw-k4-vN8"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ADr-yf-lud" firstAttribute="leading" secondItem="Fcx-Tx-AYC" secondAttribute="leading" id="173-O0-1tZ"/>
-                                    <constraint firstItem="qWg-6Q-YWF" firstAttribute="width" secondItem="8II-Qe-fxM" secondAttribute="width" id="GTt-bu-9YW"/>
+                                    <constraint firstItem="Wup-zB-ss2" firstAttribute="width" secondItem="8II-Qe-fxM" secondAttribute="width" id="3Wl-27-doJ"/>
                                     <constraint firstItem="8II-Qe-fxM" firstAttribute="width" secondItem="j9d-Gy-wno" secondAttribute="width" id="Knn-ut-d79"/>
-                                    <constraint firstItem="qWg-6Q-YWF" firstAttribute="leading" secondItem="8II-Qe-fxM" secondAttribute="trailing" constant="20" id="SCC-Lx-Zio"/>
-                                    <constraint firstAttribute="centerY" secondItem="ADr-yf-lud" secondAttribute="centerY" id="beu-FQ-dRX"/>
-                                    <constraint firstItem="j9d-Gy-wno" firstAttribute="leading" secondItem="ADr-yf-lud" secondAttribute="trailing" constant="20" id="fHV-sG-8qs"/>
+                                    <constraint firstItem="j9d-Gy-wno" firstAttribute="leading" secondItem="Fcx-Tx-AYC" secondAttribute="leading" id="Q2N-tL-av0"/>
+                                    <constraint firstItem="Wup-zB-ss2" firstAttribute="width" secondItem="qWg-6Q-YWF" secondAttribute="width" id="bQu-gg-zU6"/>
+                                    <constraint firstItem="qWg-6Q-YWF" firstAttribute="leading" secondItem="Wup-zB-ss2" secondAttribute="trailing" constant="20" id="chr-Wy-spH"/>
                                     <constraint firstItem="8II-Qe-fxM" firstAttribute="centerY" secondItem="Fcx-Tx-AYC" secondAttribute="centerY" id="i4p-Ys-5Gb"/>
+                                    <constraint firstItem="Wup-zB-ss2" firstAttribute="leading" secondItem="8II-Qe-fxM" secondAttribute="trailing" constant="20" id="iV5-KH-jWE"/>
                                     <constraint firstItem="j9d-Gy-wno" firstAttribute="centerY" secondItem="Fcx-Tx-AYC" secondAttribute="centerY" id="kV6-4m-cXK"/>
                                     <constraint firstItem="qWg-6Q-YWF" firstAttribute="centerY" secondItem="Fcx-Tx-AYC" secondAttribute="centerY" id="l8Q-Rv-Y8l"/>
+                                    <constraint firstAttribute="centerY" secondItem="Wup-zB-ss2" secondAttribute="centerY" id="q96-Xr-Bw7"/>
                                     <constraint firstItem="8II-Qe-fxM" firstAttribute="leading" secondItem="j9d-Gy-wno" secondAttribute="trailing" constant="20" id="tW3-2s-njQ"/>
                                     <constraint firstAttribute="height" constant="44" id="zzJ-g1-WAV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-rA-73C" userLabel="ShareBtn">
-                                <rect key="frame" x="36" y="483" width="528" height="44"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-rA-73C" userLabel="ShareBtn">
+                                <rect key="frame" x="36" y="483" width="528" height="42"/>
                                 <color key="backgroundColor" red="0.27136826281990056" green="0.77881982659573334" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
@@ -547,6 +641,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ADr-yf-lud" firstAttribute="leading" secondItem="8Ed-vr-t8I" secondAttribute="leadingMargin" constant="20" id="1Uw-HE-vNc"/>
                             <constraint firstAttribute="centerX" secondItem="Fcx-Tx-AYC" secondAttribute="centerX" id="2fu-4H-V79"/>
                             <constraint firstItem="KxK-Ud-8rR" firstAttribute="bottom" secondItem="cEg-Q5-IbD" secondAttribute="top" constant="-35" id="BGr-4r-r4U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m6i-lR-p3M" secondAttribute="trailing" constant="-16" id="TzO-vI-hhU"/>
@@ -555,6 +650,7 @@
                             <constraint firstItem="cEg-Q5-IbD" firstAttribute="leading" secondItem="8Ed-vr-t8I" secondAttribute="leadingMargin" constant="20" id="g3K-SD-659"/>
                             <constraint firstItem="KxK-Ud-8rR" firstAttribute="top" secondItem="m6i-lR-p3M" secondAttribute="bottom" constant="20" id="gtp-N2-OQk"/>
                             <constraint firstItem="a9p-rA-73C" firstAttribute="leading" secondItem="8Ed-vr-t8I" secondAttribute="leadingMargin" constant="20" id="irG-uG-NXy"/>
+                            <constraint firstItem="ADr-yf-lud" firstAttribute="top" secondItem="cEg-Q5-IbD" secondAttribute="bottom" constant="15" id="jJC-t3-iZS"/>
                             <constraint firstAttribute="centerX" secondItem="cEg-Q5-IbD" secondAttribute="centerX" id="jwV-OR-gYt"/>
                             <constraint firstAttribute="centerX" secondItem="KxK-Ud-8rR" secondAttribute="centerX" id="lvD-7C-8o8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a9p-rA-73C" secondAttribute="trailing" constant="20" id="oBT-ps-QA9"/>
@@ -569,8 +665,10 @@
                     <connections>
                         <outlet property="coverImage" destination="KxK-Ud-8rR" id="k7o-mj-iZg"/>
                         <outlet property="saveMovieBtn" destination="j9d-Gy-wno" id="u3k-5V-xxz"/>
+                        <outlet property="shareComment" destination="cEg-Q5-IbD" id="DzS-Ql-Bgd"/>
+                        <outlet property="shareTimelineBtn" destination="Wup-zB-ss2" id="Fby-pW-9zc"/>
                         <outlet property="shareWeiboBtn" destination="qWg-6Q-YWF" id="DLC-vg-xXx"/>
-                        <outlet property="shareWeixinBtn" destination="8II-Qe-fxM" id="uap-du-Hio"/>
+                        <outlet property="shareWeixinBtn" destination="8II-Qe-fxM" id="RyJ-Hi-eiT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPY-bD-Ysa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,11 +678,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BRAND" width="180" height="60"/>
         <image name="PaperPlane" width="25" height="20"/>
-        <image name="Save" width="28" height="28"/>
-        <image name="SinaWeiboLogin" width="79" height="16"/>
+        <image name="Save" width="32" height="32"/>
+        <image name="WB_LOGO" width="32" height="32"/>
         <image name="WB_LOGO_GRAY" width="32" height="32"/>
         <image name="WX_LOGO" width="32" height="32"/>
+        <image name="WX_TL_LOGO_GRAY" width="32" height="32"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
