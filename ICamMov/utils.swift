@@ -12,6 +12,10 @@ import Foundation
 let PRODUCTION_ENV = false
 let WEB_HOST = "icam.avosapps.com"
 
+
+
+let kSAVideoRangeSliderWrappViewTag =  10001
+
 class Utils {
 
     class func copyImageFromVideo(videoURL: NSURL, atTime: CMTime ) -> CGImage{
@@ -66,5 +70,15 @@ class Utils {
             presentVC.dismissViewControllerAnimated(animated, completion: completion)
         }
         
+    }
+    
+    
+    
+    class func getTestVideoUrl() ->NSURL {
+    
+        var testURL =  NSBundle.mainBundle().URLForResource("test", withExtension: "mp4")
+        println("testURL: \(testURL)" )
+        return testURL!
+    
     }
 }

@@ -230,9 +230,9 @@ class TakeMovieViewController: UIViewController, AVCaptureFileOutputRecordingDel
         }
         
         
-//        override func prefersStatusBarHidden() -> Bool {
-//            return true
-//        }
+        override func prefersStatusBarHidden() -> Bool {
+            return true
+        }
     
         override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
             

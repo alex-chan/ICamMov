@@ -20,7 +20,7 @@ var AVLoopPlayerCurrentItemObservationContext = "AVLoopPlayerCurrentItemObservat
 
 
 
-class EditMovieViewController: UIViewController{
+class EditMovieViewController: UIViewController, SAVideoRangeSliderDelegate{
     
     var tmpMovieURL: NSURL?
     var finalMovieURL : NSURL?
@@ -33,29 +33,32 @@ class EditMovieViewController: UIViewController{
     
     @IBOutlet weak var playerView: MoviePreviewView!
     
+    @IBOutlet weak var prefixStepper: UIStepper!
+    
+    @IBOutlet weak var prefixStillSec: UILabel!
+    
+    // MARK: Override methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tmpMovieURL = Utils.getTestVideoUrl()
+        
         println("viewDidLoad")
         
-
+        self.prefixStepper.addTarget(self, action: "prefixStepperChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        self.addVideoRangeSlider()
         
     }
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         println("viewWillAppear")
         
-//        var mainURL:NSURL =  NSBundle.mainBundle().URLForResource("prefix", withExtension: "mov")!
-//        tmpMovieURL = mainURL
-//        
-//        self.stillMovie = StillMovieEffect(sourceURL: tmpMovieURL!)
-//        self.stillMovie!.previewEffect({
-//            (urls) -> Void in
-//            self.loadMovieItems(urls)
-//            
-//        })
         
         self.loadMovieItems([self.tmpMovieURL!, self.tmpMovieURL!])
         
@@ -76,6 +79,11 @@ class EditMovieViewController: UIViewController{
         
         super.viewWillDisappear(animated)
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
 
@@ -109,6 +117,12 @@ class EditMovieViewController: UIViewController{
     }
     
     // MARK: selectors
+    
+    func prefixStepperChanged(stepper: UIStepper){
+        
+        self.prefixStillSec.text = String(format: "%1.0f", stepper.value)
+    }
+    
     func playerItemDidReachEnd(notification: NSNotification) {
         
         
@@ -149,6 +163,78 @@ class EditMovieViewController: UIViewController{
     }
     
 
+    // MARK: SAVideoRangeSlider delegates and related
+    
+    var leftPos: CGFloat?
+    var rightPos: CGFloat?
+    var lastLeftPos: CGFloat?
+    var lastRightPos: CGFloat?
+    
+    func videoRange(videoRange: SAVideoRangeSlider!, didChangeLeftPosition leftPosition: CGFloat, rightPosition: CGFloat) {
+        println("leftPos:\(leftPosition),rightPos:\(rightPosition)")
+        
+        
+        self.leftPos = leftPosition
+        self.rightPos = rightPosition
+        
+        
+        if self.lastLeftPos == nil {
+            self.lastLeftPos = leftPosition
+        }
+        
+        if abs(leftPosition - self.lastLeftPos!) >= 0.1 {
+            
+            self.lastLeftPos = leftPosition
+            
+            var sTime = CMTimeMake(Int64(leftPosition*30), 30)
+            var toleranceBefore = CMTimeAbsoluteValue( CMTimeSubtract( sTime, CMTimeMake(2, 30) ) )            
+            
+            var toleranceAfter = CMTimeAdd(CMTimeMake(2, 30), sTime)
+            
+            self.queuePlayer!.pause()
+            self.queuePlayer!.seekToTime(sTime, toleranceBefore:toleranceBefore, toleranceAfter: toleranceAfter, completionHandler:{
+                (succeed: Bool) in
+                return
+            })
+        }
+        
+
+        
+        
+    }
+    
+    func videoRange(videoRange: SAVideoRangeSlider!, didGestureStateEndedLeftPosition leftPosition: CGFloat, rightPosition: CGFloat) {
+        
+        println("gesture state ended")
+    }
+
+    func addVideoRangeSlider(){
+        
+        
+        var viewWrap = self.view.viewWithTag(kSAVideoRangeSliderWrappViewTag)!
+        
+        
+        println("viewWrap.frame:\(viewWrap.frame)")
+        println("viewWrap.frame.size:\(viewWrap.frame.size)")
+        println("viewWrap.bounds:\(viewWrap.bounds)")
+        println("self.view.frame:\(self.view.frame)")
+        
+        
+        var mySAVideoRangeSlider = SAVideoRangeSlider(frame: CGRectMake(0,0,self.view.frame.size.width, 44), videoUrl: self.tmpMovieURL)
+        
+        mySAVideoRangeSlider.setPopoverBubbleSize(160, height:80)
+        mySAVideoRangeSlider.delegate = self
+        
+        
+        
+        // Yellow
+        mySAVideoRangeSlider.topBorder.backgroundColor = UIColor(red: 0.996, green: 0.951, blue: 0.502, alpha: 1)
+        
+        mySAVideoRangeSlider.bottomBorder.backgroundColor = UIColor(red: 0.992, green: 0.902, blue: 0.004, alpha: 1)
+        
+        viewWrap.addSubview(mySAVideoRangeSlider)
+        
+    }
     
     // MARK: Image generate related functions
     
@@ -160,6 +246,7 @@ class EditMovieViewController: UIViewController{
         
         
         var asset1: AVURLAsset = AVURLAsset(URL: movieURLs[0], options: nil)
+        
         
         asset1.loadValuesAsynchronouslyForKeys([tracksKey], completionHandler: {
             
@@ -206,6 +293,11 @@ class EditMovieViewController: UIViewController{
         self.queuePlayer!.play()
     }
     
+    func pauseMovies(){
+        
+        self.queuePlayer!.pause()
+    }
+    
     
     func constructQueyPlayerAndPlay(item1: MyAVPlayerItem, item2: MyAVPlayerItem){
         if self.queuePlayer == nil{
@@ -222,7 +314,7 @@ class EditMovieViewController: UIViewController{
         self.queuePlayer!.actionAtItemEnd = AVPlayerActionAtItemEnd.Advance
         
         println("items ready to play :\(self.queuePlayer!.items() ) ")
-        self.queuePlayer!.play()
+//        self.queuePlayer!.play()
         
         
     }

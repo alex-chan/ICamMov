@@ -1,6 +1,7 @@
 // Playground - noun: a place where people can play
 
 import UIKit
+import AVFoundation
 
 var str = "Hello, playground"
 
@@ -17,7 +18,9 @@ alert.show()
 
 
 
+var t = CMTimeMake(0,30)
+
+t > kCMTimeZero
+CMTimeClampToRange(<#time: CMTime#>, <#range: CMTimeRange#>)
 
 
-
-AVCloud.callFunction("getHost", withParameters: nil)

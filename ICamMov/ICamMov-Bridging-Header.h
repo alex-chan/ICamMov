@@ -11,3 +11,5 @@
 //#import <Parse/Parse.h>
 #import <AVOSCloud/AVOSCloud.h>
 #import <AVOSCloudSNS/AVOSCloudSNS.h>
+
+#import "SAVideoRangeSlider.h"

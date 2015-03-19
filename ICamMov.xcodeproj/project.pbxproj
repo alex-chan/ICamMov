@@ -19,6 +19,13 @@
 		CB2645911AA9CD040062073A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2645901AA9CD040062073A /* Social.framework */; };
 		CB2645931AA9CD120062073A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2645921AA9CD120062073A /* Accounts.framework */; };
 		CB2BD8881AB969CA008D5C37 /* AccountUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */; };
+		CB2BD8921ABA7FB2008D5C37 /* SAResizibleBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD88B1ABA7FB2008D5C37 /* SAResizibleBubble.m */; };
+		CB2BD8931ABA7FB2008D5C37 /* SASliderLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD88D1ABA7FB2008D5C37 /* SASliderLeft.m */; };
+		CB2BD8941ABA7FB2008D5C37 /* SASliderRight.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD88F1ABA7FB2008D5C37 /* SASliderRight.m */; };
+		CB2BD8951ABA7FB2008D5C37 /* SAVideoRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8911ABA7FB2008D5C37 /* SAVideoRangeSlider.m */; };
+		CB2BD8971ABA7FE9008D5C37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */; };
+		CB2BD8991ABAB13D008D5C37 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8981ABAB13D008D5C37 /* test.swift */; };
+		CB2BD89E1ABAB7FD008D5C37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD89D1ABAB7FD008D5C37 /* ViewController.m */; };
 		CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */; };
 		CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */; };
 		CB5C772B1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */; };
@@ -93,6 +100,18 @@
 		CB2645901AA9CD040062073A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CB2645921AA9CD120062073A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUtils.swift; sourceTree = "<group>"; };
+		CB2BD88A1ABA7FB2008D5C37 /* SAResizibleBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAResizibleBubble.h; sourceTree = "<group>"; };
+		CB2BD88B1ABA7FB2008D5C37 /* SAResizibleBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAResizibleBubble.m; sourceTree = "<group>"; };
+		CB2BD88C1ABA7FB2008D5C37 /* SASliderLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderLeft.h; sourceTree = "<group>"; };
+		CB2BD88D1ABA7FB2008D5C37 /* SASliderLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderLeft.m; sourceTree = "<group>"; };
+		CB2BD88E1ABA7FB2008D5C37 /* SASliderRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderRight.h; sourceTree = "<group>"; };
+		CB2BD88F1ABA7FB2008D5C37 /* SASliderRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderRight.m; sourceTree = "<group>"; };
+		CB2BD8901ABA7FB2008D5C37 /* SAVideoRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoRangeSlider.h; sourceTree = "<group>"; };
+		CB2BD8911ABA7FB2008D5C37 /* SAVideoRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoRangeSlider.m; sourceTree = "<group>"; };
+		CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		CB2BD8981ABAB13D008D5C37 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		CB2BD89C1ABAB7FD008D5C37 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CB2BD89D1ABAB7FD008D5C37 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreTakeMovieViewController.swift; path = Home/PreTakeMovieViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2BD8971ABA7FE9008D5C37 /* CoreMedia.framework in Frameworks */,
 				CB1CF7E31A84EE5600CCF560 /* CoreTelephony.framework in Frameworks */,
 				CB2645931AA9CD120062073A /* Accounts.framework in Frameworks */,
 				CB2645911AA9CD040062073A /* Social.framework in Frameworks */,
@@ -249,6 +269,21 @@
 			name = Account;
 			sourceTree = "<group>";
 		};
+		CB2BD8891ABA7FB2008D5C37 /* SAVideoRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				CB2BD88A1ABA7FB2008D5C37 /* SAResizibleBubble.h */,
+				CB2BD88B1ABA7FB2008D5C37 /* SAResizibleBubble.m */,
+				CB2BD88C1ABA7FB2008D5C37 /* SASliderLeft.h */,
+				CB2BD88D1ABA7FB2008D5C37 /* SASliderLeft.m */,
+				CB2BD88E1ABA7FB2008D5C37 /* SASliderRight.h */,
+				CB2BD88F1ABA7FB2008D5C37 /* SASliderRight.m */,
+				CB2BD8901ABA7FB2008D5C37 /* SAVideoRangeSlider.h */,
+				CB2BD8911ABA7FB2008D5C37 /* SAVideoRangeSlider.m */,
+			);
+			path = SAVideoRangeSlider;
+			sourceTree = "<group>";
+		};
 		CB687BAE1A81096700D1DFA4 /* StillMovie */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +298,7 @@
 		CB6E025B1AAA881C00453435 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */,
 				CB2645921AA9CD120062073A /* Accounts.framework */,
 				CB2645901AA9CD040062073A /* Social.framework */,
 				CBC49ACB1AA9C83600701E86 /* libsqlite3.dylib */,
@@ -321,11 +357,15 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CB2BD8981ABAB13D008D5C37 /* test.swift */,
+				CB2BD89C1ABAB7FD008D5C37 /* ViewController.h */,
+				CB2BD89D1ABAB7FD008D5C37 /* ViewController.m */,
+				CBDD6E3F1AB6624C0044723C /* AVOS */,
+				CBC9C9ED1A88A4B900FAAE6D /* ShareSDK */,
+				CB2BD8891ABA7FB2008D5C37 /* SAVideoRangeSlider */,
 				CB2BD8861AB969AB008D5C37 /* Account */,
 				CBDD6E4B1AB6B2CA0044723C /* test.mp4 */,
 				CBDD6E491AB6B2BC0044723C /* i.png */,
-				CBC9C9ED1A88A4B900FAAE6D /* ShareSDK */,
-				CBDD6E3F1AB6624C0044723C /* AVOS */,
 				CB8EEF021AB03DE900848104 /* libs */,
 				CBD847531A359162002A261A /* ICamMov-Bridging-Header.h */,
 				CBC042681A25FC8800597951 /* AppDelegate.swift */,
@@ -575,22 +615,28 @@
 				CB687BB01A810A8D00D1DFA4 /* StillMovieEffect.swift in Sources */,
 				CB5C772B1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift in Sources */,
 				CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */,
+				CB2BD8951ABA7FB2008D5C37 /* SAVideoRangeSlider.m in Sources */,
 				CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */,
 				CB2BD8881AB969CA008D5C37 /* AccountUtils.swift in Sources */,
 				CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */,
 				CB1CF79F1A8482A500CCF560 /* BorderTextView.swift in Sources */,
+				CB2BD8921ABA7FB2008D5C37 /* SAResizibleBubble.m in Sources */,
 				CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */,
 				CBC0426D1A25FC8800597951 /* AccountViewController.swift in Sources */,
 				CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */,
 				CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */,
+				CB2BD8991ABAB13D008D5C37 /* test.swift in Sources */,
 				CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */,
 				CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */,
 				CBC042691A25FC8800597951 /* AppDelegate.swift in Sources */,
 				CBD07A401AAAFCD600963F4A /* LoginViewController.swift in Sources */,
 				CB1650821A31652700AB25DD /* EditMovieViewController.swift in Sources */,
+				CB2BD8931ABA7FB2008D5C37 /* SASliderLeft.m in Sources */,
 				CBC0426B1A25FC8800597951 /* MainTabViewController.swift in Sources */,
 				CB1650801A3164E200AB25DD /* MoviePreviewView.swift in Sources */,
 				CB8EEF041AB03E0300848104 /* utils.swift in Sources */,
+				CB2BD8941ABA7FB2008D5C37 /* SASliderRight.m in Sources */,
+				CB2BD89E1ABAB7FD008D5C37 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

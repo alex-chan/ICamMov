@@ -41,9 +41,7 @@ class ShareMovieViewController : UIViewController{
         super.viewDidLoad()
         
         
-        var mainURL =  NSBundle.mainBundle().URLForResource("test", withExtension: "mp4")
-        println("mainURL: \(mainURL)" )
-        self.toShareMovieURL = mainURL
+
         
         println("toShareMovieURL:\(self.toShareMovieURL!)")
         
