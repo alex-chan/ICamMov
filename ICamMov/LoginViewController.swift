@@ -8,143 +8,69 @@
 
 import Foundation
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
     
+    // MARK: Override methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.username.delegate = self
+        self.password.delegate = self
+    }
+    
+    
+    // MARK: Delegates 
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     // MARK: actions
-    @IBAction func loginWithPhoneNum(sender: UIButton) {
-        if countElements(username.text) != 11 {
-            self.alertError("手机号必须为11位")
-            return
+    @IBAction func closeSelf(sender: AnyObject) {
+        Utils.dismissPresentedVC(self)
+    }
+    
+    @IBAction func presentRegisterView(sender: UIButton) {
+        
+        if let presentingVC = self.presentingViewController  {
+            presentingVC.dismissViewControllerAnimated(false, completion: {
+                var registerView = self.storyboard!.instantiateViewControllerWithIdentifier("sid_vc_register") as RegisterViewController
+                presentingVC.presentViewController(registerView, animated: true, completion: nil)
+            })
         }
         
+    }
+    
+    @IBAction func loginWithPhoneNum(sender: UIButton) {
+        if countElements(username.text) != 11 {
+            Utils.error("手机号必须为11位")
+            return
+        }
         
         
         AVUser.logInWithMobilePhoneNumberInBackground(username.text, password: password.text, block: {
             (user:AVUser!, error: NSError!) in
             if let err = error{
-                self.alertError(err.localizedDescription)
+                Utils.error(err.localizedDescription)
             }else{
-                self.dismissSelf()
+                Utils.dismissPresentedVC(self)
             }
             return
         })
     
     }
     
-    @IBAction func sinaweibologin(sender: UIButton) {
-        
-
-        
-        ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil, result: {
-            (result: Bool, userInfo: ISSPlatformUser!, error: ICMErrorInfo!) in
-            if result {
-                println("ok")
-                
-                var uid = userInfo.uid()
-                var accessToken = userInfo.credential().token()
-                var expiresIn = userInfo.credential().expired() as NSDate
-
-                let expire = String(format:"%.2f", expiresIn.timeIntervalSinceNow)
-                
-                var authData = [ "uid": uid,
-                    "access_token": accessToken,
-                    "expiration_in": expire
-                ]
-                
-                AVUser.loginWithAuthData(authData, platform: "weibo", block: {
-                    (user: AVUser!, error: NSError!) in
-                    if error == nil {
-                        
-                        if user.objectForKey("nickname") == nil {
-                            user["nickname"] = userInfo.nickname()
-                            user.saveInBackground()
-                        }
-                        if user.objectForKey("avatar") == nil{
-                            user["avatar"] = userInfo.profileImage()
-                            user.saveInBackground()
-                        }
-                        self.dismissSelf()
-                    }
-                })
-                
-                
-            }else{
-                println("no ok")
-                var alertView = UIAlertView(title: "错误", message: error.errorDescription(), delegate: nil, cancelButtonTitle: "知道了", otherButtonTitles: "")
-                alertView.show()
-                
-                self.dismissSelf()
-                
-            }
-                
-                
-                
-                
-////                    PFUser.becomeInBackground(token, block: nil)
-//                
-//                PFCloud.callFunctionInBackground("getSessionToken", withParameters: ["uid":uid, "accessToken": accessToken], block: {
-//                    (result: AnyObject!, error: NSError!) in
-//                    println(result)
-//
-//                    if error == nil {
-////                        PFUser.becomeInBackground(result as String, block: {
-//                        AVUser.becomeInBackground(result as String, block: {
-//                            (user: PFUser!, error: NSError!) in
-//                            
-//                            if error == nil{
-//                                user.setObject(userInfo.nickname(), forKey: "nickname");
-//                                user.setObject(userInfo.profileImage(), forKey: "avatar");
-//                                user.saveInBackgroundWithBlock({
-//                                    (succeed:Bool!, error:NSError!) in
-//                                    if succeed! {
-//                                        println("succeed")
-//                                        
-//                                    }else{
-//                                        println(error.localizedDescription)
-//                                    }
-//                                });
-//                                
-//                            }else{
-//                                println(error.localizedDescription)
-//                            }
-//                            
-//                            
-//                            
-//                            
-//                            
-//                        });
-//                        
-//                    }
-//                    
-//                });
-                
-
-
-
-                
-
-            
-        })
+    @IBAction func loginWithSinaWeibo(sender: UIButton) {
+            AccountUtils.loginWithSinaWeibo(self)
     }
     
     
-    // MARK: custom functions
-    func alertError(errDes: String){
-        var alert = UIAlertView(title: "错误", message: errDes, delegate: nil, cancelButtonTitle: "知道了")
-        alert.show()
-    }
-    
-    func dismissSelf(){
-        if self.presentingViewController  != nil{
-            self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
+
     
 //
 //    func upsertUser(userInfo: ISSPlatformUser!){

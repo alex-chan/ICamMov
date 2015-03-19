@@ -18,11 +18,13 @@
 		CB1CF7EB1A84EE8300CCF560 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1CF7EA1A84EE8300CCF560 /* Security.framework */; };
 		CB2645911AA9CD040062073A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2645901AA9CD040062073A /* Social.framework */; };
 		CB2645931AA9CD120062073A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2645921AA9CD120062073A /* Accounts.framework */; };
+		CB2BD8881AB969CA008D5C37 /* AccountUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */; };
 		CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */; };
 		CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */; };
 		CB5C772B1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */; };
 		CB687BB01A810A8D00D1DFA4 /* StillMovieEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */; };
 		CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */; };
+		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
 		CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */; };
@@ -90,11 +92,13 @@
 		CB1CF7EA1A84EE8300CCF560 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CB2645901AA9CD040062073A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CB2645921AA9CD120062073A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUtils.swift; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreTakeMovieViewController.swift; path = Home/PreTakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillMovieEffect.swift; sourceTree = "<group>"; };
 		CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsProtocol.swift; sourceTree = "<group>"; };
+		CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB8EEF031AB03E0300848104 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareMovieViewController.swift; path = ShareMovie/ShareMovieViewController.swift; sourceTree = "<group>"; };
 		CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieView.swift; path = TakeMovie/TakeMovieView.swift; sourceTree = "<group>"; };
@@ -235,6 +239,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		CB2BD8861AB969AB008D5C37 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CBD07A3F1AAAFCD600963F4A /* LoginViewController.swift */,
+				CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */,
+				CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		CB687BAE1A81096700D1DFA4 /* StillMovie */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +321,7 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CB2BD8861AB969AB008D5C37 /* Account */,
 				CBDD6E4B1AB6B2CA0044723C /* test.mp4 */,
 				CBDD6E491AB6B2BC0044723C /* i.png */,
 				CBC9C9ED1A88A4B900FAAE6D /* ShareSDK */,
@@ -320,7 +335,6 @@
 				CB95D6C11A81D475000F3BD5 /* ShareMovie */,
 				CBF5368A1A7F8310002CED5E /* Effects */,
 				CB1CF79D1A84828200CCF560 /* UI */,
-				CBD07A3F1AAAFCD600963F4A /* LoginViewController.swift */,
 				CBC0426E1A25FC8800597951 /* Main.storyboard */,
 				CBC042711A25FC8800597951 /* Images.xcassets */,
 				CBC042731A25FC8800597951 /* LaunchScreen.xib */,
@@ -562,11 +576,13 @@
 				CB5C772B1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift in Sources */,
 				CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */,
 				CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */,
+				CB2BD8881AB969CA008D5C37 /* AccountUtils.swift in Sources */,
 				CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */,
 				CB1CF79F1A8482A500CCF560 /* BorderTextView.swift in Sources */,
 				CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */,
 				CBC0426D1A25FC8800597951 /* AccountViewController.swift in Sources */,
 				CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */,
+				CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */,
 				CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */,
 				CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */,
 				CBC042691A25FC8800597951 /* AppDelegate.swift in Sources */,

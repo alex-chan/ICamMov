@@ -38,4 +38,33 @@ class Utils {
         }
         
     }
+    
+    
+    class func info(message: String, title: String? = nil){
+        Utils.alert(title: title, message: message)
+    }
+    
+    class func error(message: String, title: String? = "错误" ){
+        Utils.alert(title: title, message: message)
+    }
+    
+
+    class func alert(title: String? = nil,
+                    message: String = "",
+                    cancelBtnTitle: String? = "知道了"){
+        
+        var alertView = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: cancelBtnTitle)
+        alertView.show()
+    }
+    
+    
+    
+    class func dismissPresentedVC(vc: UIViewController,
+                                animated:Bool = true,
+                                completion: (()->Void)? = nil) {
+        if let presentVC = vc.presentingViewController{
+            presentVC.dismissViewControllerAnimated(animated, completion: completion)
+        }
+        
+    }
 }
