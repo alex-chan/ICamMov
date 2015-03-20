@@ -15,7 +15,7 @@ class AccountUtils {
         ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil, result: {
             (result: Bool, userInfo: ISSPlatformUser!, error: ICMErrorInfo!) in
             if result {
-                println("ok")
+                println("login ok")
                 
                 var uid = userInfo.uid()
                 var accessToken = userInfo.credential().token()
@@ -47,7 +47,7 @@ class AccountUtils {
                 
                 
             }else{
-                println("no ok")
+                println("login not ok")
                 var alertView = UIAlertView(title: "错误", message: error.errorDescription(), delegate: nil, cancelButtonTitle: "知道了", otherButtonTitles: "")
                 alertView.show()
                 
@@ -57,6 +57,14 @@ class AccountUtils {
             
             
         })
+        
+    }
+    
+    class func presentLoginView(currentVC: UIViewController){
+        
+        Utils.dismissPresentedVC(currentVC, animated: false)
+        var loginView = currentVC.storyboard!.instantiateViewControllerWithIdentifier("sid_vc_login") as LoginViewController
+        currentVC.presentViewController(loginView, animated: true, completion: nil)
         
     }
 }

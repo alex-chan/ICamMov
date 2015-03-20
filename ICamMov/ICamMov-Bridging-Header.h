@@ -13,3 +13,5 @@
 #import <AVOSCloudSNS/AVOSCloudSNS.h>
 
 #import "SAVideoRangeSlider.h"
+
+#import "SDWebImage/UIImageView+WebCache.h"
