@@ -52,6 +52,7 @@
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
 		CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */; };
+		CBB8B08E1ABC7B65002944C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8B08D1ABC7B65002944C1 /* Constants.swift */; };
 		CBC042691A25FC8800597951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC042681A25FC8800597951 /* AppDelegate.swift */; };
 		CBC0426B1A25FC8800597951 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0426A1A25FC8800597951 /* MainTabViewController.swift */; };
 		CBC0426D1A25FC8800597951 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC0426C1A25FC8800597951 /* AccountViewController.swift */; };
@@ -173,6 +174,7 @@
 		CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareMovieViewController.swift; path = ShareMovie/ShareMovieViewController.swift; sourceTree = "<group>"; };
 		CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieView.swift; path = TakeMovie/TakeMovieView.swift; sourceTree = "<group>"; };
 		CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		CBB8B08D1ABC7B65002944C1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CBC042631A25FC8800597951 /* MagicCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC042671A25FC8800597951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBC042681A25FC8800597951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CBB8B08D1ABC7B65002944C1 /* Constants.swift */,
 				CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */,
 				CB6DE0391ABC2352004831F3 /* Home */,
 				CB2BD8981ABAB13D008D5C37 /* test.swift */,
@@ -723,6 +726,7 @@
 				CB2BD8951ABA7FB2008D5C37 /* SAVideoRangeSlider.m in Sources */,
 				CB2BD8C21ABBC24E008D5C37 /* NSData+ImageContentType.m in Sources */,
 				CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */,
+				CBB8B08E1ABC7B65002944C1 /* Constants.swift in Sources */,
 				CB2BD8881AB969CA008D5C37 /* AccountUtils.swift in Sources */,
 				CB2BD8CA1ABBC24E008D5C37 /* UIButton+WebCache.m in Sources */,
 				CB2BD8C91ABBC24E008D5C37 /* SDWebImagePrefetcher.m in Sources */,

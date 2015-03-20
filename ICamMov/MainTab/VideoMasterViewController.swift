@@ -56,14 +56,10 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
 //                refreshCtrl.endRefreshing()
                 
             }else{
+            
                 println("refresh ")
-//                AVCloud.callFunctionInBackground("refreshVideos", withParameters: ["test":"test"], target: self, selector: "refreshVideoResult:")
+                AVCloud.callFunctionInBackground("refreshVideos", withParameters: ["test":"test"], target: self, selector: "refreshVideoResult:")
                 
-                AVCloud.callFunctionInBackground("refreshVideos", withParameters: ["test":"sb"], block: {
-                    (result: AnyObject!, error: NSError!) in
-                    println(result)
-                    return
-                })
             }
         }
     }
