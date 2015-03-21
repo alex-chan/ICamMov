@@ -23,6 +23,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MagicCam.VideoMasterViewController.refreshVideoResult (MagicCam.VideoMasterViewController)(Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;, error : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; ():VideoMasterViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[GenerateMovieFromImage generateMovieWithImage:completionBlock:]:GenerateMovieFromImage.m">
          <PersistentStrings>
             <PersistentString
