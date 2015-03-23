@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Parse.enableLocalDatastore()
 //        Parse.setApplicationId("maKwViH1gwzGts0vJ1IuY2shAv31GIL7Wbgf78aA", clientKey: "J0gAaULaI7jmikzyS8e2A7s4Nqf7kzi9L6zaY1gQ")
 
+        
+        LPVideo.registerSubclass()
+        LPUser.registerSubclass()
+        LPComment.registerSubclass()
         AVOSCloud.setApplicationId("xkjj8zwzxiyouqo4m3war047dy40nfw0axxr10s0d85e6a9d", clientKey: "20toct9i8jnyl7eperpl7o66puy9s2bzr70h2dq0rkoqvgt7")
         
 //        AVOSCloud.setenv("LOG_CURL", "YES", 0)

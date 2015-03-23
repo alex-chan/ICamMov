@@ -31,7 +31,7 @@ class AccountUtils {
                 AVUser.loginWithAuthData(authData, platform: "weibo", block: {
                     (user: AVUser!, error: NSError!) in
                     if error == nil {
-                        
+                        user.ACL = basicACL()
                         if user.objectForKey("nickname") == nil {
                             user["nickname"] = userInfo.nickname()
                             user.saveInBackground()

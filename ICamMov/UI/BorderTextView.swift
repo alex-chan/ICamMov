@@ -11,6 +11,27 @@ import UIKit
 
 
 
+@IBDesignable class AvatarImageView: UIImageView{
+    
+
+    
+    override init(image: UIImage!) {
+        super.init(image: image)
+        self.layer.cornerRadius = self.frame.size.width  / 2
+    }
+    
+    override init(image: UIImage!, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        self.layer.cornerRadius = self.frame.size.width  / 2
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layer.cornerRadius = self.frame.size.width  / 2
+    }
+    
+}
+
 
 @IBDesignable class BorderTextView: UITextView, UITextViewDelegate {
     

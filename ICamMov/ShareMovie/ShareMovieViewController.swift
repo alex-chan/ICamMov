@@ -181,23 +181,25 @@ class ShareMovieViewController : UIViewController{
                 (succeed:Bool!, error:NSError?, videoFile: AVFile?) in
                 
                 if succeed! {
-                    var video = AVObject(className: "Video")
                     
-                    video["owner"] = AVUser.currentUser()
-                    video["videoFile"] = videoFile!
-                    video["coverImage"] = coverFile
-                    video.ACL = self.mineACL()
+                    
+                    var video = LPVideo()
+                    video.owner = AVUser.currentUser()
+                    video.videoFile = videoFile!
+                    video.coverImage = coverFile
+                    video.ACL = basicACL()
+                    // TODO: Error will occur here
                     video.save()
                     
-//                    var error: NSError?
-//                    var host = AVCloud.callFunction("hello", withParameters: nil, error: &error)
-//                    if let err = error{
-//                        println("error:\(err.localizedDescription)")
-//                    }
+                    
 //                    
-//                    println("host: \(host)")
-//                    
-//                    let url = "\(host)/videos/\(video.objectId)"
+//                    var video = AVObject(className: "Video")
+//                    video["owner"] = AVUser.currentUser()
+//                    video["videoFile"] = videoFile!
+//                    video["coverImage"] = coverFile
+//                    video.ACL = self.mineACL()
+//                    video.save()
+                    
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         alert.dismissWithClickedButtonIndex(0, animated: true)

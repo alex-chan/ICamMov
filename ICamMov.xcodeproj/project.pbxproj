@@ -16,6 +16,7 @@
 		CB1CF7E51A84EE6200CCF560 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1CF7E41A84EE6200CCF560 /* libicucore.dylib */; };
 		CB1CF7E91A84EE7A00CCF560 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1CF7E81A84EE7A00CCF560 /* libz.1.2.5.dylib */; };
 		CB1CF7EB1A84EE8300CCF560 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1CF7EA1A84EE8300CCF560 /* Security.framework */; };
+		CB1E9F6B1AC0076E00D32C8E /* VideoMasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E9F6A1AC0076E00D32C8E /* VideoMasterCell.swift */; };
 		CB2645911AA9CD040062073A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2645901AA9CD040062073A /* Social.framework */; };
 		CB2645931AA9CD120062073A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2645921AA9CD120062073A /* Accounts.framework */; };
 		CB2BD8881AB969CA008D5C37 /* AccountUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */; };
@@ -51,6 +52,7 @@
 		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
+		CB9A208D1ABFA9EC00CC0249 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A208C1ABFA9EC00CC0249 /* Model.swift */; };
 		CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */; };
 		CBB8B08E1ABC7B65002944C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB8B08D1ABC7B65002944C1 /* Constants.swift */; };
 		CBC042691A25FC8800597951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC042681A25FC8800597951 /* AppDelegate.swift */; };
@@ -115,6 +117,7 @@
 		CB1CF7E41A84EE6200CCF560 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		CB1CF7E81A84EE7A00CCF560 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		CB1CF7EA1A84EE8300CCF560 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CB1E9F6A1AC0076E00D32C8E /* VideoMasterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMasterCell.swift; sourceTree = "<group>"; };
 		CB2645901AA9CD040062073A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CB2645921AA9CD120062073A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CB2BD8871AB969CA008D5C37 /* AccountUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUtils.swift; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 		CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB8EEF031AB03E0300848104 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareMovieViewController.swift; path = ShareMovie/ShareMovieViewController.swift; sourceTree = "<group>"; };
+		CB9A208C1ABFA9EC00CC0249 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieView.swift; path = TakeMovie/TakeMovieView.swift; sourceTree = "<group>"; };
 		CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		CBB8B08D1ABC7B65002944C1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */,
+				CB1E9F6A1AC0076E00D32C8E /* VideoMasterCell.swift */,
 				CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */,
 				CBC0426A1A25FC8800597951 /* MainTabViewController.swift */,
 				CBC0426C1A25FC8800597951 /* AccountViewController.swift */,
@@ -459,6 +464,7 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CB9A208C1ABFA9EC00CC0249 /* Model.swift */,
 				CBB8B08D1ABC7B65002944C1 /* Constants.swift */,
 				CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */,
 				CB6DE0391ABC2352004831F3 /* Home */,
@@ -737,6 +743,7 @@
 				CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */,
 				CBC0426D1A25FC8800597951 /* AccountViewController.swift in Sources */,
 				CB2BD8C81ABBC24E008D5C37 /* SDWebImageManager.m in Sources */,
+				CB9A208D1ABFA9EC00CC0249 /* Model.swift in Sources */,
 				CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */,
 				CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */,
 				CB2BD8991ABAB13D008D5C37 /* test.swift in Sources */,
@@ -746,6 +753,7 @@
 				CBC042691A25FC8800597951 /* AppDelegate.swift in Sources */,
 				CB2BD8CC1ABBC24E008D5C37 /* UIImage+MultiFormat.m in Sources */,
 				CB2BD8C71ABBC24E008D5C37 /* SDWebImageDownloaderOperation.m in Sources */,
+				CB1E9F6B1AC0076E00D32C8E /* VideoMasterCell.swift in Sources */,
 				CBD07A401AAAFCD600963F4A /* LoginViewController.swift in Sources */,
 				CB1650821A31652700AB25DD /* EditMovieViewController.swift in Sources */,
 				CB2BD8931ABA7FB2008D5C37 /* SASliderLeft.m in Sources */,

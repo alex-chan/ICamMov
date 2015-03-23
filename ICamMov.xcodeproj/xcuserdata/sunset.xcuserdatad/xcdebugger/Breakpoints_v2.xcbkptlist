@@ -53,47 +53,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ICamMov/MainTab/VideoMasterViewController.swift"
-            timestampString = "448622927.121775"
+            timestampString = "448806498.082443"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "refreshVideoResult(_:error:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MagicCam.VideoMasterViewController.refreshVideoResult (MagicCam.VideoMasterViewController)(Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;, error : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; ()"
-                  moduleName = "MagicCam"
-                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/MainTab/VideoMasterViewController.swift"
-                  timestampString = "448622937.998528"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "244">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "reabstraction thunk helper from @callee_owned (@unowned ObjectiveC.NSCopying) -&gt; (@autoreleased Swift.Optional&lt;Swift.AnyObject&gt;) to @callee_owned (@owned ObjectiveC.NSCopying) -&gt; (@owned Swift.Optional&lt;Swift.AnyObject&gt;)"
-                  moduleName = "MagicCam"
-                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/MainTab/VideoMasterViewController.swift"
-                  timestampString = "448622937.998931"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,13 +72,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ICamMov/MainTab/VideoMasterViewController.swift"
-            timestampString = "448623129.88524"
+            filePath = "ICamMov/UI/BorderTextView.swift"
+            timestampString = "448791946.440539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "refreshVideoResult(_:error:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init(image:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/UI/BorderTextView.swift"
+            timestampString = "448791947.977005"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(image:highlightedImage:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
