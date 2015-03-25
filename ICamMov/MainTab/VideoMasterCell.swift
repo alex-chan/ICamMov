@@ -19,6 +19,9 @@ class VideoMasterCell: UITableViewCell {
     
     @IBOutlet weak var videoContent: MoviePreviewView!
     
-
+    
+    var videoURL : String?
+    
+    
     
 }

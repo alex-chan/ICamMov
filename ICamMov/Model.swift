@@ -26,9 +26,9 @@ class LPVideo: AVObject, AVSubclassing {
     
 
 
-    var videoFile: AVFile?
-    var owner: AVUser?
-    var coverImage: AVFile?
+    @NSManaged var videoFile: AVFile?
+    @NSManaged var owner: AVUser?
+    @NSManaged var coverImage: AVFile?
     var createdAtCopy : String?
     var updatedAtCopy : String?
     var likes: Int = 0

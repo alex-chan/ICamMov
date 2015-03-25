@@ -79,6 +79,11 @@ class Utils {
         var testURL =  NSBundle.mainBundle().URLForResource("test", withExtension: "mp4")
         println("testURL: \(testURL)" )
         return testURL!
+    }
     
+    class func getTestVideo2Url() ->NSURL {
+        
+        var testURL =  NSBundle.mainBundle().URLForResource("test2", withExtension: "mp4")
+        return testURL!
     }
 }

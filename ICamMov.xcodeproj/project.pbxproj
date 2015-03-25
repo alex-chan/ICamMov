@@ -43,6 +43,7 @@
 		CB2BD8CE1ABBC24E008D5C37 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8BC1ABBC24E008D5C37 /* UIImageView+HighlightedWebCache.m */; };
 		CB2BD8CF1ABBC24E008D5C37 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8BE1ABBC24E008D5C37 /* UIImageView+WebCache.m */; };
 		CB2BD8D01ABBC24E008D5C37 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */; };
+		CB3266A01AC18A3800F41E47 /* EditMovie2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */; };
 		CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */; };
 		CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */; };
 		CB5C772B1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */; };
@@ -87,6 +88,7 @@
 		CBC9CA1B1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBC9CA091A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		CBC9CA1C1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC9CA0A1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
 		CBD07A401AAAFCD600963F4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD07A3F1AAAFCD600963F4A /* LoginViewController.swift */; };
+		CBD5EDF91AC2BFAA006861DD /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBD5EDF81AC2BFAA006861DD /* test2.mp4 */; };
 		CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD847511A354A31002A261A /* GenerateMovieFromImage.swift */; };
 		CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD847541A359162002A261A /* GenerateMovieFromImage.m */; };
 		CBDD6E431AB665E70044723C /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD6E421AB665E70044723C /* AVOSCloud.framework */; };
@@ -166,6 +168,7 @@
 		CB2BD8BE1ABBC24E008D5C37 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		CB2BD8BF1ABBC24E008D5C37 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMovie2ViewController.swift; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreTakeMovieViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 		CBC9CA091A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		CBC9CA0A1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
 		CBD07A3F1AAAFCD600963F4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CBD5EDF81AC2BFAA006861DD /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 		CBD847511A354A31002A261A /* GenerateMovieFromImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateMovieFromImage.swift; sourceTree = "<group>"; };
 		CBD847531A359162002A261A /* ICamMov-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ICamMov-Bridging-Header.h"; sourceTree = "<group>"; };
 		CBD847541A359162002A261A /* GenerateMovieFromImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateMovieFromImage.m; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 			children = (
 				CB16507F1A3164E200AB25DD /* MoviePreviewView.swift */,
 				CB1650811A31652700AB25DD /* EditMovieViewController.swift */,
+				CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */,
 			);
 			name = EditMovie;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CBD5EDF81AC2BFAA006861DD /* test2.mp4 */,
 				CB9A208C1ABFA9EC00CC0249 /* Model.swift */,
 				CBB8B08D1ABC7B65002944C1 /* Constants.swift */,
 				CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */,
@@ -698,6 +704,7 @@
 			files = (
 				CBDD6E4D1AB6B3220044723C /* Main.storyboard in Resources */,
 				CBDD6E4E1AB6B3220044723C /* LaunchScreen.xib in Resources */,
+				CBD5EDF91AC2BFAA006861DD /* test2.mp4 in Resources */,
 				CBC9CA191A88A4B900FAAE6D /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				CBC9CA1B1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				CBC9CA161A88A4B900FAAE6D /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -746,6 +753,7 @@
 				CB9A208D1ABFA9EC00CC0249 /* Model.swift in Sources */,
 				CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */,
 				CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */,
+				CB3266A01AC18A3800F41E47 /* EditMovie2ViewController.swift in Sources */,
 				CB2BD8991ABAB13D008D5C37 /* test.swift in Sources */,
 				CB2BD8CB1ABBC24E008D5C37 /* UIImage+GIF.m in Sources */,
 				CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */,

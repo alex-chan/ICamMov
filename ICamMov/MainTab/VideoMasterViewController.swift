@@ -15,7 +15,7 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
     var isRefreshingVideos = false
     var videos : [LPVideo] = []
     
-    var player: AVPlayer?
+    var currentPlayer: AVPlayer?
     
     @IBOutlet weak var refreshNewVideoControl: UIRefreshControl!
     
@@ -29,9 +29,7 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
         
         
     }
-    
-    
-    
+
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -105,12 +103,27 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
         
 //        cell.videoContent.player = AVPlayer()
         
-        self.loadVideoItem(cell, url: video.videoFile!.url)
+        cell.videoURL = video.videoFile!.url
+        
+//        self.loadVideoItem(cell, url: video.videoFile!.url)
         
         
         return cell
     }
     
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var mycell =  cell as VideoMasterCell
+        self.loadVideoItem(mycell, url: mycell.videoURL!)
+    }
+    
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var mycell = cell as VideoMasterCell
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: mycell.videoContent.player)
+        
+        
+    }
     
     
     // MARK: Actions
@@ -208,6 +221,12 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
         
     }
     
+    func videoItemDidReachEnd(notification: NSNotification){
+        var item = notification.object as AVPlayerItem
+        item.seekToTime(kCMTimeZero)
+        
+    }
+    
     // MARK: Custom functions
     
     func loadVideoItem(cell: VideoMasterCell, url: String){
@@ -221,6 +240,10 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
             if status == AVKeyValueStatus.Loaded {
                 var item = AVPlayerItem(asset: asset)
                 var player = AVPlayer(playerItem: item)
+                player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
+                
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object:
+                    player.currentItem)
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     cell.videoContent.player = player

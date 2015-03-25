@@ -189,7 +189,12 @@ class ShareMovieViewController : UIViewController{
                     video.coverImage = coverFile
                     video.ACL = basicACL()
                     // TODO: Error will occur here
-                    video.save()
+                    var err: NSError?
+                    video.save(&err)
+                    if err != nil {
+                        println("Error in save video:\(err)")
+                        return
+                    }
                     
                     
 //                    
