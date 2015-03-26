@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import GPUImage
 
-class EditMovie2ViewController: UIViewController {
+class EditMovie3ViewController: UIViewController {
     
     
     // MARK: IBOutlets
@@ -32,15 +33,15 @@ class EditMovie2ViewController: UIViewController {
     
     var currentShowing: UIView?
     
-    var player: AVQueuePlayer?
+    var player: AVPlayer?
     var observer: AnyObject?
     
-    var accumDurationArray = [CMTime]()
-    var totalDuration = kCMTimeZero
+    
+    var duration = kCMTimeZero
     
     var isPlaying = false
     
-    var allPlayItems = [AVPlayerItem]()
+    var playItem : AVPlayerItem?
     
     // MARK: Override
     override func viewDidLoad() {
@@ -55,14 +56,11 @@ class EditMovie2ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.accumDurationArray = [CMTime]()
-        
-        
-        self.totalDuration = kCMTimeZero
+        self.duration = kCMTimeZero
         
         var testURL = Utils.getTestVideoUrl()
         var test2URL = Utils.getTestVideo2Url()
-        self.loadMovieItems([testURL, test2URL])
+        self.loadMovieItems([testURL])
         
     }
     
@@ -77,7 +75,7 @@ class EditMovie2ViewController: UIViewController {
             self.removeObserverToPlayEnding()
             
             player.pause()
-            player.removeAllItems()
+        
             self.player = nil
             
         }
@@ -86,59 +84,34 @@ class EditMovie2ViewController: UIViewController {
     }
     
     
-
-
+    
+    
     // MARK: Selectors
     func lastPlayerItemDidReachEnd(notification: NSNotification){
         println("play to the end")
-//        var item = notification.object as AVPlayerItem
 
-        var items = self.player?.items() as [AVPlayerItem]
-//        println("items:\(items)")
-//        
-//        println("allItems:\(self.allPlayItems)")
-//
         
-        
-//        
-//        self.allPlayItems[0].seekToTime(kCMTimeZero)
-//        self.player?.seekToTime(kCMTimeZero)
-//        
-//        self.isPlaying = false
         
         self.player!.pause()
-        self.player!.removeAllItems()
         
+        self.playItem!.seekToTime(kCMTimeZero)
 
-        for item in self.allPlayItems{
-            if self.player!.canInsertItem(item, afterItem: nil){
-                println("insert item:\(item)")
-                self.player!.insertItem(item, afterItem: nil)
-                item.seekToTime(kCMTimeZero)
-            }else{
-                println("cannot insert item:\(item)")
-            }
-            
-        }
-        
-//        items = self.player?.items() as [AVPlayerItem]
-//        println("items:\(items)")
         
         self.player?.seekToTime(kCMTimeZero)
-
+        
         
         self.isPlaying = false
         
     }
-   
+    
     
     // MARK: Custom functions
     func removeObserverToPlayEnding(){
         // We assign the last play item will never change.
         if let player = self.player {
-       
-            var lastItem: AnyObject = self.allPlayItems[self.allPlayItems.count - 1]
-            NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: lastItem)
+            
+            
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.playItem)
         }
         
     }
@@ -154,17 +127,12 @@ class EditMovie2ViewController: UIViewController {
         self.player!.addPeriodicTimeObserverForInterval(CMTimeMake(3,30), queue: nil, usingBlock: {
             (t: CMTime) in
             
-//            return
+            //            return
             
-            var totalSecs = CMTimeGetSeconds( self.totalDuration )
-//            var curSec = CMTimeGetSeconds(t)
+            var totalSecs = CMTimeGetSeconds( self.duration )
+            var curSec = CMTimeGetSeconds( t)
+
             
-            var leftPlayCount = self.player!.items().count
-            var totalItemCount = self.allPlayItems.count
-            
-            var t2 = self.accumDurationArray[ totalItemCount - leftPlayCount ]
-            
-            var curSec = CMTimeGetSeconds( CMTimeAdd(t, t2) )
             
             let val = Float(curSec / totalSecs)
             
@@ -178,25 +146,19 @@ class EditMovie2ViewController: UIViewController {
     
     func loadMovieItems(urls: [NSURL]){
         
-        println("load movie items")
         
         
-        if urls.count == 0 {
+        println("load movie items, currently only one item is allowed")
+        
+        
+        if urls.count != 1{
             // TODO: Better hints to user
-            println("urls count is 0, error")
+            println("urls count is not 1, error")
             return
         }
         
-        var group = dispatch_group_create()
+        var url = urls[0]
         
-        var items = [AVPlayerItem?](count: urls.count, repeatedValue: nil)
-        var durations = [CMTime?](count: urls.count, repeatedValue: nil)
-        
-        self.accumDurationArray.append(kCMTimeZero)
-        
-        for (index,url) in enumerate(urls){
-
-            dispatch_group_enter(group)
             
             var trackKey = "tracks"
             var durationKey = "duration"
@@ -210,15 +172,8 @@ class EditMovie2ViewController: UIViewController {
                 var durationStatus = asset.statusOfValueForKey(durationKey, error: &error)
                 if durationStatus == AVKeyValueStatus.Loaded {
                     println("duration status loaded")
-//                    
-                    self.totalDuration = CMTimeAdd( asset.duration, self.totalDuration )
-//                    self.accumDurationArray.append(self.totalDuration)
-                    println("totalDuration :\(self.totalDuration)")
                     
-                    
-                    
-                    durations[index] = asset.duration
-                    
+                    self.duration = asset.duration
                     
                 }else{
                     print("error load duration:")
@@ -231,61 +186,40 @@ class EditMovie2ViewController: UIViewController {
                 if status == AVKeyValueStatus.Loaded {
                     println("track status ok")
                     var item = AVPlayerItem(asset: asset)
-                    items[index] = item
+                    self.playItem = item
                     
                 }else{
                     print("error load track:")
                     println(error)
                 }
-                dispatch_group_leave(group)
+                
+                
+                
+                println("construst AVQueuePlayer")
+                
+                
+                var player = AVPlayer(playerItem: self.playItem!)
+                
+                player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
+                
+                self.previewView.player = player
+                
+                self.player = player
+                
+                self.syncUI()
+                
+                self.addObserverToPlayEnding(self.playItem!)
+                
+                self.doPlay()
                 
             })
-        }
+ 
         
 
-
         
-        dispatch_group_notify(group, dispatch_get_main_queue(), {
-            
-            println("construst AVQueuePlayer")
-            
-            println("accumDurationArray count:\(self.accumDurationArray.count)")
-            
-            self.allPlayItems.removeAll(keepCapacity: false)
-            for item in items {
-                if item != nil{
-                    self.allPlayItems.append(item!)
-                }
-            }
-            println("all items:\(items)" )
-            
-            self.accumDurationArray.removeAll(keepCapacity: false)
-            self.accumDurationArray.append(kCMTimeZero)
-            for dur in durations {
-                if dur != nil{
-                    
-                    self.accumDurationArray.append(CMTimeAdd(self.accumDurationArray.last! , dur!) )
-                }
-            }
-            self.totalDuration = self.accumDurationArray.last!
-            println("accumDurationArray:\(self.accumDurationArray)" )
-            
-            var player = AVQueuePlayer(items: self.allPlayItems)
-            player.actionAtItemEnd = AVPlayerActionAtItemEnd.Advance
-            
-            self.previewView.player = player
-            
-            self.player = player
-            
-            self.syncUI()
-            
-            self.addObserverToPlayEnding(self.allPlayItems[self.allPlayItems.count-1])
-            
-            self.doPlay()
-        })
     }
     
-
+    
     func doPlay(){
         println("doPlay")
         self.player?.play()
@@ -342,7 +276,7 @@ class EditMovie2ViewController: UIViewController {
     
     
     @IBAction func filerAction(sender: UIBarButtonItem) {
-
+        
         if self.currentShowing != nil {
             self.currentShowing!.hidden = true
         }
@@ -364,41 +298,18 @@ class EditMovie2ViewController: UIViewController {
         var val = Float64(sender.value)
         
         
-        var seekTime = CMTimeMultiplyByFloat64(self.totalDuration, val)
+        var seekTo = CMTimeMultiplyByFloat64(self.duration, val)
         
-        // accumDurationArray is like [0, 5s, 6.8s, 10s]
-        
-        println("accumDurationArray:\(self.accumDurationArray)")
-        println("seekTime:\(CMTimeGetSeconds(seekTime))")
+           println("seekTo:\(CMTimeGetSeconds(seekTo))")
         
         
-     
-        for (index, timeStep) in enumerate(self.accumDurationArray){
-            
-            println("loop index:\(index)")
-            println("loop timeStep:\(CMTimeGetSeconds(timeStep))")
-            
-            if index == 0 {
-                continue
-            }
-            
-            if CMTimeCompare(seekTime, timeStep) > 0 {
-                println("Adance to next")
-                self.player!.advanceToNextItem()
-            }else{
-                
-                var it = self.allPlayItems[index-1]
-                var beforeTimeline = self.accumDurationArray[index-1]
-                var seekTo = CMTimeSubtract(seekTime, beforeTimeline)
-                
-                println("seekToTime:\(CMTimeGetSeconds(seekTo))")
-                
+        
                 
                 var toleranceBefore = CMTimeAbsoluteValue( CMTimeSubtract( seekTo, CMTimeMake(2, 30) ) )
                 
                 var toleranceAfter = CMTimeAdd(CMTimeMake(2, 30), seekTo)
-             
-                it.seekToTime(seekTo, toleranceBefore:toleranceBefore, toleranceAfter: toleranceAfter, completionHandler:{
+                
+                self.playItem!.seekToTime(seekTo, toleranceBefore:toleranceBefore, toleranceAfter: toleranceAfter, completionHandler:{
                     (succeed: Bool) in
                     return
                 })
@@ -406,15 +317,8 @@ class EditMovie2ViewController: UIViewController {
                     (succeed: Bool) in
                     return
                 })
-                break
-                
-//                it.seekToTime(seekTo)
-//                self.player!.seekToTime(seekTo)
-            }
+
+   
         }
         
-        
-        
-    }
-    
 }

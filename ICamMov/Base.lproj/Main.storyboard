@@ -580,10 +580,10 @@
             </objects>
             <point key="canvasLocation" x="-1716" y="-683"/>
         </scene>
-        <!--EditMovie2-->
+        <!--EditMovie3-->
         <scene sceneID="MXm-Y6-rFc">
             <objects>
-                <viewController id="cOk-Ch-DyE" userLabel="EditMovie2" customClass="EditMovie2ViewController" customModule="MagicCam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cOk-Ch-DyE" userLabel="EditMovie3" customClass="EditMovie3ViewController" customModule="MagicCam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sSa-Iu-Ruc"/>
                         <viewControllerLayoutGuide type="bottom" id="lSH-vE-rN6"/>
@@ -843,78 +843,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="har-9x-TEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-875" y="-1349"/>
-        </scene>
-        <!--EditMovie2-->
-        <scene sceneID="IoH-3D-StH">
-            <objects>
-                <viewController id="fp9-Iv-RfA" userLabel="EditMovie2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Ff-lK-pPo"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZKt-w3-WAt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mWi-6G-qj0" userLabel="Root">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuY-He-FZD" userLabel="NavigationBar">
-                                <rect key="frame" x="0.0" y="20" width="400" height="44"/>
-                                <items>
-                                    <navigationItem id="nBR-yg-Sv6">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Bgv-sl-i8e">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ad9-OA-hyG">
-                                                <rect key="frame" x="16" y="7" width="60" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <state key="normal" title="Back">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvD-1l-9vN" userLabel="MoviePreviewView" customClass="MoviePreviewView" customModule="MagicCam" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="164" width="400" height="225"/>
-                                <color key="backgroundColor" red="0.30196078430000001" green="0.83921568629999999" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rvD-1l-9vN" secondAttribute="height" multiplier="16:9" id="yoz-lQ-le5"/>
-                                </constraints>
-                            </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9E-jf-ESa">
-                                <rect key="frame" x="0.0" y="501" width="400" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Xq8-20-0yZ"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="etb-xq-Xt3"/>
-                                    <barButtonItem title="字幕" id="k4N-Vc-t6h"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zHW-08-As9"/>
-                                    <barButtonItem title="配音" id="fCI-9Q-Pkh"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xd7-xy-jGE"/>
-                                    <barButtonItem title="滤镜" id="ztz-5R-o8P"/>
-                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="YZt-Yi-XTl"/>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="QuY-He-FZD" firstAttribute="leading" secondItem="mWi-6G-qj0" secondAttribute="leadingMargin" constant="-16" id="6SP-0U-bbj"/>
-                            <constraint firstItem="QuY-He-FZD" firstAttribute="leading" secondItem="a9E-jf-ESa" secondAttribute="leading" id="9fh-Ib-93I"/>
-                            <constraint firstItem="rvD-1l-9vN" firstAttribute="trailing" secondItem="QuY-He-FZD" secondAttribute="trailing" id="Fto-8F-yfE"/>
-                            <constraint firstItem="rvD-1l-9vN" firstAttribute="leading" secondItem="QuY-He-FZD" secondAttribute="leading" id="N6O-GE-GW8"/>
-                            <constraint firstItem="QuY-He-FZD" firstAttribute="trailing" secondItem="a9E-jf-ESa" secondAttribute="trailing" id="O09-uh-aSj"/>
-                            <constraint firstItem="rvD-1l-9vN" firstAttribute="top" secondItem="QuY-He-FZD" secondAttribute="bottom" constant="100" id="ZY2-c6-H0g"/>
-                            <constraint firstItem="QuY-He-FZD" firstAttribute="top" secondItem="0Ff-lK-pPo" secondAttribute="bottom" id="cNA-uh-s69"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QuY-He-FZD" secondAttribute="trailing" constant="-16" id="qRD-TF-6xg"/>
-                            <constraint firstItem="a9E-jf-ESa" firstAttribute="bottom" secondItem="ZKt-w3-WAt" secondAttribute="top" id="sC5-v6-r70"/>
-                        </constraints>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="600"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y3Q-fk-TBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-298" y="-1311"/>
         </scene>
         <!--EditMovie-->
         <scene sceneID="5yj-7m-6bk">

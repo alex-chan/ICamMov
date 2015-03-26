@@ -50,6 +50,8 @@
 		CB687BB01A810A8D00D1DFA4 /* StillMovieEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */; };
 		CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */; };
 		CB6DE03B1ABC2381004831F3 /* VideoMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */; };
+		CB6E91C51AC45CAB00708935 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB6E91BE1AC45B8300708935 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB6E91C71AC4623900708935 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6E91C61AC4623800708935 /* GPUImage.framework */; };
 		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
@@ -97,9 +99,33 @@
 		CBDD6E4C1AB6B2CA0044723C /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBDD6E4B1AB6B2CA0044723C /* test.mp4 */; };
 		CBDD6E4D1AB6B3220044723C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC0426E1A25FC8800597951 /* Main.storyboard */; };
 		CBDD6E4E1AB6B3220044723C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC042731A25FC8800597951 /* LaunchScreen.xib */; };
+		CBF017881AC3902F00DFBA58 /* EditMovie3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */; };
+		CBF0178B1AC3B50100DFBA58 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF0178A1AC3B50100DFBA58 /* CoreVideo.framework */; };
+		CBF0178D1AC3B72900DFBA58 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF0178C1AC3B72900DFBA58 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB6E91BB1AC45B8300708935 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		CB6E91BD1AC45B8300708935 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		CB6E91BF1AC45BA100708935 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
 		CBC0427B1A25FC8800597951 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBC0425B1A25FC8800597951 /* Project object */;
@@ -108,6 +134,19 @@
 			remoteInfo = TryDemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB6E91C41AC45C7B00708935 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB6E91C51AC45CAB00708935 /* GPUImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB16507F1A3164E200AB25DD /* MoviePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePreviewView.swift; path = EditMovie/MoviePreviewView.swift; sourceTree = "<group>"; };
@@ -168,13 +207,15 @@
 		CB2BD8BE1ABBC24E008D5C37 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		CB2BD8BF1ABBC24E008D5C37 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMovie2ViewController.swift; sourceTree = "<group>"; };
+		CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie2ViewController.swift; path = EditMovie/EditMovie2ViewController.swift; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreTakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillMovieEffect.swift; sourceTree = "<group>"; };
 		CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsProtocol.swift; sourceTree = "<group>"; };
 		CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMasterViewController.swift; sourceTree = "<group>"; };
+		CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Volumes/AppleData/DownloadsHD/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
+		CB6E91C61AC4623800708935 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB8EEF031AB03E0300848104 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareMovieViewController.swift; path = ShareMovie/ShareMovieViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +274,9 @@
 		CBDD6E441AB665F00044723C /* AVOSCloudSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloudSNS.framework; path = AVOS/AVOSCloudSNS.framework; sourceTree = "<group>"; };
 		CBDD6E491AB6B2BC0044723C /* i.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = i.png; sourceTree = "<group>"; };
 		CBDD6E4B1AB6B2CA0044723C /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie3ViewController.swift; path = EditMovie/EditMovie3ViewController.swift; sourceTree = "<group>"; };
+		CBF0178A1AC3B50100DFBA58 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CBF0178C1AC3B72900DFBA58 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +284,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF0178D1AC3B72900DFBA58 /* AVKit.framework in Frameworks */,
+				CBF0178B1AC3B50100DFBA58 /* CoreVideo.framework in Frameworks */,
 				CB2BD8971ABA7FE9008D5C37 /* CoreMedia.framework in Frameworks */,
 				CB1CF7E31A84EE5600CCF560 /* CoreTelephony.framework in Frameworks */,
 				CB2645931AA9CD120062073A /* Accounts.framework in Frameworks */,
@@ -251,6 +297,7 @@
 				CBC49AC41AA9C7E100701E86 /* CFNetwork.framework in Frameworks */,
 				CBC49AC21AA9C7D900701E86 /* AudioToolbox.framework in Frameworks */,
 				CBC49AC01AA9C68100701E86 /* MobileCoreServices.framework in Frameworks */,
+				CB6E91C71AC4623900708935 /* GPUImage.framework in Frameworks */,
 				CB1CF7EB1A84EE8300CCF560 /* Security.framework in Frameworks */,
 				CBC49ABE1AA9C66200701E86 /* StoreKit.framework in Frameworks */,
 				CBC9CA141A88A4B900FAAE6D /* libWeChatSDK.a in Frameworks */,
@@ -290,6 +337,7 @@
 				CB16507F1A3164E200AB25DD /* MoviePreviewView.swift */,
 				CB1650811A31652700AB25DD /* EditMovieViewController.swift */,
 				CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */,
+				CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */,
 			);
 			name = EditMovie;
 			sourceTree = "<group>";
@@ -410,6 +458,10 @@
 		CB6E025B1AAA881C00453435 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB6E91C61AC4623800708935 /* GPUImage.framework */,
+				CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */,
+				CBF0178C1AC3B72900DFBA58 /* AVKit.framework */,
+				CBF0178A1AC3B50100DFBA58 /* CoreVideo.framework */,
 				CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */,
 				CB2645921AA9CD120062073A /* Accounts.framework */,
 				CB2645901AA9CD040062073A /* Social.framework */,
@@ -429,6 +481,15 @@
 				CB1CF7DE1A84EE3D00CCF560 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB6E91B61AC45B8300708935 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E91BC1AC45B8300708935 /* libGPUImage.a */,
+				CB6E91BE1AC45B8300708935 /* GPUImage.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CB8EEF021AB03DE900848104 /* libs */ = {
@@ -630,10 +691,12 @@
 				CBC0425F1A25FC8800597951 /* Sources */,
 				CBC042601A25FC8800597951 /* Frameworks */,
 				CBC042611A25FC8800597951 /* Resources */,
+				CB6E91C41AC45C7B00708935 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CB6E91C01AC45BA100708935 /* PBXTargetDependency */,
 			);
 			name = ICamMov;
 			productName = TryDemo;
@@ -689,6 +752,12 @@
 			mainGroup = CBC0425A1A25FC8800597951;
 			productRefGroup = CBC042641A25FC8800597951 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB6E91B61AC45B8300708935 /* Products */;
+					ProjectRef = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CBC042621A25FC8800597951 /* ICamMov */,
@@ -696,6 +765,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CB6E91BC1AC45B8300708935 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = CB6E91BB1AC45B8300708935 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB6E91BE1AC45B8300708935 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = CB6E91BD1AC45B8300708935 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CBC042611A25FC8800597951 /* Resources */ = {
@@ -755,6 +841,7 @@
 				CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */,
 				CB3266A01AC18A3800F41E47 /* EditMovie2ViewController.swift in Sources */,
 				CB2BD8991ABAB13D008D5C37 /* test.swift in Sources */,
+				CBF017881AC3902F00DFBA58 /* EditMovie3ViewController.swift in Sources */,
 				CB2BD8CB1ABBC24E008D5C37 /* UIImage+GIF.m in Sources */,
 				CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */,
 				CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */,
@@ -791,6 +878,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB6E91C01AC45BA100708935 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = CB6E91BF1AC45BA100708935 /* PBXContainerItemProxy */;
+		};
 		CBC0427C1A25FC8800597951 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CBC042621A25FC8800597951 /* ICamMov */;
