@@ -18,8 +18,9 @@ class EditMovie3ViewController: UIViewController {
     
     @IBOutlet weak var filterView: UIScrollView!
     
-    @IBOutlet weak var previewView: MoviePreviewView!
+    @IBOutlet weak var previewView: GPUImageView!
     
+
     
     @IBOutlet weak var upperMask: UIView!
     @IBOutlet weak var bottomMask: UIView!
@@ -43,10 +44,37 @@ class EditMovie3ViewController: UIViewController {
     
     var playItem : AVPlayerItem?
     
+    
+    
     // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        var movieFile = GPUImageMovie(URL: Utils.getTestVideoUrl())
+        movieFile.runBenchmark = true
+        movieFile.playAtActualSpeed = false
+        
+        var filter = GPUImageGaussianBlurFilter()
+        movieFile.addTarget(filter)
+        
+        
+        
+        
+        
+        var filterView =  self.previewView
+        filterView.fillMode = kGPUImageFillModeStretch
+        
+        filter.addTarget(filterView)
+        
+        
+        
+        filter.blurRadiusInPixels = 10
+        
+//        filter.fractionalWidthOfAPixel = 0.05
+        
+        
+        movieFile.startProcessing()
         
         
         
@@ -56,6 +84,8 @@ class EditMovie3ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        return
+            
         self.duration = kCMTimeZero
         
         var testURL = Utils.getTestVideoUrl()
@@ -202,7 +232,7 @@ class EditMovie3ViewController: UIViewController {
                 
                 player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
                 
-                self.previewView.player = player
+//                self.previewView.player = player 
                 
                 self.player = player
                 

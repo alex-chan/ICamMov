@@ -50,9 +50,9 @@
 		CB687BB01A810A8D00D1DFA4 /* StillMovieEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */; };
 		CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */; };
 		CB6DE03B1ABC2381004831F3 /* VideoMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */; };
-		CB6E91C51AC45CAB00708935 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB6E91BE1AC45B8300708935 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CB6E91C71AC4623900708935 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6E91C61AC4623800708935 /* GPUImage.framework */; };
 		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
+		CB8669F01AC46911004AA1E7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8669EF1AC46911004AA1E7 /* GPUImage.framework */; };
+		CB8669F21AC46974004AA1E7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB8669EF1AC46911004AA1E7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
 		CB9A208D1ABFA9EC00CC0249 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A208C1ABFA9EC00CC0249 /* Model.swift */; };
@@ -105,27 +105,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CB6E91BB1AC45B8300708935 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
-			remoteInfo = GPUImage;
-		};
-		CB6E91BD1AC45B8300708935 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCE209E51943F20C002FEED8;
-			remoteInfo = GPUImageFramework;
-		};
-		CB6E91BF1AC45BA100708935 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCE209E41943F20C002FEED8;
-			remoteInfo = GPUImageFramework;
-		};
 		CBC0427B1A25FC8800597951 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBC0425B1A25FC8800597951 /* Project object */;
@@ -136,15 +115,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB6E91C41AC45C7B00708935 /* CopyFiles */ = {
+		CB8669F11AC46962004AA1E7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CB6E91C51AC45CAB00708935 /* GPUImage.framework in CopyFiles */,
+				CB8669F21AC46974004AA1E7 /* GPUImage.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -214,9 +193,8 @@
 		CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillMovieEffect.swift; sourceTree = "<group>"; };
 		CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsProtocol.swift; sourceTree = "<group>"; };
 		CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMasterViewController.swift; sourceTree = "<group>"; };
-		CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Volumes/AppleData/DownloadsHD/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
-		CB6E91C61AC4623800708935 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CB8669EF1AC46911004AA1E7 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = ICamMov/Frameworks/GPUImage.framework; sourceTree = "<group>"; };
 		CB8EEF031AB03E0300848104 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareMovieViewController.swift; path = ShareMovie/ShareMovieViewController.swift; sourceTree = "<group>"; };
 		CB9A208C1ABFA9EC00CC0249 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -297,7 +275,7 @@
 				CBC49AC41AA9C7E100701E86 /* CFNetwork.framework in Frameworks */,
 				CBC49AC21AA9C7D900701E86 /* AudioToolbox.framework in Frameworks */,
 				CBC49AC01AA9C68100701E86 /* MobileCoreServices.framework in Frameworks */,
-				CB6E91C71AC4623900708935 /* GPUImage.framework in Frameworks */,
+				CB8669F01AC46911004AA1E7 /* GPUImage.framework in Frameworks */,
 				CB1CF7EB1A84EE8300CCF560 /* Security.framework in Frameworks */,
 				CBC49ABE1AA9C66200701E86 /* StoreKit.framework in Frameworks */,
 				CBC9CA141A88A4B900FAAE6D /* libWeChatSDK.a in Frameworks */,
@@ -458,8 +436,7 @@
 		CB6E025B1AAA881C00453435 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CB6E91C61AC4623800708935 /* GPUImage.framework */,
-				CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */,
+				CB8669EF1AC46911004AA1E7 /* GPUImage.framework */,
 				CBF0178C1AC3B72900DFBA58 /* AVKit.framework */,
 				CBF0178A1AC3B50100DFBA58 /* CoreVideo.framework */,
 				CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */,
@@ -481,15 +458,6 @@
 				CB1CF7DE1A84EE3D00CCF560 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CB6E91B61AC45B8300708935 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CB6E91BC1AC45B8300708935 /* libGPUImage.a */,
-				CB6E91BE1AC45B8300708935 /* GPUImage.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		CB8EEF021AB03DE900848104 /* libs */ = {
@@ -691,12 +659,11 @@
 				CBC0425F1A25FC8800597951 /* Sources */,
 				CBC042601A25FC8800597951 /* Frameworks */,
 				CBC042611A25FC8800597951 /* Resources */,
-				CB6E91C41AC45C7B00708935 /* CopyFiles */,
+				CB8669F11AC46962004AA1E7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB6E91C01AC45BA100708935 /* PBXTargetDependency */,
 			);
 			name = ICamMov;
 			productName = TryDemo;
@@ -752,12 +719,6 @@
 			mainGroup = CBC0425A1A25FC8800597951;
 			productRefGroup = CBC042641A25FC8800597951 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CB6E91B61AC45B8300708935 /* Products */;
-					ProjectRef = CB6E91B51AC45B8300708935 /* GPUImage.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CBC042621A25FC8800597951 /* ICamMov */,
@@ -765,23 +726,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CB6E91BC1AC45B8300708935 /* libGPUImage.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGPUImage.a;
-			remoteRef = CB6E91BB1AC45B8300708935 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CB6E91BE1AC45B8300708935 /* GPUImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GPUImage.framework;
-			remoteRef = CB6E91BD1AC45B8300708935 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CBC042611A25FC8800597951 /* Resources */ = {
@@ -878,11 +822,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CB6E91C01AC45BA100708935 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GPUImageFramework;
-			targetProxy = CB6E91BF1AC45BA100708935 /* PBXContainerItemProxy */;
-		};
 		CBC0427C1A25FC8800597951 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CBC042621A25FC8800597951 /* ICamMov */;
@@ -955,7 +894,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-all_load";
@@ -995,7 +934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-all_load";
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";

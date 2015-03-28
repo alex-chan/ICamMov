@@ -640,7 +640,7 @@
                                             <constraint firstAttribute="trailing" secondItem="VKL-3v-4ZG" secondAttribute="trailing" id="cSL-D1-H7W"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIa-Si-3fk" userLabel="MoviePreviewView" customClass="MoviePreviewView" customModule="MagicCam" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIa-Si-3fk" userLabel="MoviePreviewView" customClass="GPUImageView">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="225"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-sl-E1p" userLabel="UpperMask">
