@@ -86,4 +86,7 @@ class Utils {
         var testURL =  NSBundle.mainBundle().URLForResource("test2", withExtension: "mp4")
         return testURL!
     }
+    
+    
+
 }

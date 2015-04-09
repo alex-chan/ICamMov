@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SunsetPlayerViewController" customModule="UsetCoreImage" customModuleProvider="target">
+            <connections>
+                <outlet property="playPauseBtn" destination="xCH-WI-Q77" id="4xl-nX-jYF"/>
+                <outlet property="playerView" destination="PrC-bl-UGm" id="SKF-rl-x72"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrC-bl-UGm" userLabel="PlayerView" customClass="SunsetView" customModule="UsetCoreImage" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="564"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QK4-Ba-d28" userLabel="Controls">
+                    <rect key="frame" x="0.0" y="564" width="600" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCH-WI-Q77">
+                            <rect key="frame" x="0.0" y="3" width="46" height="30"/>
+                            <state key="normal" title="Play">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="playOrPause:" destination="-1" eventType="touchUpInside" id="ps5-aR-kEo"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-Gw-ulg" userLabel="currentTime">
+                            <rect key="frame" x="40" y="8" width="10" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIi-mv-ydw" userLabel="totalTime">
+                            <rect key="frame" x="590" y="8" width="10" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-lN-0sN">
+                            <rect key="frame" x="38" y="4" width="544" height="31"/>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="3bb-Gw-ulg" firstAttribute="leading" secondItem="xCH-WI-Q77" secondAttribute="trailing" constant="-6" id="35K-Kk-Zpx"/>
+                        <constraint firstAttribute="height" constant="36" id="FWG-Jj-nKm"/>
+                        <constraint firstItem="3bb-Gw-ulg" firstAttribute="trailing" secondItem="MQa-lN-0sN" secondAttribute="leading" id="HbZ-bz-6VQ"/>
+                        <constraint firstItem="xCH-WI-Q77" firstAttribute="centerY" secondItem="gIi-mv-ydw" secondAttribute="centerY" constant="-0.5" id="Iah-Pv-VWt"/>
+                        <constraint firstAttribute="trailing" secondItem="gIi-mv-ydw" secondAttribute="trailing" id="PzA-Bk-B0L"/>
+                        <constraint firstAttribute="centerY" secondItem="xCH-WI-Q77" secondAttribute="centerY" id="ZsU-kD-iZ5"/>
+                        <constraint firstItem="gIi-mv-ydw" firstAttribute="leading" secondItem="MQa-lN-0sN" secondAttribute="trailing" id="aWm-xD-ng6"/>
+                        <constraint firstItem="xCH-WI-Q77" firstAttribute="leading" secondItem="QK4-Ba-d28" secondAttribute="leading" id="nLJ-Kl-JHr"/>
+                        <constraint firstItem="xCH-WI-Q77" firstAttribute="centerY" secondItem="3bb-Gw-ulg" secondAttribute="centerY" constant="-0.5" id="oY7-Uk-z2A"/>
+                        <constraint firstItem="xCH-WI-Q77" firstAttribute="centerY" secondItem="MQa-lN-0sN" secondAttribute="centerY" constant="-1" id="qA4-7H-dYj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QK4-Ba-d28" secondAttribute="trailing" id="4Q0-85-ick"/>
+                <constraint firstAttribute="trailing" secondItem="PrC-bl-UGm" secondAttribute="trailing" id="DAx-yO-142"/>
+                <constraint firstAttribute="bottom" secondItem="QK4-Ba-d28" secondAttribute="bottom" id="N8i-GO-rue"/>
+                <constraint firstItem="QK4-Ba-d28" firstAttribute="top" secondItem="PrC-bl-UGm" secondAttribute="bottom" id="a4d-iy-t08"/>
+                <constraint firstItem="PrC-bl-UGm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="geu-C1-L9o"/>
+                <constraint firstItem="QK4-Ba-d28" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kQT-ty-8X8"/>
+                <constraint firstItem="PrC-bl-UGm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kRe-ha-97F"/>
+            </constraints>
+            <point key="canvasLocation" x="197" y="320"/>
+        </view>
+        <barButtonItem style="plain" id="kcU-YR-TFV">
+            <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="kyz-Ak-dj5">
+                <rect key="frame" x="43" y="6" width="527" height="32"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            </slider>
+        </barButtonItem>
+    </objects>
+</document>
