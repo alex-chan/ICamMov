@@ -12,6 +12,8 @@
 	<dict>
 		<key>337F5F1C90DAC5107F527CCB2221473F8C643D89</key>
 		<string>https://github.com/alex-chan/ICamMov.git</string>
+		<key>ABE94CA6D69924E8EEACFF5DADBFB761A95C95D4</key>
+		<string>https://github.com/alex-chan/UseCoreImage.git</string>
 		<key>E53DC341597A84D09D2E267F2E59B9C41DB2C121</key>
 		<string>https://github.com/alex-chan/StillMovie.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>337F5F1C90DAC5107F527CCB2221473F8C643D89</key>
 		<string>../..</string>
+		<key>ABE94CA6D69924E8EEACFF5DADBFB761A95C95D4</key>
+		<string>../../../Learn/Lesson7/UsetCoreImage</string>
 		<key>E53DC341597A84D09D2E267F2E59B9C41DB2C121</key>
 		<string>../../../TryDemo</string>
 	</dict>
@@ -47,6 +51,14 @@
 			<string>E53DC341597A84D09D2E267F2E59B9C41DB2C121</string>
 			<key>IDESourceControlWCCName</key>
 			<string>TryDemo</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ABE94CA6D69924E8EEACFF5DADBFB761A95C95D4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UsetCoreImage</string>
 		</dict>
 	</array>
 </dict>

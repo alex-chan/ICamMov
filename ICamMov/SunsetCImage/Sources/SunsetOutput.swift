@@ -12,7 +12,7 @@ import Foundation
 class SunsetOutput: NSObject{
     
     
-    var targets : [SunsetInputDelegate] = []
+    var targets : [SunsetInputDelegate] = []  //TODO: Use Dollar.swift? https://github.com/ankurp/Dollar.swift
     
     func addTarget(target: SunsetInputDelegate){
         
@@ -26,6 +26,22 @@ class SunsetOutput: NSObject{
         targets.append(target)
         
     }
+    
+    func removeTarget(target: SunsetInputDelegate){
+        for (index, value) in enumerate(targets){
+            
+            if value === target {
+                targets.removeAtIndex(index)
+                break
+            }
+        }
+    }
+    
+    func removeAll(){
+        targets.removeAll(keepCapacity: false)
+    }
+            
+    
     
     func start(){
         

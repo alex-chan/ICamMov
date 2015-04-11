@@ -23,8 +23,7 @@ class SunsetView: UIView, SunsetInputDelegate {
     
     func processMovieFrame(pixelBuffer: CVPixelBuffer) {
         
-        println("processMovieFrame")
-        var ciImage =  CIImage(CVPixelBuffer: pixelBuffer)
+                var ciImage =  CIImage(CVPixelBuffer: pixelBuffer)
         var tempContext = CIContext(options: nil)
         
         var width = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
@@ -33,28 +32,16 @@ class SunsetView: UIView, SunsetInputDelegate {
         
         var size = self.frame.size
         
-      
+        println("processMovieFrame, height:\(height), width:\(width)")
         
         
         var videoImage = tempContext.createCGImage(ciImage, fromRect: CGRectMake(0, 0, width, height))
 
-        
-        self.layer.contentsGravity = fillMode        
-        self.layer.contents = kCAGravityBottomRight
+        self.dispatchCGImage(videoImage)
 
-//        self.layer.contentsScale = 2
-        
-//        self.layer.contentsRect = CGRectMake(0, 0, 1.5, 0.5)
-        
+
     }
     
-//    func prepareAudioData(maxFrames: CMItemCount, asbd: UnsafePointer<AudioStreamBasicDescription>) {
-//        //
-//    }
-//    
-//    func processAudioData(audioData: UnsafeMutablePointer<AudioBufferList>, framesNumber: UInt32) {
-//        //
-//    }
     
     func processAudioData(sampleBuffer: CMSampleBuffer) {
         // TODO: XXX
@@ -62,7 +49,11 @@ class SunsetView: UIView, SunsetInputDelegate {
     
     func dispatchCGImage(cgImage: CGImage){
         
+        println("dispatchCGImage")
+        
         self.layer.contents = cgImage
+        self.layer.contentsGravity = fillMode
+        
     }
     
     

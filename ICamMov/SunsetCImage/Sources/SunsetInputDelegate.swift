@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 
-protocol SunsetInputDelegate {
+protocol SunsetInputDelegate : NSObjectProtocol  {
     
     
     func processMovieFrame(pixelBuffer: CVPixelBuffer) -> Void

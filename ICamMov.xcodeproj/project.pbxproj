@@ -102,13 +102,19 @@
 		CBD1AE231AD672F300874D46 /* SunsetPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1AE181AD672F300874D46 /* SunsetPlayerView.xib */; };
 		CBD1AE241AD672F300874D46 /* SunsetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE191AD672F300874D46 /* SunsetUtils.swift */; };
 		CBD1AE261AD675B200874D46 /* EditMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE251AD675B200874D46 /* EditMovieViewController.swift */; };
+		CBD1AE461AD76F0C00874D46 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE451AD76F0C00874D46 /* FiltersView.swift */; };
+		CBD1AE481AD7793B00874D46 /* MyImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE471AD7793B00874D46 /* MyImageButton.swift */; };
+		CBD1AE4A1AD7A70C00874D46 /* FilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE491AD7A70C00874D46 /* FilterCollectionViewController.swift */; };
+		CBD1AE4C1AD7AE6200874D46 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE4B1AD7AE6200874D46 /* FilterCollectionViewCell.swift */; };
+		CBD1AE4E1AD7C47400874D46 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE4D1AD7C47400874D46 /* MyExtensions.swift */; };
+		CBD1AE501AD8C73F00874D46 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBD1AE4F1AD8C73F00874D46 /* test.mp4 */; };
+		CBD1AE521AD8D37100874D46 /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD1AE511AD8D37100874D46 /* icons.xcassets */; };
 		CBD5EDF91AC2BFAA006861DD /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBD5EDF81AC2BFAA006861DD /* test2.mp4 */; };
 		CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD847511A354A31002A261A /* GenerateMovieFromImage.swift */; };
 		CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD847541A359162002A261A /* GenerateMovieFromImage.m */; };
 		CBDD6E431AB665E70044723C /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD6E421AB665E70044723C /* AVOSCloud.framework */; };
 		CBDD6E451AB665F00044723C /* AVOSCloudSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDD6E441AB665F00044723C /* AVOSCloudSNS.framework */; };
 		CBDD6E4A1AB6B2BC0044723C /* i.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDD6E491AB6B2BC0044723C /* i.png */; };
-		CBDD6E4C1AB6B2CA0044723C /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBDD6E4B1AB6B2CA0044723C /* test.mp4 */; };
 		CBDD6E4D1AB6B3220044723C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC0426E1A25FC8800597951 /* Main.storyboard */; };
 		CBDD6E4E1AB6B3220044723C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC042731A25FC8800597951 /* LaunchScreen.xib */; };
 		CBF017881AC3902F00DFBA58 /* EditMovie3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */; };
@@ -268,6 +274,13 @@
 		CBD1AE181AD672F300874D46 /* SunsetPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SunsetPlayerView.xib; sourceTree = "<group>"; };
 		CBD1AE191AD672F300874D46 /* SunsetUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunsetUtils.swift; sourceTree = "<group>"; };
 		CBD1AE251AD675B200874D46 /* EditMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovieViewController.swift; path = EditMovie/EditMovieViewController.swift; sourceTree = "<group>"; };
+		CBD1AE451AD76F0C00874D46 /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
+		CBD1AE471AD7793B00874D46 /* MyImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageButton.swift; sourceTree = "<group>"; };
+		CBD1AE491AD7A70C00874D46 /* FilterCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterCollectionViewController.swift; path = EditMovie/FilterCollectionViewController.swift; sourceTree = "<group>"; };
+		CBD1AE4B1AD7AE6200874D46 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterCollectionViewCell.swift; path = EditMovie/FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBD1AE4D1AD7C47400874D46 /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		CBD1AE4F1AD8C73F00874D46 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = ../../../Learn/Lesson7/UsetCoreImage/UsetCoreImage/test.mp4; sourceTree = "<group>"; };
+		CBD1AE511AD8D37100874D46 /* icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icons.xcassets; sourceTree = "<group>"; };
 		CBD5EDF81AC2BFAA006861DD /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 		CBD847511A354A31002A261A /* GenerateMovieFromImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateMovieFromImage.swift; sourceTree = "<group>"; };
 		CBD847531A359162002A261A /* ICamMov-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ICamMov-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -276,7 +289,6 @@
 		CBDD6E421AB665E70044723C /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = AVOS/AVOSCloud.framework; sourceTree = "<group>"; };
 		CBDD6E441AB665F00044723C /* AVOSCloudSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloudSNS.framework; path = AVOS/AVOSCloudSNS.framework; sourceTree = "<group>"; };
 		CBDD6E491AB6B2BC0044723C /* i.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = i.png; sourceTree = "<group>"; };
-		CBDD6E4B1AB6B2CA0044723C /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie3ViewController.swift; path = EditMovie/EditMovie3ViewController.swift; sourceTree = "<group>"; };
 		CBF0178A1AC3B50100DFBA58 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		CBF0178C1AC3B72900DFBA58 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -338,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD1AE251AD675B200874D46 /* EditMovieViewController.swift */,
+				CBD1AE4B1AD7AE6200874D46 /* FilterCollectionViewCell.swift */,
+				CBD1AE491AD7A70C00874D46 /* FilterCollectionViewController.swift */,
 				CB16507F1A3164E200AB25DD /* MoviePreviewView.swift */,
 				CB1650811A31652700AB25DD /* EditMovie1ViewController.swift */,
 				CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */,
@@ -372,6 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				CB1CF79E1A8482A500CCF560 /* BorderTextView.swift */,
+				CBD1AE451AD76F0C00874D46 /* FiltersView.swift */,
+				CBD1AE471AD7793B00874D46 /* MyImageButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -524,11 +540,12 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CBD1AE4F1AD8C73F00874D46 /* test.mp4 */,
 				CBD5EDF81AC2BFAA006861DD /* test2.mp4 */,
-				CBDD6E4B1AB6B2CA0044723C /* test.mp4 */,
 				CBDD6E491AB6B2BC0044723C /* i.png */,
 				CB2BD8981ABAB13D008D5C37 /* test.swift */,
 				CB9A208C1ABFA9EC00CC0249 /* Model.swift */,
+				CBD1AE4D1AD7C47400874D46 /* MyExtensions.swift */,
 				CBB8B08D1ABC7B65002944C1 /* Constants.swift */,
 				CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */,
 				CB2BD89C1ABAB7FD008D5C37 /* ViewController.h */,
@@ -667,6 +684,7 @@
 				CBD1AE171AD672F300874D46 /* SunetPlayerViewController.swift */,
 				CBD1AE181AD672F300874D46 /* SunsetPlayerView.xib */,
 				CBD1AE191AD672F300874D46 /* SunsetUtils.swift */,
+				CBD1AE511AD8D37100874D46 /* icons.xcassets */,
 			);
 			path = SunsetCImage;
 			sourceTree = "<group>";
@@ -812,6 +830,7 @@
 			files = (
 				CBDD6E4D1AB6B3220044723C /* Main.storyboard in Resources */,
 				CBDD6E4E1AB6B3220044723C /* LaunchScreen.xib in Resources */,
+				CBD1AE501AD8C73F00874D46 /* test.mp4 in Resources */,
 				CBD5EDF91AC2BFAA006861DD /* test2.mp4 in Resources */,
 				CBC9CA191A88A4B900FAAE6D /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				CBD1AE231AD672F300874D46 /* SunsetPlayerView.xib in Resources */,
@@ -819,9 +838,9 @@
 				CBC9CA161A88A4B900FAAE6D /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				CBC9CA111A88A4B900FAAE6D /* ShareSDKLocalizable.strings in Resources */,
 				CBC9CA121A88A4B900FAAE6D /* WeiboSDK.bundle in Resources */,
+				CBD1AE521AD8D37100874D46 /* icons.xcassets in Resources */,
 				CBDD6E4A1AB6B2BC0044723C /* i.png in Resources */,
 				CBC042721A25FC8800597951 /* Images.xcassets in Resources */,
-				CBDD6E4C1AB6B2CA0044723C /* test.mp4 in Resources */,
 				CBC9CA0F1A88A4B900FAAE6D /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,6 +893,7 @@
 				CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */,
 				CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */,
 				CBC042691A25FC8800597951 /* AppDelegate.swift in Sources */,
+				CBD1AE461AD76F0C00874D46 /* FiltersView.swift in Sources */,
 				CB2BD8CC1ABBC24E008D5C37 /* UIImage+MultiFormat.m in Sources */,
 				CB2BD8C71ABBC24E008D5C37 /* SDWebImageDownloaderOperation.m in Sources */,
 				CB1E9F6B1AC0076E00D32C8E /* VideoMasterCell.swift in Sources */,
@@ -881,8 +901,10 @@
 				CB1650821A31652700AB25DD /* EditMovie1ViewController.swift in Sources */,
 				CB2BD8931ABA7FB2008D5C37 /* SASliderLeft.m in Sources */,
 				CBC0426B1A25FC8800597951 /* MainTabViewController.swift in Sources */,
+				CBD1AE4E1AD7C47400874D46 /* MyExtensions.swift in Sources */,
 				CB2BD8C51ABBC24E008D5C37 /* SDWebImageDecoder.m in Sources */,
 				CBD1AE1F1AD672F300874D46 /* SunsetInputDelegate.swift in Sources */,
+				CBD1AE4C1AD7AE6200874D46 /* FilterCollectionViewCell.swift in Sources */,
 				CBD1AE1A1AD672F300874D46 /* SunsetFilter.swift in Sources */,
 				CB2BD8CD1ABBC24E008D5C37 /* UIImage+WebP.m in Sources */,
 				CB2BD8C41ABBC24E008D5C37 /* SDWebImageCompat.m in Sources */,
@@ -893,11 +915,13 @@
 				CB2BD8C61ABBC24E008D5C37 /* SDWebImageDownloader.m in Sources */,
 				CB2BD8C11ABBC24E008D5C37 /* MKAnnotationView+WebCache.m in Sources */,
 				CB2BD8941ABA7FB2008D5C37 /* SASliderRight.m in Sources */,
+				CBD1AE4A1AD7A70C00874D46 /* FilterCollectionViewController.swift in Sources */,
 				CBD1AE261AD675B200874D46 /* EditMovieViewController.swift in Sources */,
 				CBD1AE241AD672F300874D46 /* SunsetUtils.swift in Sources */,
 				CB2BD89E1ABAB7FD008D5C37 /* ViewController.m in Sources */,
 				CB6DE03B1ABC2381004831F3 /* VideoMasterViewController.swift in Sources */,
 				CB2BD8C31ABBC24E008D5C37 /* SDImageCache.m in Sources */,
+				CBD1AE481AD7793B00874D46 /* MyImageButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1080,7 @@
 					"$(PROJECT_DIR)/ICamMov/AVOS",
 				);
 				INFOPLIST_FILE = ICamMov/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1097,6 +1122,7 @@
 					"$(PROJECT_DIR)/ICamMov/AVOS",
 				);
 				INFOPLIST_FILE = ICamMov/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

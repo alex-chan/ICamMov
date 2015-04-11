@@ -1,17 +1,38 @@
 
+import UIKit
+import Foundation
 
-var items = [String]()
-
-class A {
-    var v = "val"
-}
-
-class B: A {
+extension UIColor {
+     class func appGlobalColor() -> UIColor {
+        return UIColor(red: 0.349, green: 0.863, blue: 0.78, alpha: 1)
+    }
     
+    func test() -> UIColor{
+        println("test")
+        return UIColor.blueColor()
+    }
 }
 
-var a = A()
+UIColor.appGlobalColor()
 
-a.v
 
-var c =  a as? B
+
+var t : UIColor?
+
+t?.test().description
+
+
+let filterList = ["CIPhotoEffectChrome",
+    "CIPhotoEffectChrome",
+    "CIPhotoEffectFade",
+    "CIPhotoEffectInstant",
+    "CIPhotoEffectMono",
+    "CIPhotoEffectNoir",
+    "CIPhotoEffectProcess",
+    "CIPhotoEffectTonal",
+    "CIPhotoEffectTransfer",
+    "CIPhotoEffectTransfer"]
+
+
+filterList[0]
+

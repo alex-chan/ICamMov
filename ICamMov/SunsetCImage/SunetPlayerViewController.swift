@@ -50,7 +50,9 @@ class SunsetPlayerViewController : UIViewController{
     
     func play(){
         isPlaying = true
-        playPauseBtn.setTitle("Pause", forState: .Normal)
+//        playPauseBtn.setTitle("Pause", forState: .Normal)
+        playPauseBtn.setImage(UIImage(named:"pause"), forState: .Normal)
+            
         if let delegate = delegate {
             delegate.playBtnClicked()
         }
@@ -58,7 +60,8 @@ class SunsetPlayerViewController : UIViewController{
     }
     func pause(){
         isPlaying = false
-        playPauseBtn.setTitle(" Play", forState: .Normal)
+//        playPauseBtn.setTitle(" Play", forState: .Normal)
+        playPauseBtn.setImage(UIImage(named: "play"), forState: .Normal)
         if let delegate = delegate {
             delegate.pauseBtnClicked()
         }

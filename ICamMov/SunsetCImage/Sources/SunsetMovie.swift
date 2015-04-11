@@ -14,9 +14,9 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     var player: AVPlayer!
     var playerItem: AVPlayerItem?
     var displayLink: CADisplayLink!
-    var videoProcessQueue: dispatch_queue_t!
+    var videoProcessQueue: dispatch_queue_t
     
-    var videoOutput: AVPlayerItemVideoOutput!
+    var videoOutput: AVPlayerItemVideoOutput?
     var url: NSURL?
 
     var audioMix: AVAudioMix?
@@ -24,6 +24,8 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     var audioTapProcessor: SunsetAudioTapProcessor?
     
     init(URL: NSURL) {
+        
+        videoProcessQueue = dispatch_queue_create("sunsetVideoProcessQueue", DISPATCH_QUEUE_SERIAL)
         
         super.init()
         
@@ -34,23 +36,25 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         displayLink.paused = true
         
-        // TODO: Get to know pixel formate type
-        var pixBuffAttributes : [NSObject: AnyObject] = [ kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange]
-        
-        
-        videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: pixBuffAttributes)
-        videoProcessQueue = dispatch_queue_create("sunsetVideoProcessQueue", DISPATCH_QUEUE_SERIAL)
-        videoOutput.setDelegate(self, queue: videoProcessQueue)
+
         
         
 
         
     }
     
+    
+    
+    
     override func start() {
         dispatch_async(videoProcessQueue, {
             self.processURL()
         })
+    }
+    
+    func stop(){
+        playerItem = nil
+        displayLink.paused = true
     }
     
     func pause(){
@@ -99,15 +103,26 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     
     func processURL(){
         println("processURL")
+        
+        // TODO: Get to know pixel formate type
+        var pixBuffAttributes : [NSObject: AnyObject] = [ kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange]
+        
+        
+        
+        videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: pixBuffAttributes)
+
+        videoOutput!.setDelegate(self, queue: videoProcessQueue)
+        
+        
         playerItem = AVPlayerItem(URL: self.url)
         var asset = playerItem!.asset
         
-        self.playerItem?.addOutput(self.videoOutput)
-        self.player.replaceCurrentItemWithPlayerItem(self.playerItem!)
-        self.videoOutput.requestNotificationOfMediaDataChangeWithAdvanceInterval(0.1)
+        playerItem!.addOutput(self.videoOutput)
+        player.replaceCurrentItemWithPlayerItem(self.playerItem!)
+        videoOutput!.requestNotificationOfMediaDataChangeWithAdvanceInterval(0.1)
         
         if let audioMix = self.getAudioMix(asset){
-            self.playerItem!.audioMix = audioMix
+//            self.playerItem!.audioMix = audioMix
         }
         
         
@@ -139,22 +154,26 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     // MARK: AVPlayerItemOutputPullDelegate Delegates
     
     func outputMediaDataWillChange(sender: AVPlayerItemOutput!) {
+        println("displayLink paused false")
         displayLink.paused = false
     }
     
     
     // MARK: CADisplayLink Callback
     func displayLinkCallback(sender: CADisplayLink){
+        println("displayLinkCallback")
+        
         var outputItemTime = kCMTimeInvalid
         var nextVSync = sender.timestamp + sender.duration
         
         
-        outputItemTime = videoOutput.itemTimeForHostTime(nextVSync)
+        outputItemTime = videoOutput!.itemTimeForHostTime(nextVSync)
         
-        if videoOutput.hasNewPixelBufferForItemTime(outputItemTime){
+        if videoOutput!.hasNewPixelBufferForItemTime(outputItemTime){
             var pixelBuffer : CVPixelBuffer?
-            pixelBuffer = videoOutput.copyPixelBufferForItemTime(outputItemTime, itemTimeForDisplay: nil)
+            pixelBuffer = videoOutput!.copyPixelBufferForItemTime(outputItemTime, itemTimeForDisplay: nil)
 //            println("pixelBuffer:\(pixelBuffer)")
+            println("pixelBuffer")
             
             for target in targets {
                 target.processMovieFrame(pixelBuffer!)

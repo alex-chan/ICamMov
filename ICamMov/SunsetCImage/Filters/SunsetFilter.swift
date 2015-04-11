@@ -16,12 +16,37 @@ class SunsetFilter: SunsetOutput, SunsetInputDelegate  {
     var filter: CIFilter?
     var filterName: String?
     
+    let filterList = ["CIPhotoEffectChrome",
+                    "CIPhotoEffectChrome",
+                    "CIPhotoEffectFade",
+                    "CIPhotoEffectInstant",
+                    "CIPhotoEffectMono",
+                    "CIPhotoEffectNoir",
+                    "CIPhotoEffectProcess",
+                    "CIPhotoEffectTonal",
+                    "CIPhotoEffectTransfer",
+                    "CIPhotoEffectTransfer"]
+    
     init(name: String){
         
         super.init()
-        
+    
         self.filterName = name
         self.setupContext()
+    }
+    
+    init(filterIndex: Int){
+        super.init()
+        
+        if filterIndex >= countElements(filterList) {
+            self.filterName  = filterList[0]
+        }else{
+            self.filterName  = filterList[filterIndex]
+        }
+        
+        
+        self.setupContext()
+        
     }
     
     func setupContext(){
@@ -65,7 +90,10 @@ class SunsetFilter: SunsetOutput, SunsetInputDelegate  {
     
     func processAudioData(sampleBuffer: CMSampleBuffer) {
         // TODO: XXX
-        return 
+        for target in targets {
+            target.processAudioData(sampleBuffer)
+        }
+        
     }
     
 //    func processAudioData(audioData: UnsafeMutablePointer<AudioBufferList>, framesNumber: UInt32) {

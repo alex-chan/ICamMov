@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import AssetsLibrary
 
-class SunsetMovieWriter: SunsetInputDelegate {
+class SunsetMovieWriter: NSObject, SunsetInputDelegate {
     
     
 
