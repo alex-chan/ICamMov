@@ -41,7 +41,7 @@ class ShareMovieViewController : UIViewController{
         super.viewDidLoad()
         
         
-
+        self.toShareMovieURL = Utils.getTestVideoUrl()
         
         println("toShareMovieURL:\(self.toShareMovieURL!)")
         

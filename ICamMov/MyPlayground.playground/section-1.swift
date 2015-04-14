@@ -33,6 +33,17 @@ let filterList = ["CIPhotoEffectChrome",
     "CIPhotoEffectTransfer",
     "CIPhotoEffectTransfer"]
 
+import AVFoundation
 
-filterList[0]
+var time = CMTimeMake(50,30)
+
+var s = CMTimeGetSeconds(time)
+
+println(s)
+println( Int(s) )
+round(s)
+
+
+
+
 

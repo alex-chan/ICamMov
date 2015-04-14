@@ -106,4 +106,11 @@ class SunsetFilter: SunsetOutput, SunsetInputDelegate  {
         // we just ignore this method in filter
     }
     
+    
+    func setMovieDuration(duration: CMTime) {
+        for target in targets{
+            target.setMovieDuration(duration)
+        }
+    }
+    
 }

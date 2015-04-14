@@ -9,7 +9,7 @@
 import Foundation
 
 
-class EditMovieViewController: UIViewController, SunsetPlayerViewControllerDelegate, FilterCollectionViewDelegate{
+class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
     
     var isPlaying = false
@@ -24,29 +24,40 @@ class EditMovieViewController: UIViewController, SunsetPlayerViewControllerDeleg
     
     var playerVC: SunsetPlayerViewController?
     
+    var filter: SunsetFilter?
+    
+    
+    // Set show mask as default
+    var maskShowing  = true
+    
+    
 
     @IBOutlet weak var subtitleView: UIView!
     
     @IBOutlet weak var filterView: UIView!
+    
+    @IBOutlet weak var topMask: UIView!
+    @IBOutlet weak var bottomMask: UIView!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        var testURL = NSBundle.mainBundle().URLForResource("test", withExtension: "mp4")
         
-        movie = SunsetMovie(URL: testURL!)
+        movie = SunsetMovie(URL: Utils.getTestVideoUrl())
         
         println("edit movie")
         
-        var filter = SunsetFilter(name: "CIPhotoEffectProcess") // CIMotionBlur raise exception
-        movie!.addTarget(filter)
+        filter = SunsetFilter(name: "CIPhotoEffectProcess") // CIMotionBlur raise exception
+        movie!.addTarget(filter!)
         
         for childVC in childViewControllers{
             if let child = childVC as? SunsetPlayerViewController {
                 playerVC = child
-                playerVC!.delegate = self
             }
             if let child = childVC as? FilterCollectionViewController{
                 var filterVC = child
@@ -55,13 +66,12 @@ class EditMovieViewController: UIViewController, SunsetPlayerViewControllerDeleg
         }
         
         
-
         
-//        var outputFilePath: String = NSTemporaryDirectory().stringByAppendingPathComponent( "tmp".stringByAppendingPathExtension("mp4")!)
-//        var movieURL = NSURL(fileURLWithPath: outputFilePath)!
-//        var movieWriter = SunsetMovieWriter(newMovieURL: movieURL, newSize: CGSizeMake(640 , 360) )
+        // Make playerVC assoicate a SunsetMovie to control the playback of it
+        playerVC!.associateMovie(movie!)
         
-                filter.addTarget(playerVC!.playerView)
+        
+        filter!.addTarget(playerVC!.playerView)
         
 //        movie!.addTarget(movieWriter)
         
@@ -69,14 +79,12 @@ class EditMovieViewController: UIViewController, SunsetPlayerViewControllerDeleg
         
 //        movieWriter.startRecording()
         
-        movie!.start()
         
         playerVC!.play()
         
-        
-        //        var delayInSeconds  = 10
-        var t = Int64( 5 * NSEC_PER_SEC )
-        var stopTime = dispatch_time(DISPATCH_TIME_NOW, t )
+
+//        var t = Int64( 5 * NSEC_PER_SEC )
+//        var stopTime = dispatch_time(DISPATCH_TIME_NOW, t )
         
 //        dispatch_after(stopTime, dispatch_get_main_queue(), {
 //            
@@ -87,42 +95,51 @@ class EditMovieViewController: UIViewController, SunsetPlayerViewControllerDeleg
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    
-    // MARK: SunsetPlayerViewControllerDelegate
-    
-    func playBtnClicked(){
-        movie!.play()
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toShareMovieSegue" {
+            print("toShareMovieSegue: " )
+
+            (segue.destinationViewController as ShareMovieViewController).toShareMovieURL  = Utils.getTestVideoUrl()
+            
+        }
     }
-    
-    func pauseBtnClicked(){
-        
-        movie!.pause()
-    }
+
 
     
     // MARK: FilterCollectionViewDelegates
     func filterSelected(filterIndex: Int) {
         
-        playerVC!.pause()
-        movie!.stop()
-        
-        
+
+        playerVC!.stop()
+
         movie!.removeAll()
         
+        filter!.removeAll()
         
-        var filter = SunsetFilter(filterIndex: filterIndex)
-        movie = SunsetMovie(URL: Utils.getTestVideoUrl())
+        filter = SunsetFilter(filterIndex: filterIndex)
+
         
-        movie!.addTarget(filter)
-        filter.addTarget(playerVC!.playerView)
-        
-        movie!.start()
+        movie!.addTarget(filter!)
+        filter!.addTarget(playerVC!.playerView)
+
         playerVC!.play()
         
     }
@@ -132,9 +149,12 @@ class EditMovieViewController: UIViewController, SunsetPlayerViewControllerDeleg
     // MARK: UI actions
     @IBAction func maskAction(sender: UIButton) {
         
-//        self.upperMask.hidden = !self.upperMask.hidden
-//        self.bottomMask.hidden = !self.bottomMask.hidden
-//        
+        maskShowing = !maskShowing
+        
+        self.topMask.hidden = !maskShowing
+        self.bottomMask.hidden = !maskShowing
+        
+//
         
     }
     

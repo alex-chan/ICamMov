@@ -19,7 +19,12 @@ class SunsetView: UIView, SunsetInputDelegate {
     }
     
     
+    var duration : CGFloat?
+    
+    
     var fillMode: String  = kCAGravityResizeAspect
+    
+
     
     func processMovieFrame(pixelBuffer: CVPixelBuffer) {
         
@@ -49,10 +54,18 @@ class SunsetView: UIView, SunsetInputDelegate {
     
     func dispatchCGImage(cgImage: CGImage){
         
-        println("dispatchCGImage")
+//        println("dispatchCGImage")
         
         self.layer.contents = cgImage
         self.layer.contentsGravity = fillMode
+        
+    }
+
+    func setMovieDuration(duration: CMTime) {
+        var d = CMTimeGetSeconds(duration)
+        
+        self.duration = CGFloat(d)
+        
         
     }
     

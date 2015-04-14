@@ -23,6 +23,16 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     
     var audioTapProcessor: SunsetAudioTapProcessor?
     
+    
+    // TODO: This is strange, If I change NSNumber to NSInteger, it will raise no-KVC compliant excpetion
+    var duration: NSNumber?
+    var playedTimePercent: NSNumber? //  indicate the played time percent form 0.0 to 1.0
+    
+    
+    var MOVIE_DURATION_OBSERVATION = "MOVIE_DURATION_OBSERVATION"
+    
+    var timePeriodObserver: AnyObject!
+    
     init(URL: NSURL) {
         
         videoProcessQueue = dispatch_queue_create("sunsetVideoProcessQueue", DISPATCH_QUEUE_SERIAL)
@@ -30,38 +40,64 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
         super.init()
         
         url = URL
-        player = AVPlayer()
-        
+
         displayLink = CADisplayLink(target: self, selector: "displayLinkCallback:")
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         displayLink.paused = true
         
-
+        var pixBuffAttributes : [NSObject: AnyObject] = [ kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange]
+        videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: pixBuffAttributes)
+        videoOutput!.setDelegate(self, queue: videoProcessQueue)
+        player = AVPlayer()
+        timePeriodObserver = player.addPeriodicTimeObserverForInterval(CMTimeMake(3, 30), queue: nil, usingBlock: {
+            nowTime in
+            
+            var sec = Double( CMTimeGetSeconds(nowTime) )
+            if let dur = self.duration?.doubleValue{
+                var per =  sec / dur
+                
+                self.setValue(NSNumber(double: per), forKey: "playedTimePercent")
+                
+                
+            }
+            
+        })
         
-        
-
-        
-    }
-    
-    
-    
-    
-    override func start() {
         dispatch_async(videoProcessQueue, {
             self.processURL()
         })
+        
     }
     
-    func stop(){
-        playerItem = nil
+    deinit{
+        
+        player.removeTimeObserver(timePeriodObserver)
+        
         displayLink.paused = true
+        displayLink.invalidate()
+    }
+    
+    
+    
+
+    
+    override func start() {
+        self.play()
+    }
+    
+    
+    func stop(){
+        self.pause()        
+        self.player.seekToTime(kCMTimeZero)
     }
     
     func pause(){
+//        displayLink.paused = true
         self.player.pause()
     }
     
     func play(){
+        displayLink.paused = false
         self.player.play()
     }
     
@@ -99,53 +135,49 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     
 
 
-    
+    func playedToEnd(noti: NSNotification){
+        
+        
+    }
     
     func processURL(){
+        
+        
         println("processURL")
-        
-        // TODO: Get to know pixel formate type
-        var pixBuffAttributes : [NSObject: AnyObject] = [ kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange]
-        
-        
-        
-        videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: pixBuffAttributes)
 
-        videoOutput!.setDelegate(self, queue: videoProcessQueue)
-        
+        // TODO: Get to know pixel formate type
         
         playerItem = AVPlayerItem(URL: self.url)
         var asset = playerItem!.asset
         
-        playerItem!.addOutput(self.videoOutput)
-        player.replaceCurrentItemWithPlayerItem(self.playerItem!)
-        videoOutput!.requestNotificationOfMediaDataChangeWithAdvanceInterval(0.1)
-        
-        if let audioMix = self.getAudioMix(asset){
-//            self.playerItem!.audioMix = audioMix
-        }
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playedToEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+
         
         
-        self.player.play()
-        
-        
-//        asset.loadValuesAsynchronouslyForKeys(["tracks"], completionHandler: {
-//            if asset.statusOfValueForKey("tracks", error: nil) == .Loaded{
-//                var tracks = asset.tracksWithMediaType(AVMediaTypeVideo)
-//                if tracks.count > 0 {
-//                    var videoTrack = tracks[0]
-//                    
-//                    self.playerItem?.addOutput(self.videoOutput)
-//                    self.player.replaceCurrentItemWithPlayerItem(self.playerItem!)
-//                    self.videoOutput.requestNotificationOfMediaDataChangeWithAdvanceInterval(0.1)
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        self.player.play()
-//                    })
-//                    
-//                }
-//                
-//            }
-//        })
+        asset.loadValuesAsynchronouslyForKeys(["duration", "tracks"], completionHandler: {
+            if asset.statusOfValueForKey("duration", error: nil) == .Loaded {
+                
+                println("is loadValuesAsynchronouslyForKeys runing in main thread:\(NSThread.isMainThread()) ")
+                
+                var duration = Double ( CMTimeGetSeconds( asset.duration ))
+                self.setValue(NSNumber(double: duration), forKey: "duration")
+                
+                println("duration:\(self.duration)")
+
+            }
+            
+            if asset.statusOfValueForKey("tracks", error: nil) == .Loaded{
+                var tracks = asset.tracksWithMediaType(AVMediaTypeVideo)
+                if tracks.count > 0 {
+                    var videoTrack = tracks[0] as AVAssetTrack
+                    
+                    self.playerItem!.addOutput(self.videoOutput)
+                    self.player.replaceCurrentItemWithPlayerItem(self.playerItem!)
+                    
+                }
+                
+            }
+        })
         
     }
     
@@ -161,7 +193,8 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     
     // MARK: CADisplayLink Callback
     func displayLinkCallback(sender: CADisplayLink){
-        println("displayLinkCallback")
+//        println("displayLinkCallback")
+//        println("is displayLinkCallback runing in main thread:\(NSThread.isMainThread()) ")
         
         var outputItemTime = kCMTimeInvalid
         var nextVSync = sender.timestamp + sender.duration
@@ -173,7 +206,7 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
             var pixelBuffer : CVPixelBuffer?
             pixelBuffer = videoOutput!.copyPixelBufferForItemTime(outputItemTime, itemTimeForDisplay: nil)
 //            println("pixelBuffer:\(pixelBuffer)")
-            println("pixelBuffer")
+//            println("pixelBuffer")
             
             for target in targets {
                 target.processMovieFrame(pixelBuffer!)
@@ -187,23 +220,13 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     }
     
     // MARK: SunsetAudioTapProcessorDelegate
-//    func audioTapProcessor(audioTapProcessor: SunsetAudioTapProcessor!, audioData bufferList: UnsafeMutablePointer<AudioBufferList>, framesNumber: UInt32) {
-////        println("audioTapProcessor")
-//        for target in targets {
-//            target.processAudioData(bufferList, framesNumber:framesNumber)
-//        }
-//    }
+
     
     func audioTapProcessor(audioTapProcessor: SunsetAudioTapProcessor!, sampleBuffer: CMSampleBuffer!) {
         for target in targets {
             target.processAudioData(sampleBuffer)
         }
     }
-    
-//    func audioTapPrepare(audioTapProcessor: SunsetAudioTapProcessor!, maxFrames: CMItemCount, asbd: UnsafePointer<AudioStreamBasicDescription>) {
-//        for target in targets {
-//            target.prepareAudioData(maxFrames, asbd: asbd)
-//        }
-//    }
+
     
 }

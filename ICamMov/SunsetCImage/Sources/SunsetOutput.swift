@@ -42,6 +42,10 @@ class SunsetOutput: NSObject{
     }
             
     
+    func movieDuration(){
+        
+    }
+    
     
     func start(){
         

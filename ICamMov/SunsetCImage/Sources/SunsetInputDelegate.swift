@@ -19,5 +19,7 @@ protocol SunsetInputDelegate : NSObjectProtocol  {
     func processAudioData(sampleBuffer: CMSampleBuffer) -> Void
 //    func prepareAudioData(maxFrames: CMItemCount, asbd: UnsafePointer<AudioStreamBasicDescription>) -> Void
     
+    func setMovieDuration(duration: CMTime) -> Void
+    
 
 }

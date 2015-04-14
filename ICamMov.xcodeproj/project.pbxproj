@@ -44,6 +44,7 @@
 		CB2BD8CF1ABBC24E008D5C37 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8BE1ABBC24E008D5C37 /* UIImageView+WebCache.m */; };
 		CB2BD8D01ABBC24E008D5C37 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */; };
 		CB3266A01AC18A3800F41E47 /* EditMovie2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */; };
+		CB5B631E1ADB5492001FF81D /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B631D1ADB5492001FF81D /* testViewController.swift */; };
 		CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */; };
 		CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */; };
 		CB5C772B1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */; };
@@ -205,6 +206,7 @@
 		CB2BD8BF1ABBC24E008D5C37 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie2ViewController.swift; path = EditMovie/EditMovie2ViewController.swift; sourceTree = "<group>"; };
+		CB5B631D1ADB5492001FF81D /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CB5C772A1A2E0C9C007ACD7E /* PreTakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreTakeMovieViewController.swift; sourceTree = "<group>"; };
@@ -457,6 +459,14 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		CB5B631A1ADB5476001FF81D /* test */ = {
+			isa = PBXGroup;
+			children = (
+				CB5B631D1ADB5492001FF81D /* testViewController.swift */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		CB687BAE1A81096700D1DFA4 /* StillMovie */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +550,7 @@
 		CBC042651A25FC8800597951 /* ICamMov */ = {
 			isa = PBXGroup;
 			children = (
+				CB5B631A1ADB5476001FF81D /* test */,
 				CBD1AE4F1AD8C73F00874D46 /* test.mp4 */,
 				CBD5EDF81AC2BFAA006861DD /* test2.mp4 */,
 				CBDD6E491AB6B2BC0044723C /* i.png */,
@@ -909,6 +920,7 @@
 				CB2BD8CD1ABBC24E008D5C37 /* UIImage+WebP.m in Sources */,
 				CB2BD8C41ABBC24E008D5C37 /* SDWebImageCompat.m in Sources */,
 				CBD1AE201AD672F300874D46 /* SunsetMovie.swift in Sources */,
+				CB5B631E1ADB5492001FF81D /* testViewController.swift in Sources */,
 				CB1650801A3164E200AB25DD /* MoviePreviewView.swift in Sources */,
 				CBD1AE1B1AD672F300874D46 /* SunsetMovieWriter.swift in Sources */,
 				CB8EEF041AB03E0300848104 /* utils.swift in Sources */,

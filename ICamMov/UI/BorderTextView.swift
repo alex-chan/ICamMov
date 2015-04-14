@@ -32,6 +32,59 @@ import UIKit
     
 }
 
+@IBDesignable class PlaceholderTextView: UITextView, UITextViewDelegate{
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.observe()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.observe()
+    }
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        println("awakeFromNib")
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textBeginEditing:", name:UITextViewTextDidBeginEditingNotification, object: nil)
+//    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidBeginEditingNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidEndEditingNotification, object: nil)
+    }
+    
+    func observe(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textBeginEditing:", name:UITextViewTextDidBeginEditingNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textEndEditing:", name:UITextViewTextDidEndEditingNotification, object: nil)
+        
+    }
+    
+    // MARK: selectors
+    func textBeginEditing(notification: NSNotification){
+        println("textBeginEditing")
+        
+        
+        
+        var range = self.textRangeFromPosition(self.beginningOfDocument, toPosition: self.endOfDocument)
+        
+        self.selectedRange = NSRange(location: 0, length: 10)
+//        self.becomeFirstResponder()
+//        self.selectAll(nil)
+        
+//        [self performSelector:@selector(setSelectedTextRange:) withObject:selectionRange afterDelay:0.0];
+    }
+    
+    func textEndEditing(notification: NSNotification){
+        println("textEndEditing")
+        self.endEditing(true)
+        
+    }
+}
 
 @IBDesignable class BorderTextView: UITextView, UITextViewDelegate {
     
