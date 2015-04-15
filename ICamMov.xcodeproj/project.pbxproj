@@ -26,7 +26,6 @@
 		CB2BD8951ABA7FB2008D5C37 /* SAVideoRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8911ABA7FB2008D5C37 /* SAVideoRangeSlider.m */; };
 		CB2BD8971ABA7FE9008D5C37 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */; };
 		CB2BD8991ABAB13D008D5C37 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8981ABAB13D008D5C37 /* test.swift */; };
-		CB2BD89E1ABAB7FD008D5C37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD89D1ABAB7FD008D5C37 /* ViewController.m */; };
 		CB2BD8C11ABBC24E008D5C37 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8A11ABBC24E008D5C37 /* MKAnnotationView+WebCache.m */; };
 		CB2BD8C21ABBC24E008D5C37 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8A31ABBC24E008D5C37 /* NSData+ImageContentType.m */; };
 		CB2BD8C31ABBC24E008D5C37 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8A51ABBC24E008D5C37 /* SDImageCache.m */; };
@@ -43,6 +42,7 @@
 		CB2BD8CE1ABBC24E008D5C37 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8BC1ABBC24E008D5C37 /* UIImageView+HighlightedWebCache.m */; };
 		CB2BD8CF1ABBC24E008D5C37 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8BE1ABBC24E008D5C37 /* UIImageView+WebCache.m */; };
 		CB2BD8D01ABBC24E008D5C37 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */; };
+		CB2D5AD71ADE00AE0098468C /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D5AD61ADE00AE0098468C /* MyScrollView.swift */; };
 		CB3266A01AC18A3800F41E47 /* EditMovie2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */; };
 		CB5B631E1ADB5492001FF81D /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B631D1ADB5492001FF81D /* testViewController.swift */; };
 		CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */; };
@@ -52,8 +52,6 @@
 		CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */; };
 		CB6DE03B1ABC2381004831F3 /* VideoMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */; };
 		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
-		CB8669F01AC46911004AA1E7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8669EF1AC46911004AA1E7 /* GPUImage.framework */; };
-		CB8669F21AC46974004AA1E7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB8669EF1AC46911004AA1E7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
 		CB9A208D1ABFA9EC00CC0249 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A208C1ABFA9EC00CC0249 /* Model.swift */; };
@@ -140,7 +138,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CB8669F21AC46974004AA1E7 /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,8 +167,6 @@
 		CB2BD8911ABA7FB2008D5C37 /* SAVideoRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoRangeSlider.m; sourceTree = "<group>"; };
 		CB2BD8961ABA7FE9008D5C37 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		CB2BD8981ABAB13D008D5C37 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		CB2BD89C1ABAB7FD008D5C37 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CB2BD89D1ABAB7FD008D5C37 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CB2BD8A01ABBC24E008D5C37 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		CB2BD8A11ABBC24E008D5C37 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		CB2BD8A21ABBC24E008D5C37 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -205,6 +200,7 @@
 		CB2BD8BE1ABBC24E008D5C37 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		CB2BD8BF1ABBC24E008D5C37 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		CB2D5AD61ADE00AE0098468C /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie2ViewController.swift; path = EditMovie/EditMovie2ViewController.swift; sourceTree = "<group>"; };
 		CB5B631D1ADB5492001FF81D /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
@@ -314,7 +310,6 @@
 				CBC49AC41AA9C7E100701E86 /* CFNetwork.framework in Frameworks */,
 				CBC49AC21AA9C7D900701E86 /* AudioToolbox.framework in Frameworks */,
 				CBC49AC01AA9C68100701E86 /* MobileCoreServices.framework in Frameworks */,
-				CB8669F01AC46911004AA1E7 /* GPUImage.framework in Frameworks */,
 				CB1CF7EB1A84EE8300CCF560 /* Security.framework in Frameworks */,
 				CBC49ABE1AA9C66200701E86 /* StoreKit.framework in Frameworks */,
 				CBC9CA141A88A4B900FAAE6D /* libWeChatSDK.a in Frameworks */,
@@ -390,6 +385,7 @@
 				CB1CF79E1A8482A500CCF560 /* BorderTextView.swift */,
 				CBD1AE451AD76F0C00874D46 /* FiltersView.swift */,
 				CBD1AE471AD7793B00874D46 /* MyImageButton.swift */,
+				CB2D5AD61ADE00AE0098468C /* MyScrollView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -559,8 +555,6 @@
 				CBD1AE4D1AD7C47400874D46 /* MyExtensions.swift */,
 				CBB8B08D1ABC7B65002944C1 /* Constants.swift */,
 				CBB8B08C1ABC61D1002944C1 /* MyPlayground.playground */,
-				CB2BD89C1ABAB7FD008D5C37 /* ViewController.h */,
-				CB2BD89D1ABAB7FD008D5C37 /* ViewController.m */,
 				CB6DE0391ABC2352004831F3 /* Home */,
 				CB2BD89F1ABBC24E008D5C37 /* SDWebImage */,
 				CBDD6E3F1AB6624C0044723C /* AVOS */,
@@ -920,6 +914,7 @@
 				CB2BD8CD1ABBC24E008D5C37 /* UIImage+WebP.m in Sources */,
 				CB2BD8C41ABBC24E008D5C37 /* SDWebImageCompat.m in Sources */,
 				CBD1AE201AD672F300874D46 /* SunsetMovie.swift in Sources */,
+				CB2D5AD71ADE00AE0098468C /* MyScrollView.swift in Sources */,
 				CB5B631E1ADB5492001FF81D /* testViewController.swift in Sources */,
 				CB1650801A3164E200AB25DD /* MoviePreviewView.swift in Sources */,
 				CBD1AE1B1AD672F300874D46 /* SunsetMovieWriter.swift in Sources */,
@@ -930,7 +925,6 @@
 				CBD1AE4A1AD7A70C00874D46 /* FilterCollectionViewController.swift in Sources */,
 				CBD1AE261AD675B200874D46 /* EditMovieViewController.swift in Sources */,
 				CBD1AE241AD672F300874D46 /* SunsetUtils.swift in Sources */,
-				CB2BD89E1ABAB7FD008D5C37 /* ViewController.m in Sources */,
 				CB6DE03B1ABC2381004831F3 /* VideoMasterViewController.swift in Sources */,
 				CB2BD8C31ABBC24E008D5C37 /* SDImageCache.m in Sources */,
 				CBD1AE481AD7793B00874D46 /* MyImageButton.swift in Sources */,

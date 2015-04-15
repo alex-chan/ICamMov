@@ -20,18 +20,67 @@ class ShareMovieViewController : UIViewController{
     
     
     
+    var saveToAlbum: Bool = true {
+        didSet {
+            saveMovieBtn.selected = saveToAlbum
+            if !saveToAlbum {
+                shareToLP = false
+            }
+        }
+    }
+    
+    var shareToLP: Bool = true {
+        didSet {
+            shareToLPBtn.selected = shareToLP
+            if !shareToLP {
+
+                shareToWechatTimeline = false
+                shareToWechat = false
+                shareToSinaWeibo = false
+            }
+        }
+    }
+    
+    var shareToWechatTimeline: Bool = true {
+        didSet {
+            shareTimelineBtn.selected = shareToWechatTimeline
+            if shareToWechatTimeline{
+                shareToWechat = false
+            }
+        }
+    }
+    
+    var shareToWechat : Bool = false {
+        didSet {
+            shareWeixinBtn.selected = shareToWechat
+            if shareToWechat {
+                shareToWechatTimeline = false
+            }
+        }
+    }
+    
+    var shareToSinaWeibo : Bool = false {
+        didSet {
+            shareWeiboBtn.selected =  shareToSinaWeibo
+        }
+    }
+    
     var progressView: UIProgressView?
     
     
     
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var saveMovieBtn: UIButton!
+    @IBOutlet weak var shareToLPBtn: UIButton!
     @IBOutlet weak var shareWeixinBtn: UIButton!
     @IBOutlet weak var shareWeiboBtn: UIButton!
     @IBOutlet weak var shareTimelineBtn: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var shareComment: BorderTextView!
+    @IBOutlet weak var contentView: UIView!
+    
+    @IBOutlet weak var shareComment: PlaceholderTextView!
     
 
     
@@ -45,10 +94,32 @@ class ShareMovieViewController : UIViewController{
         
         println("toShareMovieURL:\(self.toShareMovieURL!)")
         
+        saveToAlbum = true
+        shareToLP = true
+        shareToWechatTimeline = true
         
         self.setCover()
     }
     
+    override func viewDidLayoutSubviews() {
+        let scrollViewBounds = scrollView.bounds
+        let contentViewBounds = contentView.bounds
+        
+        println("scrollViewBounds:\(scrollViewBounds)")
+        println("contentViewBounds:\(contentViewBounds)")
+        println("scrollViewInset:\(scrollView.contentInset.bottom)")
+//        var scrollViewInsets = UIEdgeInsetsZero
+//        scrollViewInsets.top = scrollViewBounds.size.height/2.0;
+//        scrollViewInsets.top -= contentViewBounds.size.height/2.0;
+//
+//        scrollViewInsets.bottom = scrollViewBounds.size.height/2.0
+//        scrollViewInsets.bottom -= contentViewBounds.size.height/2.0;
+//        scrollViewInsets.bottom += 1
+//
+//        scrollView.contentInset = scrollViewInsets
+        
+        scrollView.contentInset.bottom = scrollViewBounds.size.height - contentViewBounds.size.height + 1
+    }
     
     // MARK: custon functions
     
@@ -123,7 +194,7 @@ class ShareMovieViewController : UIViewController{
                 println(state.value)
                 
                 
-                switch state.value {
+                 switch state.value {
                     case SSResponseStateSuccess.value:
                         println("分享成功")
                     case SSResponseStateFail.value:
@@ -305,54 +376,29 @@ class ShareMovieViewController : UIViewController{
     // MARK: actions
     
     
-    @IBAction func saveMovie(sender: UIButton) {
-     
-        if self.shareSettings["save"]! {
-            sender.setImage(UIImage(named: "Save_gray"), forState: UIControlState.Normal)
-        }else{
-            sender.setImage(UIImage(named: "Save"), forState: UIControlState.Normal)
-        }
-        self.shareSettings["save"] = !self.shareSettings["save"]!
-        
-    }
-    
-    @IBAction func shareWeixinSession(sender: UIButton) {
-        if self.shareSettings["weixin_session"]! {
-            sender.setImage(UIImage(named: "WX_LOGO_GRAY"), forState: UIControlState.Normal)
-        }else{
-            sender.setImage(UIImage(named: "WX_LOGO"), forState: UIControlState.Normal)
-            if self.shareSettings["weixin_timeline"]! {
-                self.shareTimelineBtn.setImage(UIImage(named: "WX_TL_LOGO_GRAY"), forState: UIControlState.Normal)
-                self.shareSettings["weixin_timeline"] = false
-            }
-        }
-        self.shareSettings["weixin_session"] = !self.shareSettings["weixin_session"]!
-    }
-    
-    @IBAction func ShareWeibo(sender: UIButton) {
-        if self.shareSettings["weibo"]! {
-            sender.setImage(UIImage(named: "WB_LOGO_GRAY"), forState: UIControlState.Normal)
-        }else{
-            sender.setImage(UIImage(named: "WB_LOGO"), forState: UIControlState.Normal)
-        }
-        self.shareSettings["weibo"] = !self.shareSettings["weibo"]!
-    }
-    
 
-    
-    @IBAction func shareTimeline(sender: UIButton) {
-
-        if self.shareSettings["weixin_timeline"]! {
-            sender.setImage(UIImage(named: "WX_TL_LOGO_GRAY"), forState: UIControlState.Normal)
-        }else{
-            sender.setImage(UIImage(named: "WX_TL_LOGO"), forState: UIControlState.Normal)
-            if self.shareSettings["weixin_session"]! {
-                self.shareWeixinBtn.setImage(UIImage(named: "WX_LOGO_GRAY"), forState: UIControlState.Normal)
-                self.shareSettings["weixin_session"] = false
-            }
-        }
-        self.shareSettings["weixin_timeline"] = !self.shareSettings["weixin_timeline"]!
+    @IBAction func actionSaveToAlbum(sender: UIButton) {
+        self.saveToAlbum =  !self.saveToAlbum
     }
+    
+    @IBAction func actionShareToLP(sender: UIButton) {
+        self.shareToLP = !self.shareToLP
+    }
+    
+    @IBAction func actionShareToWechatTimeline(sender: UIButton) {
+        self.shareToWechatTimeline = !self.shareToWechatTimeline
+    }
+    
+    
+    @IBAction func actionShareToWechat(sender: UIButton) {
+        self.shareToWechat = !self.shareToWechat
+    }
+    
+    
+    @IBAction func actionShareToSinaWeibo(sender: UIButton) {
+        self.shareToSinaWeibo = !self.shareToSinaWeibo
+    }
+    
     
     @IBAction func share(sender: UIButton) {
         
@@ -366,14 +412,8 @@ class ShareMovieViewController : UIViewController{
         }else{
             println("current user exists")
             
-            var atleastOneTrue = false
-            for val in self.shareSettings.values {
-                if val {
-                    atleastOneTrue = true
-                    break
-                }
-            }
-            if !atleastOneTrue {
+            
+            if !saveToAlbum {
                 var alertView = UIAlertView(title: "错误", message: "请至少选择一项保存或分享", delegate: nil, cancelButtonTitle: "知道了")
                 alertView.show()
                 
