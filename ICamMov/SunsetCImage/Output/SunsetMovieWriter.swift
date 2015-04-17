@@ -279,7 +279,12 @@ class SunsetMovieWriter: NSObject, SunsetInputDelegate {
         return
     }
     
-    func setMovieDuration(duration: CMTime) {
-        // TODO: XXX
-    }
+//    func setMovieDuration(duration: CMTime) {
+//        // TODO: XXX
+//    }
+//    
+//    func setMovieSize(size: CGSize) {
+//        // TODO: XXX
+//        
+//    }
 }

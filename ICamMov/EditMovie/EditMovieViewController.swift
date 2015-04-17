@@ -28,7 +28,13 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
     
     // Set show mask as default
-    var maskShowing  = true
+    var maskShowing: Bool  = true {
+        didSet {
+            self.topMask.hidden = !maskShowing
+            self.bottomMask.hidden = !maskShowing
+        }
+        
+    }
     
     
 
@@ -46,7 +52,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        self.initUI()
         
         movie = SunsetMovie(URL: Utils.getTestVideoUrl())
         
@@ -71,7 +77,21 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         playerVC!.associateMovie(movie!)
         
         
-        filter!.addTarget(playerVC!.playerView)
+        
+        
+        var playerView = playerVC!.playerView
+        
+//        playerView.addBorder(10.0, borderHeight: 10.0)
+        
+        playerView.borderHeight = 10.0
+        
+        
+        
+        filter!.addTarget(playerView)
+        
+        
+        print("self view layer contenst:")
+        println(self.view.layer.contents)
         
 //        movie!.addTarget(movieWriter)
         
@@ -80,7 +100,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
 //        movieWriter.startRecording()
         
         
-        playerVC!.play()
+//        playerVC!.play()
         
 
 //        var t = Int64( 5 * NSEC_PER_SEC )
@@ -95,22 +115,9 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     }
     
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    func initUI(){
+        self.maskShowing = false
     }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -150,11 +157,6 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     @IBAction func maskAction(sender: UIButton) {
         
         maskShowing = !maskShowing
-        
-        self.topMask.hidden = !maskShowing
-        self.bottomMask.hidden = !maskShowing
-        
-//
         
     }
     

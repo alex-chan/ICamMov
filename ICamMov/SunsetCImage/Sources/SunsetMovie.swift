@@ -29,6 +29,10 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     var playedTimePercent: NSNumber? //  indicate the played time percent form 0.0 to 1.0
     
     
+    // Movie Size
+    var movieSize:CGSize = CGSizeZero
+    
+    
     var MOVIE_DURATION_OBSERVATION = "MOVIE_DURATION_OBSERVATION"
     
     var timePeriodObserver: AnyObject!
@@ -62,6 +66,10 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
             }
             
         })
+        
+        playerItem = AVPlayerItem(URL: self.url)
+        
+        self.calcMovieSize(playerItem!.asset)
         
         dispatch_async(videoProcessQueue, {
             self.processURL()
@@ -133,11 +141,20 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
 
     }
     
-
-
-    func playedToEnd(noti: NSNotification){
+    
+    func calcMovieSize(asset: AVAsset){
         
+        var track = asset.tracksWithMediaType(AVMediaTypeVideo)[0] as AVAssetTrack
         
+        println("naturalSize: \(track.naturalSize )")
+        println("perferTransform:\(track.preferredTransform)")
+        
+        self.movieSize = track.naturalSize
+
+    }
+    
+    func getMovieSize() -> CGSize{
+        return self.movieSize
     }
     
     func processURL(){
@@ -147,12 +164,8 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
 
         // TODO: Get to know pixel formate type
         
-        playerItem = AVPlayerItem(URL: self.url)
-        var asset = playerItem!.asset
-        
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playedToEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
 
-        
+        var asset = playerItem!.asset
         
         asset.loadValuesAsynchronouslyForKeys(["duration", "tracks"], completionHandler: {
             if asset.statusOfValueForKey("duration", error: nil) == .Loaded {

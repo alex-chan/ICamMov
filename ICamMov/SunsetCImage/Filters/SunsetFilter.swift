@@ -107,10 +107,15 @@ class SunsetFilter: SunsetOutput, SunsetInputDelegate  {
     }
     
     
-    func setMovieDuration(duration: CMTime) {
-        for target in targets{
-            target.setMovieDuration(duration)
-        }
-    }
-    
+//    func setMovieDuration(duration: CMTime) {
+//        for target in targets{
+//            target.setMovieDuration(duration)
+//        }
+//    }
+//    
+//    func setMovieSize(size: CGSize) {
+//        for target in targets {
+//            target.setMovieSize(size)
+//        }
+//    }
 }

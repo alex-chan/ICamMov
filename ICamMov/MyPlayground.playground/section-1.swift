@@ -15,35 +15,14 @@ extension UIColor {
 
 UIColor.appGlobalColor()
 
+var size = CGSizeMake(300, 200)
 
-
-var t : UIColor?
-
-t?.test().description
-
-
-let filterList = ["CIPhotoEffectChrome",
-    "CIPhotoEffectChrome",
-    "CIPhotoEffectFade",
-    "CIPhotoEffectInstant",
-    "CIPhotoEffectMono",
-    "CIPhotoEffectNoir",
-    "CIPhotoEffectProcess",
-    "CIPhotoEffectTonal",
-    "CIPhotoEffectTransfer",
-    "CIPhotoEffectTransfer"]
-
-import AVFoundation
-
-var time = CMTimeMake(50,30)
-
-var s = CMTimeGetSeconds(time)
-
-println(s)
-println( Int(s) )
-round(s)
+println(size)
 
 
 
 
+
+
+println( CGRectMake(0, 0, 300, 200) / 2.0 )
 

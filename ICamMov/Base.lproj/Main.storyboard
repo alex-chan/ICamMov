@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MG3-Yd-ttf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cOk-Ch-DyE">
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -757,9 +757,13 @@
                                     <constraint firstAttribute="trailing" secondItem="9V8-nW-2NF" secondAttribute="trailing" id="zTA-Bb-FVO"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8w5-Ue-nb0">
+                                <rect key="frame" x="182" y="282" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8w5-Ue-nb0" secondAttribute="centerX" id="2CV-0g-Uu1"/>
                             <constraint firstItem="dkR-Fn-kB8" firstAttribute="top" secondItem="sSa-Iu-Ruc" secondAttribute="bottom" id="BHf-rx-5mq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dkR-Fn-kB8" secondAttribute="trailing" constant="-16" id="DKi-lB-jUQ"/>
                             <constraint firstItem="lYU-qw-J3K" firstAttribute="top" secondItem="oae-1x-wbC" secondAttribute="bottom" priority="500" id="RIS-vl-x9o"/>
@@ -769,6 +773,7 @@
                             <constraint firstItem="oae-1x-wbC" firstAttribute="leading" secondItem="dkR-Fn-kB8" secondAttribute="leading" id="ado-Ml-K8U"/>
                             <constraint firstItem="lYU-qw-J3K" firstAttribute="trailing" secondItem="dkR-Fn-kB8" secondAttribute="trailing" id="dFe-30-haH"/>
                             <constraint firstItem="lYU-qw-J3K" firstAttribute="leading" secondItem="dkR-Fn-kB8" secondAttribute="leading" id="lMb-6x-AEz"/>
+                            <constraint firstAttribute="centerY" secondItem="8w5-Ue-nb0" secondAttribute="centerY" id="oeR-SS-Cao"/>
                             <constraint firstItem="oae-1x-wbC" firstAttribute="trailing" secondItem="dkR-Fn-kB8" secondAttribute="trailing" id="uhx-jL-hr6"/>
                         </constraints>
                     </view>

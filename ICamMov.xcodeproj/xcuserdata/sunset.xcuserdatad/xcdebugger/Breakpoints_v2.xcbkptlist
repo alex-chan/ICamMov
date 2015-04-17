@@ -104,22 +104,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ICamMov/SunsetCImage/Output/SunsetMovieWriter.swift"
-            timestampString = "450272960.747859"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "init(newMovieURL:newSize:fileType:outputSettings:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ICamMov/SunsetCImage/Filters/SunsetFilter.swift"
             timestampString = "450351872.59564"
             startingColumnNumber = "9223372036854775807"
@@ -136,38 +120,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ICamMov/SunsetCImage/Output/SunsetView.swift"
-            timestampString = "450604919.551928"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "setMovieDuration(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ICamMov/SunsetCImage/Output/SunsetView.swift"
-            timestampString = "450604919.551928"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "setMovieDuration(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ICamMov/EditMovie/EditMovie2ViewController.swift"
             timestampString = "450618009.993121"
             startingColumnNumber = "9223372036854775807"
@@ -176,6 +128,108 @@
             endingLineNumber = "151"
             landmarkName = "syncUI()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/SunsetCImage/Output/SunsetView.swift"
+            timestampString = "450860230.926597"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "init()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MagicCam.SunsetView.duration.getter : Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
+                  moduleName = "MagicCam"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/SunsetCImage/Output/SunsetView.swift"
+                  timestampString = "450860231.318225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MagicCam.SunsetView.duration.setter : Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
+                  moduleName = "MagicCam"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/SunsetCImage/Output/SunsetView.swift"
+                  timestampString = "450860231.318606"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MagicCam.SunsetView.duration.materializeForSet : Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
+                  moduleName = "MagicCam"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/SunsetCImage/Output/SunsetView.swift"
+                  timestampString = "450860231.318771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MagicCam.SunsetView.init (MagicCam.SunsetView.Type)(frame : C.CGRect) -&gt; MagicCam.SunsetView"
+                  moduleName = "MagicCam"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/SunsetCImage/Output/SunsetView.swift"
+                  timestampString = "450860231.318936"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MagicCam.SunsetView.init (MagicCam.SunsetView.Type)() -&gt; MagicCam.SunsetView"
+                  moduleName = "MagicCam"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/SunsetCImage/Output/SunsetView.swift"
+                  timestampString = "450860231.319111"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MagicCam.SunsetView.init (MagicCam.SunsetView.Type)(coder : ObjectiveC.NSCoder) -&gt; MagicCam.SunsetView"
+                  moduleName = "MagicCam"
+                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/SunsetCImage/Output/SunsetView.swift"
+                  timestampString = "450860231.319294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

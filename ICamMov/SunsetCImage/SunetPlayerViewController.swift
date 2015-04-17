@@ -110,6 +110,10 @@ class SunsetPlayerViewController : UIViewController{
         
         self.setupUIMovieDuration(movie.duration)
         
+        self.playerView.setMovieSize( movie.getMovieSize() )
+        
+        
+        
     }
     
     
