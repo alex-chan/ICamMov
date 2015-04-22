@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        AVOSCloud.setenv("LOG_CURL", "YES", 0)
         
-        AVCloud.setProductionMode(PRODUCTION_ENV)
+        AVCloud.setProductionMode(IS_PRODUCTION_ENV)
         
 
         return true

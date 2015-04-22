@@ -26,7 +26,14 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     
     // TODO: This is strange, If I change NSNumber to NSInteger, it will raise no-KVC compliant excpetion
     var duration: NSNumber?
-    var playedTimePercent: NSNumber? //  indicate the played time percent form 0.0 to 1.0
+    var playedTimePercent: NSNumber = 0 //  indicate the played time percent form 0.0 to 1.0
+        {
+        didSet {
+            self.playedTime = Double(duration!) * Double(playedTimePercent)
+        }
+    }
+    
+    var playedTime: Double = 0.0
     
     
     // Movie Size
@@ -80,10 +87,11 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     deinit{
         
         player.removeTimeObserver(timePeriodObserver)
-        
         displayLink.paused = true
         displayLink.invalidate()
     }
+    
+    
     
     
     

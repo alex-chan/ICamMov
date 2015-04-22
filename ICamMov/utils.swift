@@ -9,7 +9,7 @@
 import Foundation
 
 
-let PRODUCTION_ENV = false
+let IS_PRODUCTION_ENV = false
 let WEB_HOST = "icam.avosapps.com"
 
 
@@ -35,7 +35,7 @@ class Utils {
     }
     
     class func getHost() -> String{
-        if PRODUCTION_ENV {
+        if IS_PRODUCTION_ENV {
             return "https://\(WEB_HOST)"
         }else{
             return "http://dev.\(WEB_HOST)"

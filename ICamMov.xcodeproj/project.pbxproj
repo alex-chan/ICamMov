@@ -51,6 +51,7 @@
 		CB687BB01A810A8D00D1DFA4 /* StillMovieEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */; };
 		CB687BB21A810BA600D1DFA4 /* EffectsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */; };
 		CB6DE03B1ABC2381004831F3 /* VideoMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */; };
+		CB8371881AE735E200BCF441 /* AddSubtitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8371871AE735E200BCF441 /* AddSubtitleViewController.swift */; };
 		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
@@ -209,6 +210,7 @@
 		CB687BAF1A810A8D00D1DFA4 /* StillMovieEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillMovieEffect.swift; sourceTree = "<group>"; };
 		CB687BB11A810BA600D1DFA4 /* EffectsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsProtocol.swift; sourceTree = "<group>"; };
 		CB6DE03A1ABC2381004831F3 /* VideoMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMasterViewController.swift; sourceTree = "<group>"; };
+		CB8371871AE735E200BCF441 /* AddSubtitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSubtitleViewController.swift; path = EditMovie/AddSubtitleViewController.swift; sourceTree = "<group>"; };
 		CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB8669EF1AC46911004AA1E7 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = ICamMov/Frameworks/GPUImage.framework; sourceTree = "<group>"; };
 		CB8EEF031AB03E0300848104 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				CB1650811A31652700AB25DD /* EditMovie1ViewController.swift */,
 				CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */,
 				CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */,
+				CB8371871AE735E200BCF441 /* AddSubtitleViewController.swift */,
 			);
 			name = EditMovie;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				CBD1AE1C1AD672F300874D46 /* SunsetView.swift in Sources */,
 				CBD1AE221AD672F300874D46 /* SunetPlayerViewController.swift in Sources */,
 				CB2BD8CA1ABBC24E008D5C37 /* UIButton+WebCache.m in Sources */,
+				CB8371881AE735E200BCF441 /* AddSubtitleViewController.swift in Sources */,
 				CB2BD8C91ABBC24E008D5C37 /* SDWebImagePrefetcher.m in Sources */,
 				CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */,
 				CB1CF79F1A8482A500CCF560 /* BorderTextView.swift in Sources */,

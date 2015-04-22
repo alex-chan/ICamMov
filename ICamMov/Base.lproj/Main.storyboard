@@ -647,6 +647,9 @@
                                                 <state key="normal" title="添加字幕">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="e1d-WU-zTE" kind="show" id="N3B-eH-vkG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1063,6 +1066,154 @@
                 <exit id="Uol-Te-rzh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-365" y="-1265"/>
+        </scene>
+        <!--AddSubtitle-->
+        <scene sceneID="RgM-p2-u6Y">
+            <objects>
+                <viewController id="AYe-hP-QEw" userLabel="AddSubtitle" customClass="AddSubtitleViewController" customModule="MagicCam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7eo-xO-LlG"/>
+                        <viewControllerLayoutGuide type="bottom" id="oaz-dg-H4H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Thg-bn-u30">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="oQg-IN-qXe" userLabel="scrollView">
+                                <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taT-jt-9M8" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="503"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中文字幕" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye0-jM-jrR" userLabel="Ch">
+                                                <rect key="frame" x="0.0" y="10" width="400" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc2-dY-gQ7" userLabel="En">
+                                                <rect key="frame" x="0.0" y="157" width="400" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="D7g-4A-gjW" userLabel="En">
+                                                <rect key="frame" x="0.0" y="182" width="400" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="109" id="E2D-9g-2fM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3c-oT-sU7" userLabel="Change">
+                                                <rect key="frame" x="170" y="341" width="60" height="30"/>
+                                                <state key="normal" title="切换字幕">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fetchSubtitle:" destination="AYe-hP-QEw" eventType="touchUpInside" id="D00-jA-2sc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bex-F9-dXk" userLabel="Use it">
+                                                <rect key="frame" x="0.0" y="401" width="400" height="42"/>
+                                                <color key="backgroundColor" red="0.27136826279999998" green="0.77881982660000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                                <state key="normal" title="使用" image="PaperPlane">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="SSy-NU-6PT" kind="unwind" identifier="segueDidAddSubtitle" unwindAction="unwindToEditMovie:" id="u2c-Wt-nUW"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-tj-1TG" userLabel="Ch">
+                                                <rect key="frame" x="0.0" y="35" width="400" height="105"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="105" id="iDC-zV-OeG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="D7g-4A-gjW" firstAttribute="trailing" secondItem="Ye0-jM-jrR" secondAttribute="trailing" id="1oz-Ak-G9B"/>
+                                            <constraint firstItem="Ye0-jM-jrR" firstAttribute="trailing" secondItem="bex-F9-dXk" secondAttribute="trailing" id="2m9-YP-Zgl"/>
+                                            <constraint firstItem="n3c-oT-sU7" firstAttribute="top" secondItem="D7g-4A-gjW" secondAttribute="bottom" constant="50" id="5hP-Q0-TNX"/>
+                                            <constraint firstAttribute="centerX" secondItem="n3c-oT-sU7" secondAttribute="centerX" id="5qg-bY-yXC"/>
+                                            <constraint firstItem="gc2-dY-gQ7" firstAttribute="top" secondItem="pyH-tj-1TG" secondAttribute="bottom" constant="17" id="ERD-Py-Uns"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ye0-jM-jrR" secondAttribute="trailing" id="Jfa-xA-enP"/>
+                                            <constraint firstItem="Ye0-jM-jrR" firstAttribute="leading" secondItem="bex-F9-dXk" secondAttribute="leading" id="MPk-1j-vsg"/>
+                                            <constraint firstItem="Ye0-jM-jrR" firstAttribute="top" secondItem="taT-jt-9M8" secondAttribute="top" constant="10" id="P1C-aP-2bA"/>
+                                            <constraint firstItem="D7g-4A-gjW" firstAttribute="leading" secondItem="Ye0-jM-jrR" secondAttribute="leading" id="Pvz-Fp-NT0"/>
+                                            <constraint firstItem="gc2-dY-gQ7" firstAttribute="trailing" secondItem="Ye0-jM-jrR" secondAttribute="trailing" id="Z1e-4Z-i9h"/>
+                                            <constraint firstItem="D7g-4A-gjW" firstAttribute="top" secondItem="gc2-dY-gQ7" secondAttribute="bottom" constant="8" id="aEG-6K-DyC"/>
+                                            <constraint firstItem="Ye0-jM-jrR" firstAttribute="leading" secondItem="taT-jt-9M8" secondAttribute="leading" id="b3s-8W-8Ee"/>
+                                            <constraint firstItem="pyH-tj-1TG" firstAttribute="trailing" secondItem="Ye0-jM-jrR" secondAttribute="trailing" id="eaH-V8-Jke"/>
+                                            <constraint firstItem="bex-F9-dXk" firstAttribute="top" secondItem="n3c-oT-sU7" secondAttribute="bottom" constant="30" id="lYj-G2-szv"/>
+                                            <constraint firstAttribute="bottom" secondItem="bex-F9-dXk" secondAttribute="bottom" constant="60" id="rFL-xR-GkZ"/>
+                                            <constraint firstItem="pyH-tj-1TG" firstAttribute="leading" secondItem="Ye0-jM-jrR" secondAttribute="leading" id="srA-Wr-gu4"/>
+                                            <constraint firstItem="gc2-dY-gQ7" firstAttribute="leading" secondItem="Ye0-jM-jrR" secondAttribute="leading" id="xRx-ok-UrU"/>
+                                            <constraint firstItem="pyH-tj-1TG" firstAttribute="top" secondItem="Ye0-jM-jrR" secondAttribute="bottom" constant="8" id="xXt-cI-yhp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="taT-jt-9M8" firstAttribute="leading" secondItem="oQg-IN-qXe" secondAttribute="leading" id="0Mb-k9-ImD"/>
+                                    <constraint firstAttribute="trailing" secondItem="taT-jt-9M8" secondAttribute="trailing" id="8cf-lJ-3eL"/>
+                                    <constraint firstAttribute="bottom" secondItem="taT-jt-9M8" secondAttribute="bottom" id="gDz-fD-34h"/>
+                                    <constraint firstItem="taT-jt-9M8" firstAttribute="top" secondItem="oQg-IN-qXe" secondAttribute="top" id="ikX-xr-vZL"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="oQg-IN-qXe" secondAttribute="trailing" constant="-16" id="6XR-VL-c4l"/>
+                            <constraint firstItem="oQg-IN-qXe" firstAttribute="leading" secondItem="Thg-bn-u30" secondAttribute="leadingMargin" constant="-16" id="MYA-B2-f4v"/>
+                            <constraint firstItem="oQg-IN-qXe" firstAttribute="top" secondItem="7eo-xO-LlG" secondAttribute="bottom" id="O0c-cF-Vhu"/>
+                            <constraint firstItem="oaz-dg-H4H" firstAttribute="top" secondItem="oQg-IN-qXe" secondAttribute="bottom" id="dGB-R2-36r"/>
+                            <constraint firstItem="taT-jt-9M8" firstAttribute="width" secondItem="Thg-bn-u30" secondAttribute="width" id="yBf-5W-zSn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UfJ-pM-QMa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RLa-sW-ymV">
+                            <connections>
+                                <segue destination="SSy-NU-6PT" kind="unwind" identifier="segueCancelAddSubtitle" unwindAction="unwindToEditMovie:" id="SUR-km-Ngb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                    <connections>
+                        <outlet property="chSubtitle" destination="pyH-tj-1TG" id="C6b-w5-DGP"/>
+                        <outlet property="contentView" destination="taT-jt-9M8" id="RfZ-MI-EEi"/>
+                        <outlet property="enSubtitle" destination="D7g-4A-gjW" id="OnB-4g-Lux"/>
+                        <outlet property="scrollView" destination="oQg-IN-qXe" id="slb-ST-6rT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSj-pG-KBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SSy-NU-6PT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="-536"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jUe-Az-yrC">
+            <objects>
+                <navigationController id="e1d-WU-zTE" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1Z-uI-AE2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AYe-hP-QEw" kind="relationship" relationship="rootViewController" id="1gz-f0-Ep9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NY4-Kv-Twt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-989" y="-536"/>
         </scene>
         <!--Register-->
         <scene sceneID="ygH-1w-pc2">

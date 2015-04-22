@@ -43,7 +43,12 @@ class SunsetView: UIView, SunsetInputDelegate {
     var videoLayer: CALayer = CALayer()
     var backgroundLayer: CALayer = CALayer()
     
-    var textLayer: CATextLayer = CATextLayer()
+    var textLayerCh: CATextLayer!
+    var textLayerEn: CATextLayer!
+    
+    let MASK_HEIGHT: CGFloat = 20.0
+    let FONT_SIZE: CGFloat = 11.0
+    let TEXTLAYER_HEIGHT : CGFloat =  12.0
     
     var borderHeight: CGFloat  = 0.0 {
         didSet {
@@ -85,14 +90,37 @@ class SunsetView: UIView, SunsetInputDelegate {
         videoLayer.contentsGravity = kCAGravityResize
         
 
-        
-        
-        textLayer.frame = CGRectMake(0, layer.bounds.size.height-20-20, layer.bounds.size.width, 20)
-//        backgroundLayer.contents = bgImg!.CGImage
+        self.layoutTextLayer()
+
         
     }
     
     var bgImg: UIImage?
+    
+    func initTextLayer(type: String) -> CATextLayer{
+        var textLayer = CATextLayer()
+        textLayer.contentsScale = UIScreen.mainScreen().scale
+        textLayer.font = "Helvetica"
+        textLayer.fontSize = FONT_SIZE
+        textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.foregroundColor = UIColor.whiteColor().CGColor
+        if type == "en" {
+            textLayer.string = "请添加字幕"
+
+        }else{
+            textLayer.string = "Please add subtitle"
+
+        }
+        
+        return textLayer
+    }
+    
+    func layoutTextLayer(){
+        let layerSize = layer.bounds.size
+        textLayerCh.frame = CGRectMake(0, layerSize.height - TEXTLAYER_HEIGHT * 2 - MASK_HEIGHT, layerSize.width, TEXTLAYER_HEIGHT)
+        textLayerEn.frame = CGRectMake(0, layerSize.height - TEXTLAYER_HEIGHT  - MASK_HEIGHT, layerSize.width, TEXTLAYER_HEIGHT)
+   
+    }
     
     func setupLayer(){
         
@@ -112,17 +140,15 @@ class SunsetView: UIView, SunsetInputDelegate {
         self.layer.addSublayer(videoLayer)
         self.layer.masksToBounds = true
         
-        textLayer.contentsScale = UIScreen.mainScreen().scale
-        textLayer.font = "Helvetica-Bold"
-        textLayer.fontSize = 16
-        textLayer.alignmentMode = kCAAlignmentCenter
-        textLayer.foregroundColor = UIColor.whiteColor().CGColor
-        textLayer.string = "请添加字幕"
+        textLayerCh = self.initTextLayer("ch")
+        textLayerEn = self.initTextLayer("en")
+        
+        self.layoutTextLayer()
+        
+        self.layer.insertSublayer(textLayerCh, above: videoLayer)
+        self.layer.insertSublayer(textLayerEn, above: videoLayer)
         
         
-        
-        
-        self.layer.insertSublayer(textLayer, above: videoLayer)
         
 
     }

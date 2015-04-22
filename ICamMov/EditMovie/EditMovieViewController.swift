@@ -8,6 +8,20 @@
 
 import Foundation
 
+class Subtitle {
+    var time : CMTime!
+    var timeSec: Double!
+    var chinese: String!
+    var english: String!
+    
+    init(time: CMTime, chinese: String, english: String){
+        self.time = time
+        self.timeSec = Double( CMTimeGetSeconds(time) )
+        self.chinese = chinese
+        self.english = english
+    }
+    
+}
 
 class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
@@ -22,9 +36,11 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
     var curFilterIndex: Int?
     
-    var playerVC: SunsetPlayerViewController?
+    var playerVC: SunsetPlayerViewController!
     
     var filter: SunsetFilter?
+    
+    var timer: NSTimer!
     
     
     // Set show mask as default
@@ -36,6 +52,8 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         
     }
     
+    var subtitles: [Subtitle] = []
+    var subtitleIndex = 0
     
 
     @IBOutlet weak var subtitleView: UIView!
@@ -72,26 +90,14 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         }
         
         
-        
         // Make playerVC assoicate a SunsetMovie to control the playback of it
-        playerVC!.associateMovie(movie!)
+        playerVC.associateMovie(movie!)
+
         
-        
-        
-        
-        var playerView = playerVC!.playerView
-        
-//        playerView.addBorder(10.0, borderHeight: 10.0)
-        
-        playerView.borderHeight = 10.0
-        
-        
-        
+        var playerView = playerVC.playerView
         filter!.addTarget(playerView)
+
         
-        
-        print("self view layer contenst:")
-        println(self.view.layer.contents)
         
 //        movie!.addTarget(movieWriter)
         
@@ -103,22 +109,35 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
 //        playerVC!.play()
         
 
-//        var t = Int64( 5 * NSEC_PER_SEC )
+//        var t = Int64( 2 * NSEC_PER_SEC )
 //        var stopTime = dispatch_time(DISPATCH_TIME_NOW, t )
-        
+//        
 //        dispatch_after(stopTime, dispatch_get_main_queue(), {
+//            playerView.textLayerCh.string = "我想要的未来，是什么"
+//            playerView.textLayerEn.string = "What's the future I need "
 //            
-//            movieWriter.finishRecording()
-//            self.movie!.pause()
-//            println("finish recording")
+////            movieWriter.finishRecording()
+////            self.movie!.pause()
+////            println("finish recording")
 //        })
     }
     
     
     func initUI(){
-        self.maskShowing = false
+        self.maskShowing = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onProgress", userInfo: nil, repeats: true)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        timer.invalidate()
+        
+        super.viewWillDisappear(animated)
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toShareMovieSegue" {
@@ -129,13 +148,40 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         }
     }
 
+    // Selectors
+    
+    func onProgress(){
+        
+        var subtitleCount =  countElements(self.subtitles)
+        
+        if subtitleCount == 0 {
+            return
+        }
+        
+        
+        var sub = self.subtitles[self.subtitleIndex]
+        
+        if movie!.playedTime >= sub.timeSec && movie!.playedTime <= sub.timeSec+0.2  {
+            // show this
+            playerVC.playerView.textLayerEn.string = sub.english
+            playerVC.playerView.textLayerCh.string = sub.chinese
+            
+            self.subtitleIndex += 1
+        }
+        
+        if self.subtitleIndex >= subtitleCount  {
+            self.subtitleIndex = 0
+        }
+        
+    }
+
 
     
     // MARK: FilterCollectionViewDelegates
     func filterSelected(filterIndex: Int) {
         
 
-        playerVC!.stop()
+        playerVC.stop()
 
         movie!.removeAll()
         
@@ -147,13 +193,46 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         movie!.addTarget(filter!)
         filter!.addTarget(playerVC!.playerView)
 
-        playerVC!.play()
+        playerVC.play()
         
     }
     
     
     
     // MARK: UI actions
+    @IBAction func unwindToEditMovie(segue: UIStoryboardSegue) {
+        if segue.identifier == "segueDidAddSubtitle" {
+            var addSubtitleVC = segue.sourceViewController as AddSubtitleViewController
+            var enSubtitle = addSubtitleVC.enSubtitle.text
+            var chSubtitle = addSubtitleVC.chSubtitle.text
+            
+            var enSubtitleArr = split(enSubtitle){$0 == "\n"}
+            var chSubtitleArr = split(chSubtitle){$0 == "\n"}
+            
+            self.subtitles.removeAll(keepCapacity: false)
+            self.subtitleIndex = 0
+            
+            let enCount = countElements(enSubtitleArr)
+            for (index,sub) in enumerate(chSubtitleArr) {
+                // TODO: the duration is hard coded , which is not good
+                var enSub = ""
+                if index < enCount {
+                    enSub = enSubtitleArr[index]
+                }
+                var time = CMTimeMakeWithSeconds(Float64(index * 2), 30)
+                var newSub = Subtitle(time: time, chinese: sub, english: enSub)
+                
+                self.subtitles.append(newSub)
+            }
+//            
+//            var sub =  Subtitle(time: CMTimeMakeWithSeconds(Float64(movie!.duration!), 30), chinese:" ", english:" ")
+//            
+//            self.subtitles.append(sub )
+            
+            
+        }
+    }
+    
     @IBAction func maskAction(sender: UIButton) {
         
         maskShowing = !maskShowing

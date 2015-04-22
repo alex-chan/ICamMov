@@ -158,9 +158,7 @@ class EditMovie1ViewController: UIViewController, SAVideoRangeSliderDelegate{
     }
     
     
-    @IBAction func unwindToEditMovie(segue: UIStoryboardSegue) {
-        
-    }
+
     
 
     // MARK: SAVideoRangeSlider delegates and related
