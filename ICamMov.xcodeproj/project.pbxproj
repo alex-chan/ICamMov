@@ -109,6 +109,7 @@
 		CBD1AE4E1AD7C47400874D46 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE4D1AD7C47400874D46 /* MyExtensions.swift */; };
 		CBD1AE501AD8C73F00874D46 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBD1AE4F1AD8C73F00874D46 /* test.mp4 */; };
 		CBD1AE521AD8D37100874D46 /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD1AE511AD8D37100874D46 /* icons.xcassets */; };
+		CBD3A0CF1AE8D958006EC5DD /* SunsetMovie2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD3A0CE1AE8D958006EC5DD /* SunsetMovie2.swift */; };
 		CBD5EDF91AC2BFAA006861DD /* test2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CBD5EDF81AC2BFAA006861DD /* test2.mp4 */; };
 		CBD847521A354A31002A261A /* GenerateMovieFromImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD847511A354A31002A261A /* GenerateMovieFromImage.swift */; };
 		CBD847551A359162002A261A /* GenerateMovieFromImage.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD847541A359162002A261A /* GenerateMovieFromImage.m */; };
@@ -281,6 +282,7 @@
 		CBD1AE4D1AD7C47400874D46 /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
 		CBD1AE4F1AD8C73F00874D46 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = ../../../Learn/Lesson7/UsetCoreImage/UsetCoreImage/test.mp4; sourceTree = "<group>"; };
 		CBD1AE511AD8D37100874D46 /* icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icons.xcassets; sourceTree = "<group>"; };
+		CBD3A0CE1AE8D958006EC5DD /* SunsetMovie2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunsetMovie2.swift; sourceTree = "<group>"; };
 		CBD5EDF81AC2BFAA006861DD /* test2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.mp4; sourceTree = "<group>"; };
 		CBD847511A354A31002A261A /* GenerateMovieFromImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateMovieFromImage.swift; sourceTree = "<group>"; };
 		CBD847531A359162002A261A /* ICamMov-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ICamMov-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 				CBD1AE141AD672F300874D46 /* SunsetInputDelegate.swift */,
 				CBD1AE151AD672F300874D46 /* SunsetMovie.swift */,
 				CBD1AE161AD672F300874D46 /* SunsetOutput.swift */,
+				CBD3A0CE1AE8D958006EC5DD /* SunsetMovie2.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				CB2BD8CF1ABBC24E008D5C37 /* UIImageView+WebCache.m in Sources */,
 				CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */,
 				CB2BD8951ABA7FB2008D5C37 /* SAVideoRangeSlider.m in Sources */,
+				CBD3A0CF1AE8D958006EC5DD /* SunsetMovie2.swift in Sources */,
 				CB2BD8C21ABBC24E008D5C37 /* NSData+ImageContentType.m in Sources */,
 				CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */,
 				CBB8B08E1ABC7B65002944C1 /* Constants.swift in Sources */,
