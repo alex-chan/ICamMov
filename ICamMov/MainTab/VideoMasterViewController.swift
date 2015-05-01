@@ -82,7 +82,7 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
         var user = video.owner!.fetchIfNeeded()
         
         
-        println(user)
+//        println(user)
         var nick = "Unset"
         if let u = user as? LPUser{
             if let nick2  = u.nickname {
@@ -103,7 +103,7 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
         
 //        cell.videoContent.player = AVPlayer()
         
-        cell.videoURL = video.videoFile!.url
+        cell.videoURL = video.videoFile.url
         
 //        self.loadVideoItem(cell, url: video.videoFile!.url)
         
@@ -125,6 +125,13 @@ class VideoMasterViewController: UITableViewController, UITableViewDataSource, U
         
     }
     
+    
+//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        var video = self.videos[indexPath.row] as LPVideo
+////        var asset = AVURLAsset(URL: video.videoFile.url, options:nil)
+////        asset
+//        video.coverImage
+//    }
     
     // MARK: Actions
     @IBAction func refreshVideos(sender: UIRefreshControl) {

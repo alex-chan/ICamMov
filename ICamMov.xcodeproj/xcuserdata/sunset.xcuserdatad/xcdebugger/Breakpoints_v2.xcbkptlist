@@ -62,8 +62,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "refreshVideoResult(_:error:)"
-            landmarkType = "5">
+            landmarkName = "VideoMasterViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -239,12 +239,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ICamMov/EditMovie/EditMovieViewController.swift"
-            timestampString = "451397491.545054"
+            timestampString = "452104900.398196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "onProgress()"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "showShareScene(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -255,43 +255,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ICamMov/EditMovie/EditMovieViewController.swift"
-            timestampString = "451404197.583648"
+            timestampString = "452104900.398196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "unwindToEditMovie(_:)"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "showShareScene(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MagicCam.EditMovieViewController.unwindToEditMovie (MagicCam.EditMovieViewController)(ObjectiveC.UIStoryboardSegue) -&gt; ()"
-                  moduleName = "MagicCam"
-                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/EditMovie/EditMovieViewController.swift"
-                  timestampString = "451404197.685882"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "3192">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MagicCam.EditMovieViewController.(unwindToEditMovie (MagicCam.EditMovieViewController) -&gt; (ObjectiveC.UIStoryboardSegue) -&gt; ()).(closure #2)"
-                  moduleName = "MagicCam"
-                  urlString = "file:///Users/sunset/projects/iOS_App/Products/ICamMov/ICamMov/EditMovie/EditMovieViewController.swift"
-                  timestampString = "451404197.686146"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/TakeMovie/TakeMovieViewController.swift"
+            timestampString = "451812814.637313"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/SunsetCImage/Filters/SunsetFilter.swift"
+            timestampString = "451814227.282818"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "processMovieFrame(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/SunsetCImage/Sources/SunsetMovie.swift"
+            timestampString = "451814903.890448"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "displayLinkCallback(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/SunsetCImage/Sources/SunsetMovie.swift"
+            timestampString = "451814391.492782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "play()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/SunsetCImage/Sources/SunsetMovie.swift"
+            timestampString = "451814927.844539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "play()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -301,12 +349,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ICamMov/EditMovie/EditMovieViewController.swift"
-            timestampString = "451404277.444092"
+            timestampString = "452104900.398196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "unwindToEditMovie(_:)"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "filerAction(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/EditMovie/EditMovieViewController.swift"
+            timestampString = "452104900.398196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/EditMovie/EditMovieViewController.swift"
+            timestampString = "452104900.398196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/EditMovie/EditMovieViewController.swift"
+            timestampString = "452104900.398196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ICamMov/TakeMovie/HomeTakeMovieViewController.swift"
+            timestampString = "452105065.313266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "recordOrStop(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

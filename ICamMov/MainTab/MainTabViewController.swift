@@ -43,8 +43,8 @@ class MainTabViewController: UITabBarController{
     func addCenterButton(){
 //        var button: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         var button : UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        button.frame = CGRect(x: 0, y: 0, width: self.tabBar.frame.size.height, height: self.tabBar.frame.size.width)
-        button.setTitle("SB", forState: UIControlState.Normal)
+        button.frame = CGRect(x: 0, y: 0, width: self.tabBar.bounds.size.width/3, height: self.tabBar.bounds.size.height)
+//        button.setTitle("SB", forState: UIControlState.Normal)
         button.setImage(UIImage(named: "first"), forState: UIControlState.Normal)
 //        button.setBackgroundImage(UIImage(named: "second"), forState: UIControlState.Normal)
         

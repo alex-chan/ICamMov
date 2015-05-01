@@ -45,10 +45,10 @@ class SunsetMovie2: SunsetOutput {
     func createAssetReader() -> AVAssetReader {
         var error: NSError?
         var assetReader = AVAssetReader(asset: asset, error: &error)
-        var outputSettings = [kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
-        var readerVideoOuput = AVAssetReaderVideoCompositionOutput(videoTracks: <#[AnyObject]!#>, videoSettings: outputSettings)
+//        var outputSettings = [kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
+//        var readerVideoOuput = AVAssetReaderVideoCompositionOutput(videoTracks: <#[AnyObject]!#>, videoSettings: outputSettings)
         
-        
+        return assetReader
     }
     
 }

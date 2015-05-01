@@ -44,6 +44,7 @@
 		CB2BD8D01ABBC24E008D5C37 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */; };
 		CB2D5AD71ADE00AE0098468C /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D5AD61ADE00AE0098468C /* MyScrollView.swift */; };
 		CB3266A01AC18A3800F41E47 /* EditMovie2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */; };
+		CB51CD171AF226840039726E /* EditMovie4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51CD161AF226840039726E /* EditMovie4ViewController.swift */; };
 		CB5B631E1ADB5492001FF81D /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B631D1ADB5492001FF81D /* testViewController.swift */; };
 		CB5C77241A2D68A5007ACD7E /* TakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */; };
 		CB5C77281A2DA4E5007ACD7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */; };
@@ -54,6 +55,7 @@
 		CB8371881AE735E200BCF441 /* AddSubtitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8371871AE735E200BCF441 /* AddSubtitleViewController.swift */; };
 		CB84A6A61AB90CA9004D88F7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */; };
 		CB8EEF041AB03E0300848104 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8EEF031AB03E0300848104 /* utils.swift */; };
+		CB94E3C81AF0CC000062C357 /* HomeTakeMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB94E3C71AF0CC000062C357 /* HomeTakeMovieViewController.swift */; };
 		CB95D6C31A820308000F3BD5 /* ShareMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */; };
 		CB9A208D1ABFA9EC00CC0249 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A208C1ABFA9EC00CC0249 /* Model.swift */; };
 		CBB38B601A2F10B600610CB1 /* TakeMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */; };
@@ -89,6 +91,7 @@
 		CBC9CA1A1A88A4B900FAAE6D /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC9CA081A88A4B900FAAE6D /* ShareSDKiPhoneDefaultShareViewUI.framework */; };
 		CBC9CA1B1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBC9CA091A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		CBC9CA1C1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC9CA0A1A88A4B900FAAE6D /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
+		CBCA31791AEDC82500FA2D3A /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB8669EF1AC46911004AA1E7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBD07A401AAAFCD600963F4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD07A3F1AAAFCD600963F4A /* LoginViewController.swift */; };
 		CBD1AE1A1AD672F300874D46 /* SunsetFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE0B1AD672F300874D46 /* SunsetFilter.swift */; };
 		CBD1AE1B1AD672F300874D46 /* SunsetMovieWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1AE0D1AD672F300874D46 /* SunsetMovieWriter.swift */; };
@@ -140,6 +143,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CBCA31791AEDC82500FA2D3A /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +208,7 @@
 		CB2BD8C01ABBC24E008D5C37 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		CB2D5AD61ADE00AE0098468C /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie2ViewController.swift; path = EditMovie/EditMovie2ViewController.swift; sourceTree = "<group>"; };
+		CB51CD161AF226840039726E /* EditMovie4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMovie4ViewController.swift; path = EditMovie/EditMovie4ViewController.swift; sourceTree = "<group>"; };
 		CB5B631D1ADB5492001FF81D /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieViewController.swift; path = TakeMovie/TakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB5C77271A2DA4E5007ACD7E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 		CB84A6A51AB90CA9004D88F7 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB8669EF1AC46911004AA1E7 /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = ICamMov/Frameworks/GPUImage.framework; sourceTree = "<group>"; };
 		CB8EEF031AB03E0300848104 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		CB94E3C71AF0CC000062C357 /* HomeTakeMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTakeMovieViewController.swift; path = TakeMovie/HomeTakeMovieViewController.swift; sourceTree = "<group>"; };
 		CB95D6C21A820308000F3BD5 /* ShareMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareMovieViewController.swift; path = ShareMovie/ShareMovieViewController.swift; sourceTree = "<group>"; };
 		CB9A208C1ABFA9EC00CC0249 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakeMovieView.swift; path = TakeMovie/TakeMovieView.swift; sourceTree = "<group>"; };
@@ -358,6 +364,7 @@
 				CB32669F1AC18A3800F41E47 /* EditMovie2ViewController.swift */,
 				CBF017871AC3902F00DFBA58 /* EditMovie3ViewController.swift */,
 				CB8371871AE735E200BCF441 /* AddSubtitleViewController.swift */,
+				CB51CD161AF226840039726E /* EditMovie4ViewController.swift */,
 			);
 			name = EditMovie;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 			children = (
 				CBB38B5F1A2F10B600610CB1 /* TakeMovieView.swift */,
 				CB5C77231A2D68A5007ACD7E /* TakeMovieViewController.swift */,
+				CB94E3C71AF0CC000062C357 /* HomeTakeMovieViewController.swift */,
 			);
 			name = TakeMovie;
 			sourceTree = "<group>";
@@ -914,7 +922,9 @@
 				CB1650821A31652700AB25DD /* EditMovie1ViewController.swift in Sources */,
 				CB2BD8931ABA7FB2008D5C37 /* SASliderLeft.m in Sources */,
 				CBC0426B1A25FC8800597951 /* MainTabViewController.swift in Sources */,
+				CB94E3C81AF0CC000062C357 /* HomeTakeMovieViewController.swift in Sources */,
 				CBD1AE4E1AD7C47400874D46 /* MyExtensions.swift in Sources */,
+				CB51CD171AF226840039726E /* EditMovie4ViewController.swift in Sources */,
 				CB2BD8C51ABBC24E008D5C37 /* SDWebImageDecoder.m in Sources */,
 				CBD1AE1F1AD672F300874D46 /* SunsetInputDelegate.swift in Sources */,
 				CBD1AE4C1AD7AE6200874D46 /* FilterCollectionViewCell.swift in Sources */,

@@ -108,11 +108,12 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
     }
     
     func pause(){
-//        displayLink.paused = true
+        displayLink.paused = true
         self.player.pause()
     }
     
     func play(){
+        
         displayLink.paused = false
         self.player.play()
     }
@@ -195,6 +196,7 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
                     self.playerItem!.addOutput(self.videoOutput)
                     self.player.replaceCurrentItemWithPlayerItem(self.playerItem!)
                     
+                    self.videoOutput!.requestNotificationOfMediaDataChangeWithAdvanceInterval(0.3)
                 }
                 
             }
@@ -228,10 +230,12 @@ class SunsetMovie: SunsetOutput, AVPlayerItemOutputPullDelegate, SunsetAudioTapP
             pixelBuffer = videoOutput!.copyPixelBufferForItemTime(outputItemTime, itemTimeForDisplay: nil)
 //            println("pixelBuffer:\(pixelBuffer)")
 //            println("pixelBuffer")
-            
-            for target in targets {
-                target.processMovieFrame(pixelBuffer!)
+            if pixelBuffer != nil {
+                for target in targets {
+                    target.processMovieFrame(pixelBuffer!)
+                }
             }
+            
             
         }else{
 //            println("no new pixel buffer for time:\(outputItemTime.value)")

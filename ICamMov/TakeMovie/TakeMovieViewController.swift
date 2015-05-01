@@ -99,10 +99,10 @@ class TakeMovieViewController: UIViewController, AVCaptureFileOutputRecordingDel
                 }
                 
 //                
-//                if session.canSetSessionPreset(AVCaptureSessionPreset640x480){
-//                    println("can set preset 1928x1080")
-//                    session.sessionPreset = AVCaptureSessionPreset640x480
-//                }
+                if session.canSetSessionPreset(AVCaptureSessionPresetLow){
+                    println("can set preset AVCaptureSessionPresetLow")
+                    session.sessionPreset = AVCaptureSessionPresetLow
+                }
                 
                 if session.canAddInput(videoDeviceInput){
                     session.addInput(videoDeviceInput)
@@ -296,7 +296,7 @@ class TakeMovieViewController: UIViewController, AVCaptureFileOutputRecordingDel
                 print("toEditMovieSegue: " )
                 println(self.tmpMovieURL)
                 //            segue.setValue(self.tmpMovieURL, forKey: "tmpMovieURL")
-                (segue.destinationViewController as EditMovieViewController).tmpMovieURL  = self.tmpMovieURL
+                (segue.destinationViewController as EditMovieViewController).toEditMovieURL  = self.tmpMovieURL
                 
             }
         }

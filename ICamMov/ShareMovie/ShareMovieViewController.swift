@@ -13,11 +13,8 @@ import UIKit
 class ShareMovieViewController : UIViewController{
     
     
-    var toShareMovieURL : NSURL?
-//    var coverImage: UIImage?
-    
-    var shareSettings :Dictionary<String, Bool> = ["save": true, "weixin_session": true, "weixin_timeline": false, "weibo": false]
-    
+    var toShareMovieURL : NSURL!
+
     
     
     var saveToAlbum: Bool = true {
@@ -46,6 +43,7 @@ class ShareMovieViewController : UIViewController{
             shareTimelineBtn.selected = shareToWechatTimeline
             if shareToWechatTimeline{
                 shareToWechat = false
+                shareToLP = true
             }
         }
     }
@@ -55,6 +53,7 @@ class ShareMovieViewController : UIViewController{
             shareWeixinBtn.selected = shareToWechat
             if shareToWechat {
                 shareToWechatTimeline = false
+                shareToLP = true
             }
         }
     }
@@ -62,6 +61,9 @@ class ShareMovieViewController : UIViewController{
     var shareToSinaWeibo : Bool = false {
         didSet {
             shareWeiboBtn.selected =  shareToSinaWeibo
+            if shareToSinaWeibo {
+                shareToLP = true
+            }
         }
     }
     
@@ -90,7 +92,7 @@ class ShareMovieViewController : UIViewController{
         super.viewDidLoad()
         
         
-        self.toShareMovieURL = Utils.getTestVideoUrl()
+//        self.toShareMovieURL = Utils.getTestVideoUrl()
         
         println("toShareMovieURL:\(self.toShareMovieURL!)")
         
@@ -148,17 +150,62 @@ class ShareMovieViewController : UIViewController{
     
     
     func dispatchShare(shareUrl: String){
-        if self.shareSettings["save"]! {
-            
-        }
-        if self.shareSettings["weixin_session"]! {
+        
+        if shareToWechat{
             self.shareInWeixin(ShareTypeWeixiSession, shareUrl: shareUrl)
         }
-        if self.shareSettings["weixin_timeline"]! {
+        if shareToWechatTimeline{
             self.shareInWeixin(ShareTypeWeixiTimeline, shareUrl: shareUrl)
         }
         
+        if shareToSinaWeibo {
+            self.shareInSinaWeibo(shareUrl)
+        }
+ 
         
+ 
+        
+        
+    }
+    
+    func shareInSinaWeibo(shareUrl: String){
+        
+        var title = shareComment.text
+        
+        var publishContent : ISSContent = ShareSDK.content(title+shareUrl,
+            defaultContent:"默认分享内容，没内容时显示",
+            image:nil,
+            title:title,
+            url:shareUrl,
+            description:title,
+            mediaType:SSPublishContentMediaTypeVideo)
+        
+        ShareSDK.shareContent(publishContent, type: ShareTypeSinaWeibo, authOptions: nil, shareOptions: nil, statusBarTips: true, result: {
+            (type:ShareType, state:SSResponseState , statusInfo:ISSPlatformShareInfo!, error:ICMErrorInfo!, end:Bool) in
+            
+            println(state.value)
+            
+            
+            switch state.value {
+            case SSResponseStateSuccess.value:
+                println("分享成功")
+                Utils.info("分享成功", title: "")
+//                presentViewController:animated:completion:
+                
+                var mainVC = self.storyboard!.instantiateViewControllerWithIdentifier("main_tab_sb_id") as MainTabViewController
+                self.presentViewController(mainVC, animated: true, completion: nil)
+                
+            case SSResponseStateFail.value:
+                Utils.error(error.errorDescription(), title: "错误")
+                
+                println(error.errorCode())
+                println(error.errorDescription())
+            default:
+                println("other")
+                
+            }
+
+        })
     }
     
     func shareInWeixin(type: ShareType, shareUrl: String){
@@ -210,11 +257,27 @@ class ShareMovieViewController : UIViewController{
     
     typealias UploadFileResultBlock = (Bool!, NSError?, AVFile?)->Void
     
+    
+    func saveMovieToAlumb(){
+        if self.saveToAlbum {
+            var assetLibrary: ALAssetsLibrary = ALAssetsLibrary()
+            if (assetLibrary.videoAtPathIsCompatibleWithSavedPhotosAlbum(self.toShareMovieURL) ){
+                assetLibrary.writeVideoAtPathToSavedPhotosAlbum(self.toShareMovieURL, completionBlock:{
+                    (url, error) in
+                    
+                    return
+                })
+                
+            }
+        }
+    }
+    
+    
     func uploadCoverAndMovie(){
+        self.saveMovieToAlumb()
         
         var sessionQueue: dispatch_queue_t = dispatch_queue_create("upload file session queue",DISPATCH_QUEUE_SERIAL)
         
-//        self.sessionQueue = sessionQueue
         
         var alert = UIAlertView(title: "上传中...", message: nil, delegate: nil, cancelButtonTitle:nil)
         var progress = UIProgressView(progressViewStyle: UIProgressViewStyle.Bar)

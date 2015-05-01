@@ -200,7 +200,7 @@ class SunsetView: UIView, SunsetInputDelegate {
     
     func dispatchCGImage(cgImage: CGImage){
         
-//        println("dispatchCGImage")
+        println("dispatchCGImage")
 
         self.videoLayer.contents = cgImage
         

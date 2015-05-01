@@ -77,6 +77,8 @@ class SunsetFilter: SunsetOutput, SunsetInputDelegate  {
     }
     
     func processMovieFrame(pixelBuffer: CVPixelBuffer) -> Void  {
+        
+        println("SunsetFilter: processMovieFrame ")
         var ciImage = CIImage(CVPixelBuffer: pixelBuffer)
         
         self.applyFilter(ciImage)

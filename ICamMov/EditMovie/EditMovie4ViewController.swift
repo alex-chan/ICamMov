@@ -7,30 +7,29 @@
 //
 
 import Foundation
+import AssetsLibrary
+import MobileCoreServices
 
-class Subtitle {
-    var time : CMTime!
-    var timeSec: Double!
-    var chinese: String!
-    var english: String!
-    
-    init(time: CMTime, chinese: String, english: String){
-        self.time = time
-        self.timeSec = Double( CMTimeGetSeconds(time) )
-        self.chinese = chinese
-        self.english = english
-    }
-    
-}
+import GPUImage
 
-class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
+
+
+class EditMovie4ViewController: UIViewController,  FilterCollectionViewDelegate{
     
+    
+    @IBOutlet weak var moviePreview: GPUImageView!
+    var movie2 : GPUImageMovie!
+    var player:  AVPlayer!
+    var playerItem: AVPlayerItem!
+    
+    
+    // ------
     
     var isPlaying = false
     
-    var movie : SunsetMovie?
+    var movie : SunsetMovie!
     
-    var tmpMovieURL: NSURL?
+    var toEditMovieURL: NSURL!
     
     var currentShowing: UIView?
     
@@ -41,6 +40,8 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     var filter: SunsetFilter?
     
     var timer: NSTimer!
+    
+    var movieURLToShare: NSURL!
     
     
     // Set show mask as default
@@ -55,7 +56,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     var subtitles: [Subtitle] = []
     var subtitleIndex = 0
     
-
+    
     @IBOutlet weak var subtitleView: UIView!
     
     @IBOutlet weak var filterView: UIView!
@@ -64,7 +65,8 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     @IBOutlet weak var bottomMask: UIView!
     
     
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,12 +74,8 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         
         self.initUI()
         
-        movie = SunsetMovie(URL: Utils.getTestVideoUrl())
+        println("edit movie:\(toEditMovieURL)")
         
-        println("edit movie")
-        
-        filter = SunsetFilter(name: "CIPhotoEffectProcess") // CIMotionBlur raise exception
-        movie!.addTarget(filter!)
         
         for childVC in childViewControllers{
             if let child = childVC as? SunsetPlayerViewController {
@@ -90,64 +88,66 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         }
         
         
-        // Make playerVC assoicate a SunsetMovie to control the playback of it
-        playerVC.associateMovie(movie!)
-
-        
-        var playerView = playerVC.playerView
-        filter!.addTarget(playerView)
-
         
         
-//        movie!.addTarget(movieWriter)
-        
-//        movie!.addTarget(playerVC!.playerView )
-        
-//        movieWriter.startRecording()
-        
-        
-//        playerVC!.play()
-        
-
-//        var t = Int64( 2 * NSEC_PER_SEC )
-//        var stopTime = dispatch_time(DISPATCH_TIME_NOW, t )
-//        
-//        dispatch_after(stopTime, dispatch_get_main_queue(), {
-//            playerView.textLayerCh.string = "我想要的未来，是什么"
-//            playerView.textLayerEn.string = "What's the future I need "
-//            
-////            movieWriter.finishRecording()
-////            self.movie!.pause()
-////            println("finish recording")
-//        })
     }
     
     
     func initUI(){
         self.maskShowing = true
     }
-    
     override func viewWillAppear(animated: Bool) {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onProgress", userInfo: nil, repeats: true)
         super.viewWillAppear(animated)
+        playerItem = AVPlayerItem(URL: toEditMovieURL)
+        player = AVPlayer(playerItem: playerItem)
+        
+        
+        movie2 = GPUImageMovie(playerItem: playerItem)
+        movie2.playAtActualSpeed = true
+        movie2.addTarget(self.moviePreview)
+        
+        player.play()
+        movie2.startProcessing()
     }
+    //    override func viewWillAppear(animated: Bool) {
+    //        self.activityIndicator.stopAnimating()
+    //
+    //        movie = SunsetMovie(URL: toEditMovieURL)
+    //
+    //        filter = SunsetFilter(name: "CIPhotoEffectProcess") // CIMotionBlur raise exception
+    //        movie.addTarget(filter!)
+    //
+    //
+    //        // Make playerVC assoicate a SunsetMovie to control the playback of it
+    //        playerVC.associateMovie(movie)
+    //
+    //        var playerView = playerVC.playerView
+    //        filter!.addTarget(playerView)
+    ////        playerVC!.play()
+    //
+    //        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onProgress", userInfo: nil, repeats: true)
+    //        super.viewWillAppear(animated)
+    //    }
+    //
+    //    override func viewWillDisappear(animated: Bool) {
+    //
+    //        timer.invalidate()
+    //
+    //        super.viewWillDisappear(animated)
+    //    }
     
-    override func viewWillDisappear(animated: Bool) {
-        
-        timer.invalidate()
-        
-        super.viewWillDisappear(animated)
-    }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toShareMovieSegue" {
             print("toShareMovieSegue: " )
-
-            (segue.destinationViewController as ShareMovieViewController).toShareMovieURL  = Utils.getTestVideoUrl()
+            if let url = movieURLToShare{
+                (segue.destinationViewController as ShareMovieViewController).toShareMovieURL  = url
+            }
+            
+            
             
         }
     }
-
+    
     // Selectors
     
     func onProgress(){
@@ -161,7 +161,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         
         var sub = self.subtitles[self.subtitleIndex]
         
-        if movie!.playedTime >= sub.timeSec && movie!.playedTime <= sub.timeSec+0.2  {
+        if movie.playedTime >= sub.timeSec && movie.playedTime <= sub.timeSec+0.2  {
             // show this
             playerVC.playerView.textLayerEn.string = sub.english
             playerVC.playerView.textLayerCh.string = sub.chinese
@@ -174,25 +174,25 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
         }
         
     }
-
-
+    
+    
     
     // MARK: FilterCollectionViewDelegates
     func filterSelected(filterIndex: Int) {
         
-
+        
         playerVC.stop()
-
-        movie!.removeAll()
+        
+        movie.removeAll()
         
         filter!.removeAll()
         
         filter = SunsetFilter(filterIndex: filterIndex)
-
         
-        movie!.addTarget(filter!)
+        
+        movie.addTarget(filter!)
         filter!.addTarget(playerVC!.playerView)
-
+        
         playerVC.play()
         
     }
@@ -224,10 +224,10 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
                 
                 self.subtitles.append(newSub)
             }
-//            
-//            var sub =  Subtitle(time: CMTimeMakeWithSeconds(Float64(movie!.duration!), 30), chinese:" ", english:" ")
-//            
-//            self.subtitles.append(sub )
+            //
+            //            var sub =  Subtitle(time: CMTimeMakeWithSeconds(Float64(movie.duration!), 30), chinese:" ", english:" ")
+            //
+            //            self.subtitles.append(sub )
             
             
         }
@@ -272,6 +272,43 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
             self.currentShowing = nil
         }
         
+        
+    }
+    @IBAction func showShareScene(sender: AnyObject) {
+        
+        self.activityIndicator.startAnimating()
+        
+        var movie2 = GPUImageMovie(URL: toEditMovieURL)
+        
+        
+        var  kDateFormatter: NSDateFormatter?
+        kDateFormatter = NSDateFormatter()
+        kDateFormatter!.dateStyle = NSDateFormatterStyle.MediumStyle
+        kDateFormatter!.timeStyle = NSDateFormatterStyle.ShortStyle
+        var outurl = NSFileManager.defaultManager()
+            .URLForDirectory(
+                .DocumentDirectory,
+                inDomain: .UserDomainMask,
+                appropriateForURL: nil,
+                create: true,
+                error: nil)!
+            .URLByAppendingPathComponent(kDateFormatter!.stringFromDate( NSDate() ) )
+            .URLByAppendingPathExtension( UTTypeCopyPreferredTagWithClass( AVFileTypeQuickTimeMovie , kUTTagClassFilenameExtension).takeRetainedValue() )
+        
+        
+        var movie2writer = GPUImageMovieWriter(movieURL: outurl, size: movie.movieSize)
+        movie2.addTarget(movie2writer)
+        movie2writer.completionBlock = {
+            self.activityIndicator.stopAnimating()
+            self.movieURLToShare = outurl
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("toShareMovieSegue", sender: nil)
+            })
+        }
+        
+        movie2writer.startRecording()
+        movie2.startProcessing()
         
     }
 }
