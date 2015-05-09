@@ -71,6 +71,7 @@ class EditMovieViewController: UIViewController,  FilterCollectionViewDelegate{
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    // MARK: Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()

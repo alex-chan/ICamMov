@@ -28,7 +28,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WgF-6g-IXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2222" y="-58"/>
+            <point key="canvasLocation" x="-2514" y="-99"/>
         </scene>
         <!--HomeMaster-->
         <scene sceneID="qpY-o5-GHn">
@@ -62,7 +62,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze7-Wj-iHJ" userLabel="PostTime">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze7-Wj-iHJ" userLabel="PostTime">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                                 <constraint firstAttribute="height" constant="44" id="sZf-YI-f7r"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zy-yQ-pOJ" userLabel="footer">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zy-yQ-pOJ" userLabel="footer">
                                             <rect key="frame" x="0.0" y="364" width="400" height="44"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-bD-Fo1" userLabel="Likes">
@@ -166,7 +166,7 @@
                                                 <constraint firstItem="df3-9h-JPl" firstAttribute="width" secondItem="jPg-bD-Fo1" secondAttribute="width" id="plV-TF-B6X"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5K-R8-Ou0" userLabel="videoContent" customClass="MoviePreviewView" customModule="MagicCam" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5K-R8-Ou0" userLabel="videoContent" customClass="MoviePreviewView" customModule="MagicCam" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="44" width="400" height="320"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -473,7 +473,6 @@
                             <constraint firstItem="bqp-1Z-FDn" firstAttribute="leading" secondItem="2Kt-9D-WYC" secondAttribute="trailing" constant="52" id="FtM-Fo-flr">
                                 <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                             </constraint>
-                            <constraint firstItem="BB0-iH-TBz" firstAttribute="top" secondItem="AVm-Zt-aRW" secondAttribute="bottom" id="GFr-UL-byU"/>
                             <constraint firstItem="bqp-1Z-FDn" firstAttribute="trailing" secondItem="2Kt-9D-WYC" secondAttribute="trailing" constant="-341" id="LcI-fZ-Bi2">
                                 <variation key="heightClass=compact" constant="0.0"/>
                             </constraint>
@@ -483,25 +482,26 @@
                             <constraint firstAttribute="trailingMargin" secondItem="2Kt-9D-WYC" secondAttribute="trailing" constant="148" id="Oae-nY-tOr">
                                 <variation key="heightClass=compact" constant="20"/>
                             </constraint>
+                            <constraint firstItem="BB0-iH-TBz" firstAttribute="top" secondItem="AVm-Zt-aRW" secondAttribute="bottom" id="P0C-kF-6jt"/>
                             <constraint firstAttribute="centerX" secondItem="2Kt-9D-WYC" secondAttribute="centerX" id="WTG-1Z-m1h"/>
-                            <constraint firstItem="1MP-BD-sQ0" firstAttribute="top" secondItem="2Kt-9D-WYC" secondAttribute="bottom" constant="20" id="bX8-6T-h3x"/>
-                            <constraint firstItem="BB0-iH-TBz" firstAttribute="top" secondItem="AVm-Zt-aRW" secondAttribute="bottom" id="cAe-gv-TwA"/>
+                            <constraint firstItem="BB0-iH-TBz" firstAttribute="top" secondItem="AVm-Zt-aRW" secondAttribute="bottom" id="ddF-AH-VJl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BB0-iH-TBz" secondAttribute="trailing" constant="-16" id="e7I-e7-rKp"/>
                             <constraint firstItem="2Kt-9D-WYC" firstAttribute="top" secondItem="bqp-1Z-FDn" secondAttribute="bottom" constant="50" id="vtk-Mo-665">
                                 <variation key="heightClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstItem="bqp-1Z-FDn" firstAttribute="bottom" secondItem="2Kt-9D-WYC" secondAttribute="bottom" id="zM7-eW-dkR"/>
                             <constraint firstItem="BB0-iH-TBz" firstAttribute="leading" secondItem="6BV-Ei-t3A" secondAttribute="leadingMargin" constant="-16" id="zN4-k9-rXP"/>
+                            <constraint firstItem="1MP-BD-sQ0" firstAttribute="top" secondItem="2Kt-9D-WYC" secondAttribute="bottom" constant="20" id="zut-ou-Q3d"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="FtM-Fo-flr"/>
+                                <exclude reference="LcI-fZ-Bi2"/>
+                                <exclude reference="zM7-eW-dkR"/>
                                 <exclude reference="Mcu-e7-SIw"/>
                                 <exclude reference="Oae-nY-tOr"/>
                                 <exclude reference="WTG-1Z-m1h"/>
                                 <exclude reference="vtk-Mo-665"/>
-                                <exclude reference="FtM-Fo-flr"/>
-                                <exclude reference="LcI-fZ-Bi2"/>
-                                <exclude reference="zM7-eW-dkR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -509,10 +509,10 @@
                                 <include reference="BB0-iH-TBz"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="LcI-fZ-Bi2"/>
                                 <include reference="Mcu-e7-SIw"/>
                                 <include reference="Oae-nY-tOr"/>
                                 <include reference="vtk-Mo-665"/>
-                                <include reference="LcI-fZ-Bi2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -523,9 +523,9 @@
                             <mask key="constraints">
                                 <include reference="e7I-e7-rKp"/>
                                 <include reference="zN4-k9-rXP"/>
-                                <include reference="WTG-1Z-m1h"/>
                                 <include reference="FtM-Fo-flr"/>
                                 <include reference="zM7-eW-dkR"/>
+                                <include reference="WTG-1Z-m1h"/>
                             </mask>
                         </variation>
                     </view>
@@ -700,7 +700,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLf-fa-6nd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7nc-bx-vQ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1666" y="-335"/>
+            <point key="canvasLocation" x="-1630.5" y="-590.25"/>
         </scene>
         <!--EditMovie-->
         <scene sceneID="MXm-Y6-rFc">
@@ -852,7 +852,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oae-1x-wbC" userLabel="PlayerView">
                                 <rect key="frame" x="0.0" y="64" width="400" height="202"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-YZ-VeB" customClass="GPUImageView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-YZ-VeB" customClass="GPUImageView">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="-84" width="400" height="0.0"/>
@@ -1292,6 +1292,9 @@
                                     <constraint firstAttribute="bottom" secondItem="taT-jt-9M8" secondAttribute="bottom" id="gDz-fD-34h"/>
                                     <constraint firstItem="taT-jt-9M8" firstAttribute="top" secondItem="oQg-IN-qXe" secondAttribute="top" id="ikX-xr-vZL"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="492"/>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1322,7 +1325,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSj-pG-KBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SSy-NU-6PT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-420" y="-536"/>
+            <point key="canvasLocation" x="177" y="-497.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jUe-Az-yrC">
@@ -1340,7 +1343,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NY4-Kv-Twt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-989" y="-536"/>
+            <point key="canvasLocation" x="-891" y="-546.75"/>
         </scene>
         <!--Register-->
         <scene sceneID="ygH-1w-pc2">
